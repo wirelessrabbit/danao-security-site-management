@@ -118,36 +118,11 @@
       
       <!-- Brand Logo + Condensed Title -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
-        <!-- Custom SVG Gold Shield Emblem with Trident Crown & DS Monogram -->
-        <svg class="w-10 h-11 sm:w-11 sm:h-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Danao Security Services Shield Logo">
-          <defs>
-            <linearGradient id="goldGradMain" x1="15" y1="10" x2="85" y2="105" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#f7d582" />
-              <stop offset="50%" stop-color="#e5b857" />
-              <stop offset="100%" stop-color="#b88728" />
-            </linearGradient>
-            <linearGradient id="goldGradDark" x1="50" y1="20" x2="50" y2="100" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#162d4d" />
-              <stop offset="100%" stop-color="#0b192c" />
-            </linearGradient>
-          </defs>
-          <!-- Trident Top Spikes -->
-          <path d="M50 4L46 15H54L50 4Z" fill="url(#goldGradMain)" />
-          <rect x="48.5" y="13" width="3" height="10" fill="url(#goldGradMain)" />
-          <path d="M35 10C34 15 36 19 41 21L43 18C39.5 16.5 38.5 14 39 11L35 10Z" fill="url(#goldGradMain)" />
-          <path d="M65 10C66 15 64 19 59 21L57 18C60.5 16.5 61.5 14 61 11L65 10Z" fill="url(#goldGradMain)" />
-          <!-- Side Wing Flourishes -->
-          <path d="M18 46L8 43L15 54L18 46Z" fill="url(#goldGradMain)" />
-          <path d="M82 46L92 43L85 54L82 46Z" fill="url(#goldGradMain)" />
-          <path d="M22 76L11 81L24 85L22 76Z" fill="url(#goldGradMain)" />
-          <path d="M78 76L89 81L76 85L78 76Z" fill="url(#goldGradMain)" />
-          <!-- Outer Shield -->
-          <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="url(#goldGradMain)" />
-          <!-- Inner Dark Shield -->
-          <path d="M50 25L78 34.5V60.5C78 79 65.5 93 50 100.5C34.5 93 22 79 22 60.5V34.5L50 25Z" fill="url(#goldGradDark)" stroke="#f7d582" stroke-width="1.2" />
-          <!-- DS Bold Monogram -->
-          <text x="50" y="72" text-anchor="middle" fill="url(#goldGradMain)" font-family="Oswald, sans-serif" font-weight="700" font-size="33" letter-spacing="1">DS</text>
-        </svg>
+        <img
+          src="assets/logodssi1.png"
+          alt="Danao Security Services Inc Logo"
+          class="w-10 h-11 sm:w-11 sm:h-12 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+        />
 
         <span class="brand-title-font text-gold-500 text-base sm:text-xl md:text-2xl font-bold tracking-wide uppercase leading-none">
           DANAO SECURITY SERVICES INC
@@ -171,7 +146,7 @@
           </a>
         </nav>
 
-        <!-- 3-Line Gold Hamburger Toggle Button (Visible on all screens matching mockup) -->
+        <!-- 3-Line Gold Hamburger Toggle Button -->
         <button id="menuToggleBtn" type="button" aria-label="Toggle Navigation Drawer" class="p-2 rounded-lg hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400/50">
           <div class="w-6 sm:w-7 flex flex-col justify-between gap-[5px]">
             <span class="block h-[2.5px] w-full bg-gold-500 rounded-full transition-transform duration-300" id="bar1"></span>
@@ -209,14 +184,12 @@
   <section class="relative">
     <!-- Hero Photo Banner with Dark Navy Overlay -->
     <div class="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[490px] flex items-center overflow-hidden bg-navy-900">
-      <!-- Uniformed Security Officers Formation Background Image -->
       <img
         src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1920&q=85"
         onerror="this.onerror=null;this.src='https://placehold.co/1920x700/10233d/e5b857?text=Danao+Security+Operations';"
         alt="Uniformed Security Personnel in Formation"
         class="absolute inset-0 w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-110"
       />
-      <!-- Multi-layered Deep Navy Gradient Overlay matching mockup tint -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#0c1b30]/90 via-[#10233d]/75 to-[#10233d]/55"></div>
       <div class="absolute inset-0 bg-[#10233d]/35 mix-blend-multiply"></div>
 
@@ -235,10 +208,9 @@
       </div>
     </div>
 
-    <!-- Bottom CTA Bar (Deep Navy #10233d band with 3 glowing pill buttons) -->
+    <!-- Bottom CTA Bar -->
     <div class="bg-navy-850 py-9 sm:py-11 px-4 border-t border-white/5">
       <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-5 sm:gap-10 md:gap-14">
-        <!-- Pill 1: Inquiries -->
         <a
           href="#footer-contacts"
           class="min-w-[140px] sm:min-w-[165px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
@@ -246,7 +218,6 @@
           Inquiries
         </a>
 
-        <!-- Pill 2: Learn More (Gold Accent) -->
         <a
           href="#why-choose-us"
           class="min-w-[140px] sm:min-w-[165px] text-center bg-gold-450 text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:bg-gold-400 hover:-translate-y-0.5 transition-all duration-200"
@@ -254,7 +225,6 @@
           Learn More
         </a>
 
-        <!-- Pill 3: Join Us -->
         <a
           href="#join-us"
           class="min-w-[140px] sm:min-w-[165px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
@@ -266,19 +236,19 @@
   </section>
 
   <!-- =====================================================================
-       4. 'WHY CHOOSE US' & 'WHAT WE DO' SECTIONS (CRISP WHITE / OFF-WHITE)
+       4. 'WHY CHOOSE US' & 'WHAT WE DO' SECTIONS
   ====================================================================== -->
   <main class="bg-[#fcfdfe] text-slate-700">
     <section id="why-choose-us" class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-10">
       
       <!-- Section Header with Inline Gold Shield Icon -->
       <div class="flex items-center gap-2.5">
-        <svg class="w-6 h-7 flex-shrink-0" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M50 4L46 15H54L50 4Z" fill="#e5b857" />
-          <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="#e5b857" />
-          <path d="M50 26L77 35V60.5C77 78.5 65 92 50 99.5C35 92 23 78.5 23 60.5V35L50 26Z" fill="#fffdf7" />
-          <text x="50" y="71" text-anchor="middle" fill="#d4a33c" font-family="Oswald, sans-serif" font-weight="700" font-size="31">DS</text>
-        </svg>
+        <img
+          src="assets/logodssi1.png"
+          alt=""
+          aria-hidden="true"
+          class="w-6 h-7 object-contain flex-shrink-0"
+        />
         <h2 class="text-brandBlue-600 font-bold text-sm sm:text-base tracking-wide uppercase">
           WHY CHOOSE US
         </h2>
@@ -293,7 +263,7 @@
       <!-- Thin Horizontal Divider Line -->
       <hr class="my-8 sm:my-10 border-t border-slate-300/90" />
 
-      <!-- 5-Card Staggered Grid (3 Cards Top Row, 2 Centered Cards Bottom Row) -->
+      <!-- 5-Card Staggered Grid -->
       <div class="space-y-6">
         <!-- Top Row: 3 Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
@@ -345,7 +315,7 @@
 
         </div>
 
-        <!-- Bottom Row: 2 Centered Cards matching top card width -->
+        <!-- Bottom Row: 2 Centered Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 md:max-w-[66.666%] mx-auto">
           
           <!-- Card 4 -->
@@ -383,16 +353,16 @@
     </section>
 
     <!-- =====================================================================
-         5. 'WHAT WE DO' SECTION (CENTERED BELOW CARDS)
+         5. 'WHAT WE DO' SECTION
     ====================================================================== -->
     <section id="what-we-do" class="max-w-4xl mx-auto px-4 pt-12 sm:pt-16 pb-16 sm:pb-20 text-center">
       <div class="inline-flex items-center justify-center gap-2.5">
-        <svg class="w-6 h-7 flex-shrink-0" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M50 4L46 15H54L50 4Z" fill="#e5b857" />
-          <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="#e5b857" />
-          <path d="M50 26L77 35V60.5C77 78.5 65 92 50 99.5C35 92 23 78.5 23 60.5V35L50 26Z" fill="#fffdf7" />
-          <text x="50" y="71" text-anchor="middle" fill="#d4a33c" font-family="Oswald, sans-serif" font-weight="700" font-size="31">DS</text>
-        </svg>
+        <img
+          src="assets/logodssi1.png"
+          alt=""
+          aria-hidden="true"
+          class="w-6 h-7 object-contain flex-shrink-0"
+        />
         <h2 class="text-brandBlue-600 font-bold text-sm sm:text-base tracking-wide uppercase">
           WHAT WE DO
         </h2>
@@ -414,7 +384,7 @@
        6. 'JOIN US!' RECRUITMENT BANNER & APPLICATION FORM
   ====================================================================== -->
   <section id="join-us" class="bg-navy-850">
-    <!-- Top Half: Full-Width Photo Banner of Security Officer Speaking with Client -->
+    <!-- Top Half: Full-Width Photo Banner -->
     <div class="relative w-full min-h-[270px] sm:min-h-[330px] flex items-center justify-center text-center overflow-hidden">
       <img
         src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1920&q=85"
@@ -422,10 +392,8 @@
         alt="Security Guard Assisting a Client Outdoors in Urban Plaza"
         class="absolute inset-0 w-full h-full object-cover object-center filter brightness-75"
       />
-      <!-- Dark Slate/Navy Overlay -->
       <div class="absolute inset-0 bg-[#0d1d33]/75"></div>
 
-      <!-- Centered Overlay Text -->
       <div class="relative z-10 max-w-xl mx-auto px-6 py-12">
         <h2 class="text-white text-2xl sm:text-3xl font-bold tracking-tight">
           Join Us!
@@ -440,7 +408,6 @@
     <div class="bg-navy-850 py-12 sm:py-16 px-6">
       <form id="recruitmentForm" class="max-w-md mx-auto space-y-6" novalidate>
         
-        <!-- NAME* -->
         <div>
           <label for="applicantName" class="sr-only">Name</label>
           <input
@@ -453,7 +420,6 @@
           />
         </div>
 
-        <!-- CONTACT NUMBER* -->
         <div>
           <label for="applicantPhone" class="sr-only">Contact Number</label>
           <input
@@ -466,7 +432,6 @@
           />
         </div>
 
-        <!-- EMAIL ADDRESS* -->
         <div>
           <label for="applicantEmail" class="sr-only">Email Address</label>
           <input
@@ -479,7 +444,6 @@
           />
         </div>
 
-        <!-- POSITION APPLYING FOR* -->
         <div>
           <label for="applicantPosition" class="sr-only">Position Applying For</label>
           <input
@@ -492,7 +456,6 @@
           />
         </div>
 
-        <!-- File Upload Input ('Choose File' / 'No file chosen') -->
         <div class="border-b border-slate-400/60 pb-2 pt-1">
           <label for="applicantResume" class="sr-only">Upload Resume or Credentials</label>
           <input
@@ -504,7 +467,6 @@
           />
         </div>
 
-        <!-- Subtle Submit Trigger (Maintains minimal form look while enabling full submission) -->
         <div class="pt-2 text-center">
           <button
             type="submit"
@@ -524,29 +486,13 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 sm:py-14">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
         
-        <!-- Col 1: Brand Emblem + Title + Description (Spans 5 cols on desktop) -->
+        <!-- Col 1: Brand Emblem + Title + Description -->
         <div class="lg:col-span-5 flex items-start gap-4">
-          <!-- Larger Gold Shield Emblem SVG -->
-          <svg class="w-16 h-20 sm:w-20 sm:h-24 flex-shrink-0" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="footerGoldGrad" x1="15" y1="10" x2="85" y2="105" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#f7d582" />
-                <stop offset="50%" stop-color="#e5b857" />
-                <stop offset="100%" stop-color="#b88728" />
-              </linearGradient>
-            </defs>
-            <path d="M50 4L46 15H54L50 4Z" fill="url(#footerGoldGrad)" />
-            <rect x="48.5" y="13" width="3" height="10" fill="url(#footerGoldGrad)" />
-            <path d="M35 10C34 15 36 19 41 21L43 18C39.5 16.5 38.5 14 39 11L35 10Z" fill="url(#footerGoldGrad)" />
-            <path d="M65 10C66 15 64 19 59 21L57 18C60.5 16.5 61.5 14 61 11L65 10Z" fill="url(#footerGoldGrad)" />
-            <path d="M18 46L8 43L15 54L18 46Z" fill="url(#footerGoldGrad)" />
-            <path d="M82 46L92 43L85 54L82 46Z" fill="url(#footerGoldGrad)" />
-            <path d="M22 76L11 81L24 85L22 76Z" fill="url(#footerGoldGrad)" />
-            <path d="M78 76L89 81L76 85L78 76Z" fill="url(#footerGoldGrad)" />
-            <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="url(#footerGoldGrad)" />
-            <path d="M50 25L78 34.5V60.5C78 79 65.5 93 50 100.5C34.5 93 22 79 22 60.5V34.5L50 25Z" fill="#0c1b30" stroke="#f7d582" stroke-width="1.2" />
-            <text x="50" y="72" text-anchor="middle" fill="url(#footerGoldGrad)" font-family="Oswald, sans-serif" font-weight="700" font-size="33" letter-spacing="1">DS</text>
-          </svg>
+          <img
+            src="assets/logodssi1.png"
+            alt="Danao Security Services Inc Logo"
+            class="w-16 h-20 sm:w-20 sm:h-24 object-contain flex-shrink-0"
+          />
 
           <div>
             <h3 class="brand-title-font text-gold-500 text-sm sm:text-base font-bold tracking-wide uppercase">
@@ -558,7 +504,7 @@
           </div>
         </div>
 
-        <!-- Col 2: CONTACTS (Spans 3 cols) -->
+        <!-- Col 2: CONTACTS -->
         <div class="lg:col-span-3 lg:text-center">
           <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
             CONTACTS
@@ -566,7 +512,6 @@
           <ul class="space-y-2.5 text-[11px] sm:text-xs text-slate-300">
             <li>
               <a href="mailto:danaomain@gmail.com" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
-                <!-- Email Envelope Icon -->
                 <svg class="w-3.5 h-3.5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <rect width="20" height="16" x="2" y="4" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -576,7 +521,6 @@
             </li>
             <li>
               <a href="tel:+639663225095" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
-                <!-- Phone / Mobile Icon -->
                 <svg class="w-3.5 h-3.5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
                   <path d="M12 18h.01" />
@@ -587,7 +531,7 @@
           </ul>
         </div>
 
-        <!-- Col 3: LEGAL (Spans 2 cols) -->
+        <!-- Col 3: LEGAL -->
         <div class="lg:col-span-2 lg:text-center">
           <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
             LEGAL
@@ -606,13 +550,12 @@
           </ul>
         </div>
 
-        <!-- Col 4: FOLLOW US ON (Spans 2 cols) -->
+        <!-- Col 4: FOLLOW US ON -->
         <div class="lg:col-span-2 lg:text-center">
           <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
             FOLLOW US ON
           </h4>
           <div class="flex items-center lg:justify-center gap-3">
-            <!-- Circular Blue Facebook 'f' Icon -->
             <a
               href="#follow-facebook"
               aria-label="Follow Danao Security Services on Facebook"
@@ -623,7 +566,6 @@
               </svg>
             </a>
 
-            <!-- Square Blue LinkedIn 'in' Icon -->
             <a
               href="#follow-linkedin"
               aria-label="Follow Danao Security Services on LinkedIn"
@@ -641,10 +583,8 @@
   </footer>
 
   <!-- =====================================================================
-       8. INTERACTIVE MODALS & TOAST NOTIFICATION (NO ALERT/CONFIRM USED)
+       8. INTERACTIVE MODALS & TOAST NOTIFICATION
   ====================================================================== -->
-
-  <!-- Services Overview Modal (Triggered by 'Our Services' Gold Button) -->
   <div id="servicesModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4">
     <div class="bg-white text-slate-800 rounded-xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-brandBlue-500/30 relative">
       <button id="closeServicesModalBtn" type="button" aria-label="Close Services Modal" class="absolute top-4 right-4 text-slate-400 hover:text-navy-950 p-1 rounded-lg">
@@ -700,7 +640,6 @@
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Mobile / Hamburger Drawer Toggle
       const menuToggleBtn = document.getElementById('menuToggleBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
       const drawerLinks = document.querySelectorAll('.drawer-link');
@@ -715,7 +654,6 @@
         });
       });
 
-      // 2. Custom Toast Helper (Replaces alert())
       const toastBanner = document.getElementById('toastBanner');
       const toastTitle = document.getElementById('toastTitle');
       const toastMessage = document.getElementById('toastMessage');
@@ -734,7 +672,6 @@
         }, 4500);
       }
 
-      // 3. Recruitment Application Form Validation & Feedback
       const recruitmentForm = document.getElementById('recruitmentForm');
       recruitmentForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -755,7 +692,6 @@
         recruitmentForm.reset();
       });
 
-      // 4. 'Our Services' Modal Controls
       const servicesModal = document.getElementById('servicesModal');
       const openServicesModalBtn = document.getElementById('openServicesModalBtn');
       const closeServicesModalBtn = document.getElementById('closeServicesModalBtn');
@@ -785,7 +721,6 @@
         showToast('Direct Inquiry', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
       });
 
-      // 5. Footer Legal & Social Links Feedback
       document.querySelectorAll('.legal-modal-trigger').forEach((btn) => {
         btn.addEventListener('click', () => {
           const type = btn.getAttribute('data-legal');
