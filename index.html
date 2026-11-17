@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danao Security Services Inc | Safeguarding Assets, Empowering Operations</title>
+  <meta name="description" content="ISO 9001 & ISO 27001 Certified Security Operations. Trusted security and protection services." />
+
+  <!-- Google Fonts: Inter & Oswald for condensed brand display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#0b192c',
+              900: '#0c1b30',
+              850: '#10233d',
+              800: '#152e4f',
+            },
+            gold: {
+              400: '#f0c363',
+              450: '#efc464',
+              500: '#e5b857',
+              600: '#d4a33c',
+            },
+            brandBlue: {
+              500: '#3b76b8',
+              600: '#2b66a8',
+              700: '#1f4f85',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-white': '0 0 22px rgba(255, 255, 255, 0.32)',
+            'glow-white-hover': '0 0 28px rgba(255, 255, 255, 0.52)',
+            'glow-gold': '0 0 24px rgba(239, 196, 100, 0.42)',
+            'glow-gold-hover': '0 0 32px rgba(239, 196, 100, 0.65)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom subtle animations and form overrides */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #10233d;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .brand-title-font {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    /* Custom minimalist file input button matching mockup */
+    input[type="file"]::file-selector-button {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      border: 1px solid #d1d5db;
+      border-radius: 3px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 500;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+      background-color: #e5e7eb;
+    }
+
+    /* Subtle hover elevation for value cards */
+    .value-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(43, 102, 168, 0.14);
+      border-color: #2b66a8;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-950">
+
+  <!-- =====================================================================
+       1. TOP UTILITY BAR
+  ====================================================================== -->
+  <div class="bg-navy-950 border-b border-white/10 text-[11px] sm:text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-8 flex items-center justify-between">
+      <p class="text-slate-300 tracking-wide truncate">
+        ISO 9001 &amp; ISO 27001 Certified Security Operations
+      </p>
+      <a href="tel:+639663776695" class="text-slate-200 hover:text-gold-400 transition-colors whitespace-nowrap ml-4">
+        Hotline: <span class="text-gold-450 font-medium">63 966 377 6695</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       2. MAIN NAVIGATION BAR
+  ====================================================================== -->
+  <header class="sticky top-0 z-40 bg-navy-850/95 backdrop-blur-md border-b border-white/5 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Condensed Title -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+        <!-- Custom SVG Gold Shield Emblem with Trident Crown & DS Monogram -->
+        <svg class="w-10 h-11 sm:w-11 sm:h-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Danao Security Services Shield Logo">
+          <defs>
+            <linearGradient id="goldGradMain" x1="15" y1="10" x2="85" y2="105" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f7d582" />
+              <stop offset="50%" stop-color="#e5b857" />
+              <stop offset="100%" stop-color="#b88728" />
+            </linearGradient>
+            <linearGradient id="goldGradDark" x1="50" y1="20" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#162d4d" />
+              <stop offset="100%" stop-color="#0b192c" />
+            </linearGradient>
+          </defs>
+          <!-- Trident Top Spikes -->
+          <path d="M50 4L46 15H54L50 4Z" fill="url(#goldGradMain)" />
+          <rect x="48.5" y="13" width="3" height="10" fill="url(#goldGradMain)" />
+          <path d="M35 10C34 15 36 19 41 21L43 18C39.5 16.5 38.5 14 39 11L35 10Z" fill="url(#goldGradMain)" />
+          <path d="M65 10C66 15 64 19 59 21L57 18C60.5 16.5 61.5 14 61 11L65 10Z" fill="url(#goldGradMain)" />
+          <!-- Side Wing Flourishes -->
+          <path d="M18 46L8 43L15 54L18 46Z" fill="url(#goldGradMain)" />
+          <path d="M82 46L92 43L85 54L82 46Z" fill="url(#goldGradMain)" />
+          <path d="M22 76L11 81L24 85L22 76Z" fill="url(#goldGradMain)" />
+          <path d="M78 76L89 81L76 85L78 76Z" fill="url(#goldGradMain)" />
+          <!-- Outer Shield -->
+          <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="url(#goldGradMain)" />
+          <!-- Inner Dark Shield -->
+          <path d="M50 25L78 34.5V60.5C78 79 65.5 93 50 100.5C34.5 93 22 79 22 60.5V34.5L50 25Z" fill="url(#goldGradDark)" stroke="#f7d582" stroke-width="1.2" />
+          <!-- DS Bold Monogram -->
+          <text x="50" y="72" text-anchor="middle" fill="url(#goldGradMain)" font-family="Oswald, sans-serif" font-weight="700" font-size="33" letter-spacing="1">DS</text>
+        </svg>
+
+        <span class="brand-title-font text-gold-500 text-base sm:text-xl md:text-2xl font-bold tracking-wide uppercase leading-none">
+          DANAO SECURITY SERVICES INC
+        </span>
+      </a>
+
+      <!-- Desktop Links + Far Right Gold Hamburger Icon -->
+      <div class="flex items-center gap-6 lg:gap-9">
+        <nav class="hidden md:flex items-center gap-7 lg:gap-9">
+          <a href="#why-choose-us" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+            ABOUT US
+          </a>
+          <a href="#what-we-do" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+            SERVICES
+          </a>
+          <a href="#footer-contacts" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+            CONTACTS
+          </a>
+          <a href="#join-us" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+            PORTFOLIO
+          </a>
+        </nav>
+
+        <!-- 3-Line Gold Hamburger Toggle Button (Visible on all screens matching mockup) -->
+        <button id="menuToggleBtn" type="button" aria-label="Toggle Navigation Drawer" class="p-2 rounded-lg hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400/50">
+          <div class="w-6 sm:w-7 flex flex-col justify-between gap-[5px]">
+            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full transition-transform duration-300" id="bar1"></span>
+            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full transition-opacity duration-300" id="bar2"></span>
+            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full transition-transform duration-300" id="bar3"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Expandable Quick Navigation Drawer -->
+    <div id="mobileDrawer" class="hidden bg-navy-900 border-t border-white/10 px-6 py-5 shadow-2xl">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
+          <a href="#why-choose-us" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">About Us</a>
+          <a href="#what-we-do" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">Services</a>
+          <a href="#footer-contacts" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">Contacts</a>
+          <a href="#join-us" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">Portfolio &amp; Careers</a>
+        </div>
+        <div class="flex items-center gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
+          <a href="#join-us" class="drawer-link inline-block bg-gold-450 text-navy-950 text-xs font-semibold px-4 py-2 rounded-full hover:bg-gold-400 transition">
+            Apply Now
+          </a>
+          <a href="tel:+639663776695" class="text-xs text-gold-400 hover:underline">
+            Call Dispatch: +63 966 377 6695
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       3. HERO SECTION & BOTTOM CTA BAR
+  ====================================================================== -->
+  <section class="relative">
+    <!-- Hero Photo Banner with Dark Navy Overlay -->
+    <div class="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[490px] flex items-center overflow-hidden bg-navy-900">
+      <!-- Uniformed Security Officers Formation Background Image -->
+      <img
+        src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1920&q=85"
+        onerror="this.onerror=null;this.src='https://placehold.co/1920x700/10233d/e5b857?text=Danao+Security+Operations';"
+        alt="Uniformed Security Personnel in Formation"
+        class="absolute inset-0 w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-110"
+      />
+      <!-- Multi-layered Deep Navy Gradient Overlay matching mockup tint -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0c1b30]/90 via-[#10233d]/75 to-[#10233d]/55"></div>
+      <div class="absolute inset-0 bg-[#10233d]/35 mix-blend-multiply"></div>
+
+      <!-- Left-Aligned Hero Content -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 py-14 sm:py-20">
+        <div class="max-w-xl">
+          <h1 class="text-2xl sm:text-3xl md:text-[34px] font-bold leading-snug tracking-tight">
+            <span class="block text-white">Safeguarding Assets</span>
+            <span class="block text-gold-450 mt-0.5">Empowering Operations</span>
+          </h1>
+
+          <p class="mt-4 sm:mt-5 text-xs sm:text-[13.5px] md:text-sm text-slate-100/95 leading-relaxed font-normal max-w-md">
+            Danao Security Services promises to provide trusted security and protection services to ensure the safety of our clients, their personnel, assets, and operations. By combining experienced management, modern security methods, and client-focused service, we strive to exceed expectations and set a higher standard in the security industry.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA Bar (Deep Navy #10233d band with 3 glowing pill buttons) -->
+    <div class="bg-navy-850 py-9 sm:py-11 px-4 border-t border-white/5">
+      <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-5 sm:gap-10 md:gap-14">
+        <!-- Pill 1: Inquiries -->
+        <a
+          href="#footer-contacts"
+          class="min-w-[140px] sm:min-w-[165px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Inquiries
+        </a>
+
+        <!-- Pill 2: Learn More (Gold Accent) -->
+        <a
+          href="#why-choose-us"
+          class="min-w-[140px] sm:min-w-[165px] text-center bg-gold-450 text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:bg-gold-400 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Learn More
+        </a>
+
+        <!-- Pill 3: Join Us -->
+        <a
+          href="#join-us"
+          class="min-w-[140px] sm:min-w-[165px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Join Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       4. 'WHY CHOOSE US' & 'WHAT WE DO' SECTIONS (CRISP WHITE / OFF-WHITE)
+  ====================================================================== -->
+  <main class="bg-[#fcfdfe] text-slate-700">
+    <section id="why-choose-us" class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-10">
+      
+      <!-- Section Header with Inline Gold Shield Icon -->
+      <div class="flex items-center gap-2.5">
+        <svg class="w-6 h-7 flex-shrink-0" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 4L46 15H54L50 4Z" fill="#e5b857" />
+          <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="#e5b857" />
+          <path d="M50 26L77 35V60.5C77 78.5 65 92 50 99.5C35 92 23 78.5 23 60.5V35L50 26Z" fill="#fffdf7" />
+          <text x="50" y="71" text-anchor="middle" fill="#d4a33c" font-family="Oswald, sans-serif" font-weight="700" font-size="31">DS</text>
+        </svg>
+        <h2 class="text-brandBlue-600 font-bold text-sm sm:text-base tracking-wide uppercase">
+          WHY CHOOSE US
+        </h2>
+      </div>
+
+      <!-- Lead Statement -->
+      <p class="mt-3.5 text-brandBlue-600 text-base sm:text-lg md:text-[19px] font-medium leading-snug max-w-2xl">
+        Our goal is to provide high-end security <span class="text-gold-500 font-semibold">you can trust.</span><br class="hidden sm:inline" />
+        With intensive investigation and background checks, we can ensure you reliability and safety.
+      </p>
+
+      <!-- Thin Horizontal Divider Line -->
+      <hr class="my-8 sm:my-10 border-t border-slate-300/90" />
+
+      <!-- 5-Card Staggered Grid (3 Cards Top Row, 2 Centered Cards Bottom Row) -->
+      <div class="space-y-6">
+        <!-- Top Row: 3 Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+          
+          <!-- Card 1 -->
+          <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <h3 class="text-brandBlue-600 font-bold text-xs sm:text-[13px] tracking-wide uppercase">
+                  COMMUNICATION
+                </h3>
+                <span class="text-brandBlue-600 font-bold text-sm sm:text-base leading-none">1</span>
+              </div>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                We maintain constant communication both with our partners and with our clients. We are always attentive to client concerns and feedback, ensuring they are addressed promptly and effectively.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <h3 class="text-brandBlue-600 font-bold text-xs sm:text-[13px] tracking-wide uppercase">
+                  COORDINATION
+                </h3>
+                <span class="text-brandBlue-600 font-bold text-sm sm:text-base leading-none">2</span>
+              </div>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                We ensure proper coordination between our internal staff and the client's team to efficiently address issues and eliminate potential problems.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <h3 class="text-brandBlue-600 font-bold text-xs sm:text-[13px] tracking-wide uppercase">
+                  ORGANIZATION
+                </h3>
+                <span class="text-brandBlue-600 font-bold text-sm sm:text-base leading-none">3</span>
+              </div>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                We maintain a well-structured system for organizing client requests, instructions, concerns, and all relevant documents, ensuring they are easily accessible for timely reference and action.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Bottom Row: 2 Centered Cards matching top card width -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 md:max-w-[66.666%] mx-auto">
+          
+          <!-- Card 4 -->
+          <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <h3 class="text-brandBlue-600 font-bold text-xs sm:text-[13px] tracking-wide uppercase">
+                  TECHNOLOGY
+                </h3>
+                <span class="text-brandBlue-600 font-bold text-sm sm:text-base leading-none">4</span>
+              </div>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                We leverage technology as a core strength to enhance the efficiency and effectiveness of our security services.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <h3 class="text-brandBlue-600 font-bold text-[11px] sm:text-xs tracking-wide uppercase leading-tight">
+                  TRADITIONAL CUSTOMER SERVICE
+                </h3>
+                <span class="text-brandBlue-600 font-bold text-sm sm:text-base leading-none">5</span>
+              </div>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                We provide direct and accessible customer service, ensuring clients are never stuck in automated systems or voicemail queues. Our team is always ready to listen and respond promptly to your concerns and inquiries.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. 'WHAT WE DO' SECTION (CENTERED BELOW CARDS)
+    ====================================================================== -->
+    <section id="what-we-do" class="max-w-4xl mx-auto px-4 pt-12 sm:pt-16 pb-16 sm:pb-20 text-center">
+      <div class="inline-flex items-center justify-center gap-2.5">
+        <svg class="w-6 h-7 flex-shrink-0" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 4L46 15H54L50 4Z" fill="#e5b857" />
+          <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="#e5b857" />
+          <path d="M50 26L77 35V60.5C77 78.5 65 92 50 99.5C35 92 23 78.5 23 60.5V35L50 26Z" fill="#fffdf7" />
+          <text x="50" y="71" text-anchor="middle" fill="#d4a33c" font-family="Oswald, sans-serif" font-weight="700" font-size="31">DS</text>
+        </svg>
+        <h2 class="text-brandBlue-600 font-bold text-sm sm:text-base tracking-wide uppercase">
+          WHAT WE DO
+        </h2>
+      </div>
+
+      <div class="mt-5">
+        <button
+          id="openServicesModalBtn"
+          type="button"
+          class="inline-block bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs sm:text-sm px-9 py-2.5 sm:py-3 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+        >
+          Our Services
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       6. 'JOIN US!' RECRUITMENT BANNER & APPLICATION FORM
+  ====================================================================== -->
+  <section id="join-us" class="bg-navy-850">
+    <!-- Top Half: Full-Width Photo Banner of Security Officer Speaking with Client -->
+    <div class="relative w-full min-h-[270px] sm:min-h-[330px] flex items-center justify-center text-center overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1920&q=85"
+        onerror="this.onerror=null;this.src='https://placehold.co/1920x500/152e4f/ffffff?text=Join+Danao+Security+Services';"
+        alt="Security Guard Assisting a Client Outdoors in Urban Plaza"
+        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-75"
+      />
+      <!-- Dark Slate/Navy Overlay -->
+      <div class="absolute inset-0 bg-[#0d1d33]/75"></div>
+
+      <!-- Centered Overlay Text -->
+      <div class="relative z-10 max-w-xl mx-auto px-6 py-12">
+        <h2 class="text-white text-2xl sm:text-3xl font-bold tracking-tight">
+          Join Us!
+        </h2>
+        <p class="mt-3 text-xs sm:text-sm text-slate-100/95 leading-relaxed font-normal">
+          We are continuously seeking dedicated, disciplined professionals ready to advance their careers while safeguarding what matters most.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Half: Minimalist Bottom-Border-Only Application Form -->
+    <div class="bg-navy-850 py-12 sm:py-16 px-6">
+      <form id="recruitmentForm" class="max-w-md mx-auto space-y-6" novalidate>
+        
+        <!-- NAME* -->
+        <div>
+          <label for="applicantName" class="sr-only">Name</label>
+          <input
+            id="applicantName"
+            name="name"
+            type="text"
+            required
+            placeholder="NAME*"
+            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
+          />
+        </div>
+
+        <!-- CONTACT NUMBER* -->
+        <div>
+          <label for="applicantPhone" class="sr-only">Contact Number</label>
+          <input
+            id="applicantPhone"
+            name="contact"
+            type="tel"
+            required
+            placeholder="CONTACT NUMBER*"
+            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
+          />
+        </div>
+
+        <!-- EMAIL ADDRESS* -->
+        <div>
+          <label for="applicantEmail" class="sr-only">Email Address</label>
+          <input
+            id="applicantEmail"
+            name="email"
+            type="email"
+            required
+            placeholder="EMAIL ADDRESS*"
+            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
+          />
+        </div>
+
+        <!-- POSITION APPLYING FOR* -->
+        <div>
+          <label for="applicantPosition" class="sr-only">Position Applying For</label>
+          <input
+            id="applicantPosition"
+            name="position"
+            type="text"
+            required
+            placeholder="POSITION APPLYING FOR*"
+            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
+          />
+        </div>
+
+        <!-- File Upload Input ('Choose File' / 'No file chosen') -->
+        <div class="border-b border-slate-400/60 pb-2 pt-1">
+          <label for="applicantResume" class="sr-only">Upload Resume or Credentials</label>
+          <input
+            id="applicantResume"
+            name="resume"
+            type="file"
+            accept=".pdf,.doc,.docx,.jpg,.png"
+            class="w-full text-[11px] sm:text-xs text-slate-300 focus:outline-none cursor-pointer"
+          />
+        </div>
+
+        <!-- Subtle Submit Trigger (Maintains minimal form look while enabling full submission) -->
+        <div class="pt-2 text-center">
+          <button
+            type="submit"
+            class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs tracking-wider uppercase px-8 py-2.5 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover transition-all duration-200 cursor-pointer"
+          >
+            Submit Application
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       7. FOOTER (DEEP NAVY #0c1b30 WITH 4-COLUMN LAYOUT)
+  ====================================================================== -->
+  <footer id="footer-contacts" class="bg-navy-900 border-t border-white/15 text-slate-200">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 sm:py-14">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+        
+        <!-- Col 1: Brand Emblem + Title + Description (Spans 5 cols on desktop) -->
+        <div class="lg:col-span-5 flex items-start gap-4">
+          <!-- Larger Gold Shield Emblem SVG -->
+          <svg class="w-16 h-20 sm:w-20 sm:h-24 flex-shrink-0" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footerGoldGrad" x1="15" y1="10" x2="85" y2="105" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#f7d582" />
+                <stop offset="50%" stop-color="#e5b857" />
+                <stop offset="100%" stop-color="#b88728" />
+              </linearGradient>
+            </defs>
+            <path d="M50 4L46 15H54L50 4Z" fill="url(#footerGoldGrad)" />
+            <rect x="48.5" y="13" width="3" height="10" fill="url(#footerGoldGrad)" />
+            <path d="M35 10C34 15 36 19 41 21L43 18C39.5 16.5 38.5 14 39 11L35 10Z" fill="url(#footerGoldGrad)" />
+            <path d="M65 10C66 15 64 19 59 21L57 18C60.5 16.5 61.5 14 61 11L65 10Z" fill="url(#footerGoldGrad)" />
+            <path d="M18 46L8 43L15 54L18 46Z" fill="url(#footerGoldGrad)" />
+            <path d="M82 46L92 43L85 54L82 46Z" fill="url(#footerGoldGrad)" />
+            <path d="M22 76L11 81L24 85L22 76Z" fill="url(#footerGoldGrad)" />
+            <path d="M78 76L89 81L76 85L78 76Z" fill="url(#footerGoldGrad)" />
+            <path d="M50 20L83 31V61C83 82.5 68.5 98.5 50 107C31.5 98.5 17 82.5 17 61V31L50 20Z" fill="url(#footerGoldGrad)" />
+            <path d="M50 25L78 34.5V60.5C78 79 65.5 93 50 100.5C34.5 93 22 79 22 60.5V34.5L50 25Z" fill="#0c1b30" stroke="#f7d582" stroke-width="1.2" />
+            <text x="50" y="72" text-anchor="middle" fill="url(#footerGoldGrad)" font-family="Oswald, sans-serif" font-weight="700" font-size="33" letter-spacing="1">DS</text>
+          </svg>
+
+          <div>
+            <h3 class="brand-title-font text-gold-500 text-sm sm:text-base font-bold tracking-wide uppercase">
+              DANAO SECURITY SERVICES INC
+            </h3>
+            <p class="mt-2 text-[10.5px] sm:text-[11px] text-slate-300 leading-relaxed max-w-xs">
+              We secure your business, site, networks, and people with end-to-end security solutions—combining rigorous screening, continuous site supervision, and responsive support so your team stays safe and productive, with effective protection that adds measurable value to your operations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 2: CONTACTS (Spans 3 cols) -->
+        <div class="lg:col-span-3 lg:text-center">
+          <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
+            CONTACTS
+          </h4>
+          <ul class="space-y-2.5 text-[11px] sm:text-xs text-slate-300">
+            <li>
+              <a href="mailto:danaomain@gmail.com" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
+                <!-- Email Envelope Icon -->
+                <svg class="w-3.5 h-3.5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span>danaomain@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+639663225095" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
+                <!-- Phone / Mobile Icon -->
+                <svg class="w-3.5 h-3.5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+                <span>+63 966 322 5095</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: LEGAL (Spans 2 cols) -->
+        <div class="lg:col-span-2 lg:text-center">
+          <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
+            LEGAL
+          </h4>
+          <ul class="space-y-2.5 text-[11px] sm:text-xs text-slate-300">
+            <li>
+              <button type="button" data-legal="terms" class="legal-modal-trigger hover:text-gold-400 transition-colors cursor-pointer">
+                Terms and Condition
+              </button>
+            </li>
+            <li>
+              <button type="button" data-legal="privacy" class="legal-modal-trigger hover:text-gold-400 transition-colors cursor-pointer">
+                Privacy Policy
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: FOLLOW US ON (Spans 2 cols) -->
+        <div class="lg:col-span-2 lg:text-center">
+          <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
+            FOLLOW US ON
+          </h4>
+          <div class="flex items-center lg:justify-center gap-3">
+            <!-- Circular Blue Facebook 'f' Icon -->
+            <a
+              href="#follow-facebook"
+              aria-label="Follow Danao Security Services on Facebook"
+              class="social-link w-8 h-8 rounded-full bg-[#1877F2] hover:bg-[#166fe5] text-white flex items-center justify-center transition-transform hover:scale-110 shadow"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
+              </svg>
+            </a>
+
+            <!-- Square Blue LinkedIn 'in' Icon -->
+            <a
+              href="#follow-linkedin"
+              aria-label="Follow Danao Security Services on LinkedIn"
+              class="social-link w-8 h-8 rounded-[4px] bg-[#0A66C2] hover:bg-[#0958a8] text-white flex items-center justify-center transition-transform hover:scale-110 shadow"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       8. INTERACTIVE MODALS & TOAST NOTIFICATION (NO ALERT/CONFIRM USED)
+  ====================================================================== -->
+
+  <!-- Services Overview Modal (Triggered by 'Our Services' Gold Button) -->
+  <div id="servicesModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4">
+    <div class="bg-white text-slate-800 rounded-xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-brandBlue-500/30 relative">
+      <button id="closeServicesModalBtn" type="button" aria-label="Close Services Modal" class="absolute top-4 right-4 text-slate-400 hover:text-navy-950 p-1 rounded-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-gold-500"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brandBlue-600">ISO 9001 &amp; ISO 27001 Certified</span>
+      </div>
+      <h3 class="text-xl font-bold text-navy-900">Our Core Security Services</h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1 mb-5">
+        Comprehensive protection tailored for corporate, industrial, commercial, and residential operations.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
+          <h4 class="font-bold text-brandBlue-600 uppercase">Uniformed Guarding</h4>
+          <p class="text-slate-600 mt-1">24/7 licensed security personnel trained in access control, patrol, and emergency response.</p>
+        </div>
+        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
+          <h4 class="font-bold text-brandBlue-600 uppercase">VIP &amp; Executive Protection</h4>
+          <p class="text-slate-600 mt-1">Discreet close-protection specialists and secure transit logistics for key executives.</p>
+        </div>
+        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
+          <h4 class="font-bold text-brandBlue-600 uppercase">Electronic Surveillance</h4>
+          <p class="text-slate-600 mt-1">CCTV monitoring, biometric access systems, and rapid incident dispatch integration.</p>
+        </div>
+        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
+          <h4 class="font-bold text-brandBlue-600 uppercase">Background &amp; Risk Audits</h4>
+          <p class="text-slate-600 mt-1">Thorough personnel vetting, site vulnerability assessments, and compliance consulting.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex justify-end gap-3">
+        <button id="servicesInquireBtn" type="button" class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs px-5 py-2.5 rounded-full transition">
+          Request a Quote
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Banner -->
+  <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-navy-900 border border-gold-450 text-white px-5 py-3.5 rounded-xl shadow-2xl items-start gap-3">
+    <div class="w-2.5 h-2.5 rounded-full bg-gold-450 mt-1.5 flex-shrink-0"></div>
+    <div class="text-xs leading-relaxed">
+      <p id="toastTitle" class="font-bold text-gold-450 uppercase tracking-wide">Notification</p>
+      <p id="toastMessage" class="text-slate-200 mt-0.5"></p>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       9. JAVASCRIPT INTERACTIVITY
+  ====================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile / Hamburger Drawer Toggle
+      const menuToggleBtn = document.getElementById('menuToggleBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerLinks = document.querySelectorAll('.drawer-link');
+
+      menuToggleBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+
+      drawerLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
+
+      // 2. Custom Toast Helper (Replaces alert())
+      const toastBanner = document.getElementById('toastBanner');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastMessage = document.getElementById('toastMessage');
+      let toastTimeout;
+
+      function showToast(title, message) {
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+        toastBanner.classList.remove('hidden');
+        toastBanner.classList.add('flex');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toastBanner.classList.add('hidden');
+          toastBanner.classList.remove('flex');
+        }, 4500);
+      }
+
+      // 3. Recruitment Application Form Validation & Feedback
+      const recruitmentForm = document.getElementById('recruitmentForm');
+      recruitmentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('applicantName').value.trim();
+        const contact = document.getElementById('applicantPhone').value.trim();
+        const email = document.getElementById('applicantEmail').value.trim();
+        const position = document.getElementById('applicantPosition').value.trim();
+
+        if (!name || !contact || !email || !position) {
+          showToast('Incomplete Fields', 'Please fill out all required fields marked with an asterisk (*).');
+          return;
+        }
+
+        showToast(
+          'Application Received',
+          `Thank you, ${name}. Our HR recruitment team will review your application for ${position} and contact you shortly.`
+        );
+        recruitmentForm.reset();
+      });
+
+      // 4. 'Our Services' Modal Controls
+      const servicesModal = document.getElementById('servicesModal');
+      const openServicesModalBtn = document.getElementById('openServicesModalBtn');
+      const closeServicesModalBtn = document.getElementById('closeServicesModalBtn');
+      const servicesInquireBtn = document.getElementById('servicesInquireBtn');
+
+      openServicesModalBtn.addEventListener('click', () => {
+        servicesModal.classList.remove('hidden');
+        servicesModal.classList.add('flex');
+      });
+
+      closeServicesModalBtn.addEventListener('click', () => {
+        servicesModal.classList.add('hidden');
+        servicesModal.classList.remove('flex');
+      });
+
+      servicesModal.addEventListener('click', (e) => {
+        if (e.target === servicesModal) {
+          servicesModal.classList.add('hidden');
+          servicesModal.classList.remove('flex');
+        }
+      });
+
+      servicesInquireBtn.addEventListener('click', () => {
+        servicesModal.classList.add('hidden');
+        servicesModal.classList.remove('flex');
+        document.getElementById('footer-contacts').scrollIntoView({ behavior: 'smooth' });
+        showToast('Direct Inquiry', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
+      });
+
+      // 5. Footer Legal & Social Links Feedback
+      document.querySelectorAll('.legal-modal-trigger').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const type = btn.getAttribute('data-legal');
+          if (type === 'terms') {
+            showToast('Terms & Conditions', 'Danao Security Services Inc operates under ISO 9001 & ISO 27001 compliance standards.');
+          } else {
+            showToast('Privacy Policy', 'All applicant and client records are strictly confidential and encrypted.');
+          }
+        });
+      });
+
+      document.querySelectorAll('.social-link').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          showToast('Official Social Channel', 'Connecting you to Danao Security Services Inc official social profile.');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
