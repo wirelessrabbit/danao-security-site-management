@@ -114,7 +114,7 @@
   <header class="sticky top-0 z-40 bg-navy-850/95 backdrop-blur-md border-b border-white/5 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
       
-      <!-- Bigger Brand Logo + Bebas Neue Title -->
+      <!-- Brand Logo + Bebas Neue Title -->
       <a href="#" class="flex items-center gap-3 sm:gap-3.5 group focus:outline-none">
         <img
           src="assets/logodssi1.png"
@@ -136,9 +136,9 @@
           <button type="button" class="open-services-trigger font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors cursor-pointer">
             SERVICES
           </button>
-          <a href="#footer-contacts" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
-            CONTACTS
-          </a>
+          <button type="button" class="open-clients-trigger font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors cursor-pointer">
+            CLIENTS
+          </button>
           <a href="#our-industries" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
             INDUSTRIES
           </a>
@@ -161,8 +161,8 @@
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
           <a href="#why-choose-us" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">About Us</a>
           <button type="button" class="drawer-link open-services-trigger text-left font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase cursor-pointer">Services</button>
+          <button type="button" class="drawer-link open-clients-trigger text-left font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase cursor-pointer">Clients</button>
           <a href="#our-industries" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Industries</a>
-          <a href="#footer-contacts" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Contacts</a>
         </div>
         <div class="flex items-center gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
           <a href="#join-us" class="drawer-link inline-block bg-gold-450 text-navy-950 text-xs font-semibold px-4 py-2 rounded-full hover:bg-gold-400 transition">
@@ -177,7 +177,7 @@
   </header>
 
   <!-- =====================================================================
-       3. HERO SECTION & BOTTOM CTA BAR (LEARN MORE | OUR SERVICES | JOIN US)
+       3. HERO SECTION & BOTTOM CTA BAR (Learn More | Our Services | Join Us)
   ====================================================================== -->
   <section class="relative">
     <div class="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[490px] flex items-center overflow-hidden bg-navy-900">
@@ -204,7 +204,7 @@
       </div>
     </div>
 
-    <!-- Bottom CTA Bar: Left = Learn More | Middle = Our Services | Right = Join Us -->
+    <!-- Bottom CTA Bar: Uniform White Pill Buttons -->
     <div class="bg-navy-850 py-9 sm:py-11 px-4 border-t border-white/5">
       <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-5 sm:gap-10 md:gap-14">
         
@@ -216,11 +216,11 @@
           Learn More
         </a>
 
-        <!-- 2. Middle: Our Services (Gold Highlight, Bigger Text) -->
+        <!-- 2. Middle: Our Services (Matched to Learn More & Join Us) -->
         <button
           id="openServicesModalBtn"
           type="button"
-          class="open-services-trigger min-w-[175px] sm:min-w-[205px] text-center bg-gold-450 hover:bg-gold-400 text-navy-950 font-bebas text-lg sm:text-xl tracking-wider uppercase py-3 sm:py-3.5 px-9 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          class="open-services-trigger min-w-[145px] sm:min-w-[170px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-3 sm:py-3.5 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
         >
           Our Services
         </button>
@@ -238,7 +238,7 @@
   </section>
 
   <!-- =====================================================================
-       4. 'WHY CHOOSE US' & 'OUR INDUSTRIES' SECTIONS
+       4. 'WHY CHOOSE US', 'OUR INDUSTRIES', 'HOW WE OPERATE', & 'OUR REPORTING SYSTEM'
   ====================================================================== -->
   <main class="bg-[#fcfdfe] text-slate-700">
     
@@ -344,9 +344,9 @@
     </section>
 
     <!-- =====================================================================
-         5. 'OUR INDUSTRIES' SECTION (4x4 ICON GRID + SUMMARY PARAGRAPH)
+         5. 'OUR INDUSTRIES' SECTION
     ====================================================================== -->
-    <section id="our-industries" class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 pt-8 pb-16 sm:pb-24">
+    <section id="our-industries" class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 pt-8 pb-12 sm:pb-16">
       
       <hr class="mb-12 border-t border-slate-300/90" />
 
@@ -548,16 +548,238 @@
 
       </div>
 
-      <!-- Bottom Summary Paragraph matching Reference -->
+      <!-- Bottom Summary Paragraph -->
       <p class="mt-12 sm:mt-14 text-slate-900 text-sm sm:text-[15.5px] leading-relaxed max-w-4xl mx-auto text-left sm:text-justify">
         <strong class="font-extrabold text-black">DANAO Security</strong> is uniquely positioned to provide the best security services to our clients across various industries. It combines the scale and expertise of a fully licensed security provider with the flexibility of a private company that prioritizes strong partner relationships and outstanding customer service.
       </p>
 
     </section>
+
+    <!-- =====================================================================
+         6. 'HOW WE OPERATE' & 'OUR REPORTING SYSTEM' SECTION
+    ====================================================================== -->
+    <section id="how-we-operate" class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 pt-4 pb-16 sm:pb-24">
+      
+      <hr class="mb-12 border-t border-slate-300/90" />
+
+      <!-- PART A: HOW WE OPERATE -->
+      <div class="mb-16 sm:mb-20">
+        <div class="flex items-center justify-center gap-2.5 mb-8 sm:mb-10">
+          <img
+            src="assets/logodssi1.png"
+            alt=""
+            aria-hidden="true"
+            class="w-7 h-8 object-contain flex-shrink-0"
+          />
+          <h2 class="text-brandBlue-600 font-bold text-base sm:text-lg tracking-wide uppercase">
+            HOW WE OPERATE
+          </h2>
+        </div>
+
+        <div class="max-w-4xl mx-auto rounded-lg overflow-hidden border border-brandBlue-500/40 shadow-sm bg-white">
+          <!-- Step 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-12 border-b border-slate-200">
+            <div class="md:col-span-5 p-5 sm:p-6 flex items-center gap-4 bg-white">
+              <span class="w-9 h-9 rounded-full bg-brandBlue-700 text-white font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                1
+              </span>
+              <h3 class="text-brandBlue-700 font-bold text-sm sm:text-[15px] leading-snug">
+                Site Survey &amp; Consultation
+              </h3>
+            </div>
+            <div class="md:col-span-7 p-5 sm:p-6 bg-navy-900 text-slate-100 text-xs sm:text-[13px] leading-relaxed flex items-center border-t md:border-t-0 border-white/10">
+              We meet with clients and survey the site where security and protection services are needed.
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-12 border-b border-slate-200">
+            <div class="md:col-span-5 p-5 sm:p-6 flex items-center gap-4 bg-white">
+              <span class="w-9 h-9 rounded-full bg-brandBlue-700 text-white font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                2
+              </span>
+              <h3 class="text-brandBlue-700 font-bold text-sm sm:text-[15px] leading-snug">
+                Security Plan
+              </h3>
+            </div>
+            <div class="md:col-span-7 p-5 sm:p-6 bg-navy-900 text-slate-100 text-xs sm:text-[13px] leading-relaxed flex items-center border-t md:border-t-0 md:border-t md:border-white/10">
+              A security plan including post orders will be created to identify the responsibilities and duties of the security guards.
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="grid grid-cols-1 md:grid-cols-12 border-b border-slate-200">
+            <div class="md:col-span-5 p-5 sm:p-6 flex items-center gap-4 bg-white">
+              <span class="w-9 h-9 rounded-full bg-brandBlue-700 text-white font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                3
+              </span>
+              <h3 class="text-brandBlue-700 font-bold text-sm sm:text-[15px] leading-snug">
+                Guard Selection
+              </h3>
+            </div>
+            <div class="md:col-span-7 p-5 sm:p-6 bg-navy-900 text-slate-100 text-xs sm:text-[13px] leading-relaxed flex items-center border-t md:border-t-0 md:border-t md:border-white/10">
+              Security guards will be screened and selected through our rigorous screening process to ensure high quality security services.
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="grid grid-cols-1 md:grid-cols-12 border-b border-slate-200">
+            <div class="md:col-span-5 p-5 sm:p-6 flex items-center gap-4 bg-white">
+              <span class="w-9 h-9 rounded-full bg-brandBlue-700 text-white font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                4
+              </span>
+              <h3 class="text-brandBlue-700 font-bold text-sm sm:text-[15px] leading-snug">
+                Implementation &amp; Training
+              </h3>
+            </div>
+            <div class="md:col-span-7 p-5 sm:p-6 bg-navy-900 text-slate-100 text-xs sm:text-[13px] leading-relaxed flex items-center border-t md:border-t-0 md:border-t md:border-white/10">
+              The Security Guards will be briefed of post orders and will be provided additional training for specified roles as needed by the client.
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-5 p-5 sm:p-6 flex items-center gap-4 bg-white">
+              <span class="w-9 h-9 rounded-full bg-brandBlue-700 text-white font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                5
+              </span>
+              <h3 class="text-brandBlue-700 font-bold text-sm sm:text-[15px] leading-snug">
+                Supervision
+              </h3>
+            </div>
+            <div class="md:col-span-7 p-5 sm:p-6 bg-navy-900 text-slate-100 text-xs sm:text-[13px] leading-relaxed flex items-center border-t md:border-t-0 md:border-t md:border-white/10">
+              A Supervisor will regularly perform inspections, train new employees, and ensure post orders are followed.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PART B: OUR REPORTING SYSTEM -->
+      <div id="reporting-system">
+        <div class="flex items-center justify-center gap-2.5 mb-8 sm:mb-10">
+          <img
+            src="assets/logodssi1.png"
+            alt=""
+            aria-hidden="true"
+            class="w-7 h-8 object-contain flex-shrink-0"
+          />
+          <h2 class="text-brandBlue-600 font-bold text-base sm:text-lg tracking-wide uppercase">
+            OUR REPORTING SYSTEM
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          
+          <!-- 1. Digital Reporting -->
+          <article class="value-card bg-white border border-brandBlue-500 rounded-md overflow-hidden flex flex-col">
+            <div class="bg-brandBlue-700 text-white px-4 py-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-white text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-xs sm:text-[13px] tracking-wide">Digital Reporting</h3>
+            </div>
+            <div class="p-5 bg-[#eef5fc] flex-1 flex items-center">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                All reported issues are time stamped and assigned with automatic tracking numbers for easier recording.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2. Photo Documentation -->
+          <article class="value-card bg-white border border-brandBlue-500 rounded-md overflow-hidden flex flex-col">
+            <div class="bg-brandBlue-700 text-white px-4 py-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-white text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-xs sm:text-[13px] tracking-wide">Photo Documentation</h3>
+            </div>
+            <div class="p-5 bg-[#eef5fc] flex-1 flex items-center">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                Guards are provided with camera equipment to take time-stamped photographs.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. Incident Monitoring -->
+          <article class="value-card bg-white border border-brandBlue-500 rounded-md overflow-hidden flex flex-col">
+            <div class="bg-brandBlue-700 text-white px-4 py-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-white text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-xs sm:text-[13px] tracking-wide">Incident Monitoring</h3>
+            </div>
+            <div class="p-5 bg-[#eef5fc] flex-1 flex items-center">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                Guards receive alerts that they can immediately respond to and report.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4. Electronic Guard Tour System (EGTS) -->
+          <article class="value-card bg-white border border-brandBlue-500 rounded-md overflow-hidden flex flex-col">
+            <div class="bg-brandBlue-700 text-white px-4 py-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-white text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-xs sm:text-[13px] tracking-wide leading-tight">Electronic Guard Tour System (EGTS)</h3>
+            </div>
+            <div class="p-5 bg-[#eef5fc] flex-1 flex items-center">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                Digital tracking system to verify active patrol of guards on assigned checkpoints.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5. Post Orders -->
+          <article class="value-card bg-white border border-brandBlue-500 rounded-md overflow-hidden flex flex-col">
+            <div class="bg-brandBlue-700 text-white px-4 py-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-white text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-xs sm:text-[13px] tracking-wide">Post Orders</h3>
+            </div>
+            <div class="p-5 bg-[#eef5fc] flex-1 flex items-center">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                Post Orders are easily accessible to ensure all tasks are completed.
+              </p>
+            </div>
+          </article>
+
+          <!-- 6. Task Management -->
+          <article class="value-card bg-white border border-brandBlue-500 rounded-md overflow-hidden flex flex-col">
+            <div class="bg-brandBlue-700 text-white px-4 py-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-white text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-xs sm:text-[13px] tracking-wide">Task Management</h3>
+            </div>
+            <div class="p-5 bg-[#eef5fc] flex-1 flex items-center">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                Our company-wide coordination utilizes digital reporting tools to deliver timely and organized reports.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
   </main>
 
   <!-- =====================================================================
-       6. 'JOIN US!' RECRUITMENT BANNER & 2-COLUMN QR + APPLICATIONS SECTION
+       7. 'JOIN US!' RECRUITMENT BANNER & 2-COLUMN QR + APPLICATIONS SECTION
   ====================================================================== -->
   <section id="join-us" class="bg-navy-850">
     <!-- Top Half: Full-Width Photo Banner -->
@@ -690,7 +912,7 @@
   </section>
 
   <!-- =====================================================================
-       7. FOOTER (DEEP NAVY #0c1b30 WITH 4-COLUMN LAYOUT)
+       8. FOOTER (DEEP NAVY #0c1b30 WITH 4-COLUMN LAYOUT)
   ====================================================================== -->
   <footer id="footer-contacts" class="bg-navy-900 border-t border-white/15 text-slate-200">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 sm:py-14">
@@ -793,7 +1015,7 @@
   </footer>
 
   <!-- =====================================================================
-       8. FULL-FEATURED 'OUR SERVICES' POPUP MODAL
+       9. FULL-FEATURED 'OUR SERVICES' POPUP MODAL
   ====================================================================== -->
   <div id="servicesModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/85 backdrop-blur-sm p-3 sm:p-6 overflow-y-auto">
     <div class="bg-white text-slate-800 rounded-xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200 relative my-auto">
@@ -904,6 +1126,196 @@
     </div>
   </div>
 
+  <!-- =====================================================================
+       10. 'LIST OF CLIENTS' POPUP MODAL (TRIGGERED BY HEADER 'CLIENTS')
+  ====================================================================== -->
+  <div id="clientsModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/85 backdrop-blur-sm p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white text-slate-800 rounded-xl max-w-4xl w-full overflow-hidden shadow-2xl border border-slate-200 relative my-auto">
+      
+      <button id="closeClientsModalBtn" type="button" aria-label="Close Clients Modal" class="absolute top-4 right-4 z-10 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-navy-950 p-1.5 rounded-full transition-colors cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="bg-white px-6 sm:px-10 pt-8 pb-6 text-center border-b border-slate-100">
+        <div class="flex flex-col items-center">
+          <img
+            src="assets/logodssi1.png"
+            alt="Danao Security Services Inc Logo"
+            class="w-12 h-14 object-contain"
+          />
+          <span class="font-bebas text-gold-500 text-xs tracking-wider uppercase mt-1">
+            DANAO SECURITY SERVICES INC
+          </span>
+        </div>
+
+        <h3 class="text-[#0061ad] text-2xl sm:text-3xl font-extrabold tracking-tight uppercase mt-3">
+          LIST OF CLIENTS
+        </h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Trusted by leading enterprises, resorts, infrastructure, and commercial developments nationwide
+        </p>
+      </div>
+
+      <!-- 3-Column Clients Grid (15 Clients matching Reference Photo 3) -->
+      <div class="bg-[#f8fafc] px-6 sm:px-10 py-8 max-h-[65vh] overflow-y-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          
+          <!-- 1. Stronghold Steel -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/stronghold.png" alt="Stronghold Steel" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden bg-black text-white font-extrabold text-xs tracking-wider px-4 py-2.5 uppercase mb-1.5">
+              STRONGHOLD STEEL
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Stronghold Steel</span>
+          </div>
+
+          <!-- 2. Pakophil Enterprises Inc. -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/pakophil.png" alt="Pakophil Enterprises Inc." onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-navy-900 font-extrabold italic text-sm leading-tight mb-1">
+              Pakophil Enterprises Inc.
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Pakophil Enterprises Inc. (Korean Co.)</span>
+          </div>
+
+          <!-- 3. Northstar World Steel Corporation (NWSC) -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/nwsc.png" alt="Northstar World Steel Corporation" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-brandBlue-700 font-extrabold text-sm tracking-wide mb-1">
+              NWSC
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Northstar World Steel Corporation</span>
+          </div>
+
+          <!-- 4. PAGSS -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/pagss.png" alt="PAGSS" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-slate-700 font-extrabold text-base tracking-widest mb-1">
+              PAGSS
+            </div>
+            <span class="text-[10px] font-semibold text-slate-600 uppercase">Philippine Airport Ground Support Solutions, Inc.</span>
+          </div>
+
+          <!-- 5. Mactan Cebu International Airport -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/mactan-cebu.png" alt="Mactan Cebu International Airport" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-amber-600 font-bold text-sm mb-1">
+              Mactan Cebu
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Mactan Cebu International Airport</span>
+          </div>
+
+          <!-- 6. Diamond Bay Tower -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/diamond-bay.png" alt="Diamond Bay Tower" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden bg-slate-800 text-white font-semibold text-xs px-3 py-1.5 rounded mb-1.5">
+              DIAMOND BAY TOWER
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Diamond Bay Tower</span>
+          </div>
+
+          <!-- 7. Sur Beach Resort Boracay -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/sur-beach.png" alt="Sur Beach Resort Boracay" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden bg-teal-600 text-white font-bold text-xs px-3 py-1.5 rounded mb-1.5">
+              SUR BEACH RESORT
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Sur Beach Resort Boracay</span>
+          </div>
+
+          <!-- 8. Lime Hotel Boracay -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/lime-hotel.png" alt="Lime Hotel Boracay" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden bg-neutral-800 text-amber-300 font-bold text-xs px-3 py-1.5 rounded mb-1.5">
+              LIME HOTEL BORACAY
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Lime Hotel Boracay</span>
+          </div>
+
+          <!-- 9. SN Aboitiz Power Group -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/sn-aboitiz.png" alt="SN Aboitiz Power Group" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-slate-900 font-semibold text-sm tracking-widest mb-1">
+              SN | ABOITIZ
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">SN Aboitiz Power Group</span>
+          </div>
+
+          <!-- 10. Point Digital Finance BPO / Call Center -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/point-digital.png" alt="Point Digital Finance" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-brandBlue-700 font-extrabold text-base tracking-widest mb-1">
+              POINT
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Point Digital Finance (BPO / Call Center)</span>
+          </div>
+
+          <!-- 11. Global-Estate Resorts, Inc. -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/global-estate.png" alt="Global-Estate Resorts, Inc." onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-sky-600 font-semibold text-xs tracking-wider mb-1">
+              GLOBAL-ESTATE RESORTS
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Global-Estate Resorts, Inc.</span>
+          </div>
+
+          <!-- 12. El Pueblo Condominium -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/el-pueblo.png" alt="El Pueblo Condominium" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-emerald-700 font-bold text-sm mb-1">
+              EL PUEBLO
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">El Pueblo Condominium</span>
+          </div>
+
+          <!-- 13. Monte Cielo de Naga -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/monte-cielo.png" alt="Monte Cielo de Naga" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-rose-900 font-serif font-bold text-sm mb-1">
+              Monte Cielo de Naga
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Monte Cielo de Naga</span>
+          </div>
+
+          <!-- 14. Arden Botanical Estate -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/arden.png" alt="Arden Botanical Estate" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-slate-700 font-semibold text-sm tracking-widest mb-1">
+              ARDEN
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase">Arden Botanical Estate</span>
+          </div>
+
+          <!-- 15. MN Electro Industrial Supply & Tierra Bella Subdivision -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col items-center justify-center text-center min-h-[115px] shadow-sm hover:border-brandBlue-500 transition-colors">
+            <img src="assets/clients/mn-electro.png" alt="MN Electro Industrial Supply and Services Inc" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain mb-2" />
+            <div class="hidden text-amber-800 font-extrabold text-xs mb-1">
+              MN ELECTRO &amp; TIERRA BELLA
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 uppercase leading-snug">
+              MN Electro Industrial Supply &amp; Services Inc / Tierra Bella Subdivision
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-navy-900 text-white px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-slate-300">
+          Interested in partnering with Danao Security Services Inc?
+        </p>
+        <button id="clientsInquireBtn" type="button" class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs px-5 py-2 rounded-full shadow-glow-gold transition cursor-pointer">
+          Contact Us
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Toast Notification Banner -->
   <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-navy-900 border border-gold-450 text-white px-5 py-3.5 rounded-xl shadow-2xl items-start gap-3">
     <div class="w-2.5 h-2.5 rounded-full bg-gold-450 mt-1.5 flex-shrink-0"></div>
@@ -914,7 +1326,7 @@
   </div>
 
   <!-- =====================================================================
-       9. JAVASCRIPT INTERACTIVITY
+       11. JAVASCRIPT INTERACTIVITY
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -970,6 +1382,7 @@
         recruitmentForm.reset();
       });
 
+      // Services Modal
       const servicesModal = document.getElementById('servicesModal');
       const openServiceTriggers = document.querySelectorAll('.open-services-trigger');
       const closeServicesModalBtn = document.getElementById('closeServicesModalBtn');
@@ -999,6 +1412,38 @@
         servicesModal.classList.remove('flex');
         document.getElementById('footer-contacts').scrollIntoView({ behavior: 'smooth' });
         showToast('Direct Inquiry', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
+      });
+
+      // Clients Modal
+      const clientsModal = document.getElementById('clientsModal');
+      const openClientTriggers = document.querySelectorAll('.open-clients-trigger');
+      const closeClientsModalBtn = document.getElementById('closeClientsModalBtn');
+      const clientsInquireBtn = document.getElementById('clientsInquireBtn');
+
+      openClientTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          clientsModal.classList.remove('hidden');
+          clientsModal.classList.add('flex');
+        });
+      });
+
+      closeClientsModalBtn.addEventListener('click', () => {
+        clientsModal.classList.add('hidden');
+        clientsModal.classList.remove('flex');
+      });
+
+      clientsModal.addEventListener('click', (e) => {
+        if (e.target === clientsModal) {
+          clientsModal.classList.add('hidden');
+          clientsModal.classList.remove('flex');
+        }
+      });
+
+      clientsInquireBtn.addEventListener('click', () => {
+        clientsModal.classList.add('hidden');
+        clientsModal.classList.remove('flex');
+        document.getElementById('footer-contacts').scrollIntoView({ behavior: 'smooth' });
+        showToast('Client Partnership', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
       });
 
       document.querySelectorAll('.legal-modal-trigger').forEach((btn) => {
