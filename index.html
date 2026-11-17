@@ -6,10 +6,10 @@
   <title>Danao Security Services Inc | Safeguarding Assets, Empowering Operations</title>
   <meta name="description" content="ISO 9001 & ISO 27001 Certified Security Operations. Trusted security and protection services." />
 
-  <!-- Google Fonts: Inter & Oswald for condensed brand display -->
+  <!-- Google Fonts: Inter & Bebas Neue -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,12 +33,12 @@
             brandBlue: {
               500: '#3b76b8',
               600: '#2b66a8',
-              700: '#1f4f85',
+              700: '#0061ad',
             }
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            display: ['Oswald', 'sans-serif'],
+            display: ['"Bebas Neue"', 'sans-serif'],
           },
           boxShadow: {
             'glow-white': '0 0 22px rgba(255, 255, 255, 0.32)',
@@ -52,7 +52,6 @@
   </script>
 
   <style>
-    /* Custom subtle animations and form overrides */
     body {
       font-family: 'Inter', sans-serif;
       background-color: #10233d;
@@ -60,9 +59,11 @@
       overflow-x: hidden;
     }
 
-    .brand-title-font {
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 0.02em;
+    /* Bebas Neue for header and display accents */
+    .brand-title-font,
+    .font-bebas {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.04em;
     }
 
     /* Custom minimalist file input button matching mockup */
@@ -111,12 +112,12 @@
   </div>
 
   <!-- =====================================================================
-       2. MAIN NAVIGATION BAR
+       2. MAIN NAVIGATION BAR (BEBÁS NEUE HEADERS)
   ====================================================================== -->
   <header class="sticky top-0 z-40 bg-navy-850/95 backdrop-blur-md border-b border-white/5 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
       
-      <!-- Brand Logo + Condensed Title -->
+      <!-- Brand Logo + Bebas Neue Title -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
         <img
           src="assets/logodssi1.png"
@@ -124,7 +125,7 @@
           class="w-10 h-11 sm:w-11 sm:h-12 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
         />
 
-        <span class="brand-title-font text-gold-500 text-base sm:text-xl md:text-2xl font-bold tracking-wide uppercase leading-none">
+        <span class="font-bebas text-gold-500 text-xl sm:text-2xl md:text-[28px] tracking-wider uppercase leading-none">
           DANAO SECURITY SERVICES INC
         </span>
       </a>
@@ -132,16 +133,16 @@
       <!-- Desktop Links + Far Right Gold Hamburger Icon -->
       <div class="flex items-center gap-6 lg:gap-9">
         <nav class="hidden md:flex items-center gap-7 lg:gap-9">
-          <a href="#why-choose-us" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+          <a href="#why-choose-us" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
             ABOUT US
           </a>
-          <a href="#what-we-do" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+          <button type="button" class="open-services-trigger font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors cursor-pointer">
             SERVICES
-          </a>
-          <a href="#footer-contacts" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+          </button>
+          <a href="#footer-contacts" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
             CONTACTS
           </a>
-          <a href="#join-us" class="brand-title-font text-white hover:text-gold-400 text-sm lg:text-[15px] font-medium tracking-wider uppercase transition-colors">
+          <a href="#join-us" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
             PORTFOLIO
           </a>
         </nav>
@@ -161,10 +162,10 @@
     <div id="mobileDrawer" class="hidden bg-navy-900 border-t border-white/10 px-6 py-5 shadow-2xl">
       <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
-          <a href="#why-choose-us" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">About Us</a>
-          <a href="#what-we-do" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">Services</a>
-          <a href="#footer-contacts" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">Contacts</a>
-          <a href="#join-us" class="drawer-link brand-title-font text-white hover:text-gold-400 text-base tracking-wider uppercase">Portfolio &amp; Careers</a>
+          <a href="#why-choose-us" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">About Us</a>
+          <button type="button" class="drawer-link open-services-trigger text-left font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase cursor-pointer">Services</button>
+          <a href="#footer-contacts" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Contacts</a>
+          <a href="#join-us" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Portfolio &amp; Careers</a>
         </div>
         <div class="flex items-center gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
           <a href="#join-us" class="drawer-link inline-block bg-gold-450 text-navy-950 text-xs font-semibold px-4 py-2 rounded-full hover:bg-gold-400 transition">
@@ -182,7 +183,6 @@
        3. HERO SECTION & BOTTOM CTA BAR
   ====================================================================== -->
   <section class="relative">
-    <!-- Hero Photo Banner with Dark Navy Overlay -->
     <div class="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[490px] flex items-center overflow-hidden bg-navy-900">
       <img
         src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1920&q=85"
@@ -193,7 +193,6 @@
       <div class="absolute inset-0 bg-gradient-to-r from-[#0c1b30]/90 via-[#10233d]/75 to-[#10233d]/55"></div>
       <div class="absolute inset-0 bg-[#10233d]/35 mix-blend-multiply"></div>
 
-      <!-- Left-Aligned Hero Content -->
       <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 py-14 sm:py-20">
         <div class="max-w-xl">
           <h1 class="text-2xl sm:text-3xl md:text-[34px] font-bold leading-snug tracking-tight">
@@ -241,7 +240,6 @@
   <main class="bg-[#fcfdfe] text-slate-700">
     <section id="why-choose-us" class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-10">
       
-      <!-- Section Header with Inline Gold Shield Icon -->
       <div class="flex items-center gap-2.5">
         <img
           src="assets/logodssi1.png"
@@ -254,21 +252,16 @@
         </h2>
       </div>
 
-      <!-- Lead Statement -->
       <p class="mt-3.5 text-brandBlue-600 text-base sm:text-lg md:text-[19px] font-medium leading-snug max-w-2xl">
         Our goal is to provide high-end security <span class="text-gold-500 font-semibold">you can trust.</span><br class="hidden sm:inline" />
         With intensive investigation and background checks, we can ensure you reliability and safety.
       </p>
 
-      <!-- Thin Horizontal Divider Line -->
       <hr class="my-8 sm:my-10 border-t border-slate-300/90" />
 
-      <!-- 5-Card Staggered Grid -->
       <div class="space-y-6">
         <!-- Top Row: 3 Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-          
-          <!-- Card 1 -->
           <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
@@ -283,7 +276,6 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
           <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
@@ -298,7 +290,6 @@
             </div>
           </article>
 
-          <!-- Card 3 -->
           <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
@@ -312,13 +303,10 @@
               </p>
             </div>
           </article>
-
         </div>
 
         <!-- Bottom Row: 2 Centered Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 md:max-w-[66.666%] mx-auto">
-          
-          <!-- Card 4 -->
           <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
@@ -333,7 +321,6 @@
             </div>
           </article>
 
-          <!-- Card 5 -->
           <article class="value-card bg-white border border-brandBlue-500 p-5 sm:p-6 flex flex-col justify-between min-h-[168px]">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
@@ -347,7 +334,6 @@
               </p>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -372,7 +358,7 @@
         <button
           id="openServicesModalBtn"
           type="button"
-          class="inline-block bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs sm:text-sm px-9 py-2.5 sm:py-3 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          class="open-services-trigger inline-block bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs sm:text-sm px-9 py-2.5 sm:py-3 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
         >
           Our Services
         </button>
@@ -381,10 +367,10 @@
   </main>
 
   <!-- =====================================================================
-       6. 'JOIN US!' RECRUITMENT BANNER & APPLICATION FORM
+       6. 'JOIN US!' RECRUITMENT BANNER & 2-COLUMN QR + APPLICATIONS SECTION
   ====================================================================== -->
   <section id="join-us" class="bg-navy-850">
-    <!-- Top Half: Full-Width Photo Banner -->
+    <!-- Top Half: Full-Width Photo Banner (Same background photo preserved) -->
     <div class="relative w-full min-h-[270px] sm:min-h-[330px] flex items-center justify-center text-center overflow-hidden">
       <img
         src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1920&q=85"
@@ -404,89 +390,123 @@
       </div>
     </div>
 
-    <!-- Bottom Half: Minimalist Bottom-Border-Only Application Form -->
-    <div class="bg-navy-850 py-12 sm:py-16 px-6">
-      <form id="recruitmentForm" class="max-w-md mx-auto space-y-6" novalidate>
+    <!-- Bottom Half: Left QR + Contact Info | Right Applications Form -->
+    <div class="bg-[#18263b] py-12 sm:py-16 px-6 sm:px-10">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start">
         
-        <div>
-          <label for="applicantName" class="sr-only">Name</label>
-          <input
-            id="applicantName"
-            name="name"
-            type="text"
-            required
-            placeholder="NAME*"
-            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
-          />
+        <!-- Left Column: Gold-Bordered QR Code + Address & Contact Info -->
+        <div class="flex flex-col items-center text-center">
+          <div class="p-1 bg-white border-[4px] border-[#e6b34b] shadow-lg">
+            <img
+              src="assets/qr1.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/220x220/ffffff/0b192c?text=QR+Code';"
+              alt="Scan QR Code to Apply"
+              class="w-44 h-44 sm:w-52 sm:h-52 object-contain block"
+            />
+          </div>
+
+          <div class="mt-5 text-[11px] sm:text-xs text-slate-100 leading-relaxed max-w-xs space-y-3">
+            <p>
+              <span class="font-semibold text-white">Address:</span> Unit 308 Donada Place Building<br />
+              Brgy 37 Donada St., Pasay City (behind DLTB<br />
+              Bus Station Buendia)
+            </p>
+            <p>
+              <span class="font-semibold text-white">CP:</span> <a href="tel:+639683226695" class="hover:text-gold-400 transition-colors">0968 322 6695</a><br />
+              <span class="font-semibold text-white">e-mail:</span> <a href="mailto:danao.main@gmail.com" class="hover:text-gold-400 transition-colors">danao.main@gmail.com</a>
+            </p>
+          </div>
         </div>
 
-        <div>
-          <label for="applicantPhone" class="sr-only">Contact Number</label>
-          <input
-            id="applicantPhone"
-            name="contact"
-            type="tel"
-            required
-            placeholder="CONTACT NUMBER*"
-            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
-          />
+        <!-- Right Column: Applications Heading + Bottom-Border Form -->
+        <div class="w-full max-w-md mx-auto md:mx-0">
+          <h3 class="text-white text-xl sm:text-2xl font-bold text-center mb-6 tracking-wide">
+            Applications
+          </h3>
+
+          <form id="recruitmentForm" class="space-y-6" novalidate>
+            <div>
+              <label for="applicantName" class="sr-only">Name</label>
+              <input
+                id="applicantName"
+                name="name"
+                type="text"
+                required
+                placeholder="NAME*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="applicantPhone" class="sr-only">Contact Number</label>
+              <input
+                id="applicantPhone"
+                name="contact"
+                type="tel"
+                required
+                placeholder="CONTACT NUMBER*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="applicantEmail" class="sr-only">Email Address</label>
+              <input
+                id="applicantEmail"
+                name="email"
+                type="email"
+                required
+                placeholder="EMAIL ADDRESS*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="applicantPosition" class="sr-only">Position Applying For</label>
+              <input
+                id="applicantPosition"
+                name="position"
+                type="text"
+                required
+                placeholder="POSITION APPLYING FOR*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div class="border-b border-slate-400/70 pb-2 pt-1">
+              <label for="applicantResume" class="sr-only">Upload Resume or Credentials</label>
+              <input
+                id="applicantResume"
+                name="resume"
+                type="file"
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                class="w-full text-[11px] sm:text-xs text-slate-300 focus:outline-none cursor-pointer"
+              />
+            </div>
+
+            <div class="pt-2 text-center md:text-left">
+              <button
+                type="submit"
+                class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs tracking-wider uppercase px-8 py-2.5 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover transition-all duration-200 cursor-pointer"
+              >
+                Submit Application
+              </button>
+            </div>
+          </form>
         </div>
 
-        <div>
-          <label for="applicantEmail" class="sr-only">Email Address</label>
-          <input
-            id="applicantEmail"
-            name="email"
-            type="email"
-            required
-            placeholder="EMAIL ADDRESS*"
-            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
-          />
-        </div>
-
-        <div>
-          <label for="applicantPosition" class="sr-only">Position Applying For</label>
-          <input
-            id="applicantPosition"
-            name="position"
-            type="text"
-            required
-            placeholder="POSITION APPLYING FOR*"
-            class="w-full bg-transparent border-b border-slate-400/60 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 tracking-wider uppercase focus:outline-none transition-colors"
-          />
-        </div>
-
-        <div class="border-b border-slate-400/60 pb-2 pt-1">
-          <label for="applicantResume" class="sr-only">Upload Resume or Credentials</label>
-          <input
-            id="applicantResume"
-            name="resume"
-            type="file"
-            accept=".pdf,.doc,.docx,.jpg,.png"
-            class="w-full text-[11px] sm:text-xs text-slate-300 focus:outline-none cursor-pointer"
-          />
-        </div>
-
-        <div class="pt-2 text-center">
-          <button
-            type="submit"
-            class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs tracking-wider uppercase px-8 py-2.5 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover transition-all duration-200 cursor-pointer"
-          >
-            Submit Application
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       7. FOOTER (DEEP NAVY #0c1b30 WITH 4-COLUMN LAYOUT)
+       7. FOOTER (DEEP NAVY #0c1b30 WITH UPDATED DESCRIPTION)
   ====================================================================== -->
   <footer id="footer-contacts" class="bg-navy-900 border-t border-white/15 text-slate-200">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 sm:py-14">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
         
-        <!-- Col 1: Brand Emblem + Title + Description -->
+        <!-- Col 1: Brand Emblem + Title + Updated Vision/Mission Description -->
         <div class="lg:col-span-5 flex items-start gap-4">
           <img
             src="assets/logodssi1.png"
@@ -495,11 +515,11 @@
           />
 
           <div>
-            <h3 class="brand-title-font text-gold-500 text-sm sm:text-base font-bold tracking-wide uppercase">
+            <h3 class="font-bebas text-gold-500 text-lg sm:text-xl tracking-wider uppercase">
               DANAO SECURITY SERVICES INC
             </h3>
-            <p class="mt-2 text-[10.5px] sm:text-[11px] text-slate-300 leading-relaxed max-w-xs">
-              We secure your business, site, networks, and people with end-to-end security solutions—combining rigorous screening, continuous site supervision, and responsive support so your team stays safe and productive, with effective protection that adds measurable value to your operations.
+            <p class="mt-2 text-[11px] sm:text-xs text-slate-300 leading-relaxed max-w-xs">
+              To become one of the country’s leading and most trusted security service providers recognized by an uncompromised standard of exceptional service and client relationship
             </p>
           </div>
         </div>
@@ -583,46 +603,128 @@
   </footer>
 
   <!-- =====================================================================
-       8. INTERACTIVE MODALS & TOAST NOTIFICATION
+       8. FULL-FEATURED 'OUR SERVICES' POPUP MODAL (MATCHING REFERENCE)
   ====================================================================== -->
-  <div id="servicesModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4">
-    <div class="bg-white text-slate-800 rounded-xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-brandBlue-500/30 relative">
-      <button id="closeServicesModalBtn" type="button" aria-label="Close Services Modal" class="absolute top-4 right-4 text-slate-400 hover:text-navy-950 p-1 rounded-lg">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+  <div id="servicesModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/85 backdrop-blur-sm p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white text-slate-800 rounded-xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200 relative my-auto">
+      
+      <!-- Close Button -->
+      <button id="closeServicesModalBtn" type="button" aria-label="Close Services Modal" class="absolute top-4 right-4 z-10 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-navy-950 p-1.5 rounded-full transition-colors cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <div class="flex items-center gap-2 mb-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-gold-500"></span>
-        <span class="text-xs font-bold uppercase tracking-wider text-brandBlue-600">ISO 9001 &amp; ISO 27001 Certified</span>
+
+      <!-- Top White Section: Logo, OUR SERVICES Heading, & 3 Blue Service Cards -->
+      <div class="bg-white px-6 sm:px-10 pt-8 pb-9 text-center">
+        <!-- Centered Brand Emblem + Name -->
+        <div class="flex flex-col items-center">
+          <img
+            src="assets/logodssi1.png"
+            alt="Danao Security Services Inc Logo"
+            class="w-12 h-14 object-contain"
+          />
+          <span class="font-bebas text-gold-500 text-xs tracking-wider uppercase mt-1">
+            DANAO SECURITY SERVICES INC
+          </span>
+        </div>
+
+        <h3 class="text-[#0061ad] text-2xl sm:text-3xl font-extrabold tracking-tight uppercase mt-3 mb-7">
+          OUR SERVICES
+        </h3>
+
+        <!-- 3 Blue Service Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-2xl mx-auto text-left">
+          
+          <!-- Card 1: Armed Guard -->
+          <div class="bg-[#0061ad] text-white p-5 shadow-md flex flex-col">
+            <div class="flex flex-col items-center text-center mb-3">
+              <!-- Pistol / Handgun SVG Icon -->
+              <svg class="w-10 h-8 fill-current mb-2" viewBox="0 0 64 48">
+                <path d="M6 12h44v6h4v4h-4v2H26l-3 14h-9l4-16H6V12zm21 10h6v5h-6v-5z" />
+              </svg>
+              <h4 class="font-bold text-sm sm:text-base">Armed Guard</h4>
+            </div>
+            <ul class="list-disc list-inside text-[11px] space-y-1 text-blue-50 pl-1">
+              <li>Protect High-Value Assets</li>
+              <li>Safety Concerns</li>
+              <li>Serve as Deterrent</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Unarmed Guard -->
+          <div class="bg-[#0061ad] text-white p-5 shadow-md flex flex-col">
+            <div class="flex flex-col items-center text-center mb-3">
+              <!-- Security Officer Peaked Cap SVG Icon -->
+              <svg class="w-10 h-8 fill-current mb-2" viewBox="0 0 64 48">
+                <path d="M32 8L12 16l4 10h32l4-10L32 8zm0 5a4 4 0 110 8 4 4 0 010-8zM16 28h32c0 4-7 7-16 7s-16-3-16-7z" />
+              </svg>
+              <h4 class="font-bold text-sm sm:text-base">Unarmed Guard</h4>
+            </div>
+            <ul class="list-disc list-inside text-[11px] space-y-1 text-blue-50 pl-1">
+              <li>Identify Fire &amp; Other Hazards</li>
+              <li>Record Daily Incidents</li>
+              <li>Security Operations Center (SOC)</li>
+              <li>CCTV Operations</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Vehicle Patrol -->
+          <div class="bg-[#0061ad] text-white p-5 shadow-md flex flex-col">
+            <div class="flex flex-col items-center text-center mb-3">
+              <!-- Patrol Car with Siren SVG Icon -->
+              <svg class="w-12 h-8 fill-current mb-2" viewBox="0 0 64 44">
+                <path d="M28 6h8v3h-8V6zm-10 5h28l6 10h4v11h-5a5 5 0 01-10 0H23a5 5 0 01-10 0H8V21h4l6-10zm3 3l-4 7h30l-4-7H21zm-3 16a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm28 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" />
+              </svg>
+              <h4 class="font-bold text-sm sm:text-base">Vehicle Patrol</h4>
+            </div>
+            <ul class="list-disc list-inside text-[11px] space-y-1 text-blue-50 pl-1">
+              <li>Prevent Burglary &amp; Theft</li>
+              <li>Deter Criminal Activities</li>
+              <li>Escorting / VIP Protection</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
-      <h3 class="text-xl font-bold text-navy-900">Our Core Security Services</h3>
-      <p class="text-xs sm:text-sm text-slate-600 mt-1 mb-5">
-        Comprehensive protection tailored for corporate, industrial, commercial, and residential operations.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
-        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
-          <h4 class="font-bold text-brandBlue-600 uppercase">Uniformed Guarding</h4>
-          <p class="text-slate-600 mt-1">24/7 licensed security personnel trained in access control, patrol, and emergency response.</p>
-        </div>
-        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
-          <h4 class="font-bold text-brandBlue-600 uppercase">VIP &amp; Executive Protection</h4>
-          <p class="text-slate-600 mt-1">Discreet close-protection specialists and secure transit logistics for key executives.</p>
-        </div>
-        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
-          <h4 class="font-bold text-brandBlue-600 uppercase">Electronic Surveillance</h4>
-          <p class="text-slate-600 mt-1">CCTV monitoring, biometric access systems, and rapid incident dispatch integration.</p>
-        </div>
-        <div class="p-3.5 rounded-lg border border-brandBlue-500/40 bg-slate-50">
-          <h4 class="font-bold text-brandBlue-600 uppercase">Background &amp; Risk Audits</h4>
-          <p class="text-slate-600 mt-1">Thorough personnel vetting, site vulnerability assessments, and compliance consulting.</p>
+
+      <!-- Middle Soft Gray/White Section: 4 Stacked Blue Sector Bars -->
+      <div class="bg-[#f4f6f9] px-6 sm:px-10 py-8 border-t border-slate-200/80">
+        <div class="max-w-sm mx-auto space-y-3.5 text-center">
+          <div class="bg-[#0061ad] text-white font-bold text-xs sm:text-sm py-3 px-5 shadow-sm">
+            Corporate Facility Security
+          </div>
+          <div class="bg-[#0061ad] text-white font-bold text-xs sm:text-sm py-3 px-5 shadow-sm leading-snug">
+            Critical Infrastructure Protection/<br />Industrial Security
+          </div>
+          <div class="bg-[#0061ad] text-white font-bold text-xs sm:text-sm py-3 px-5 shadow-sm">
+            Executive Protection
+          </div>
+          <div class="bg-[#0061ad] text-white font-bold text-xs sm:text-sm py-3 px-5 shadow-sm">
+            Emergency Response &amp; Support
+          </div>
         </div>
       </div>
-      <div class="mt-6 flex justify-end gap-3">
-        <button id="servicesInquireBtn" type="button" class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs px-5 py-2.5 rounded-full transition">
-          Request a Quote
-        </button>
+
+      <!-- Bottom Dark Navy Section: Other Services -->
+      <div class="bg-[#18263b] text-white px-6 sm:px-10 py-9 text-center">
+        <h4 class="text-xl sm:text-2xl font-extrabold tracking-tight mb-4">
+          Other Services:
+        </h4>
+        <p class="text-[11px] sm:text-xs font-semibold text-slate-100 leading-relaxed max-w-xl mx-auto">
+          Security Manpower | Guard Force Management | Travel Security<br class="hidden sm:inline" />
+          Emergency Management | Evacuation | Search and Rescue Off-Site<br class="hidden sm:inline" />
+          Security Supervision and Monitoring | Command Center Operation |<br class="hidden sm:inline" />
+          Security Inspection / Auditing
+        </p>
+
+        <div class="mt-6">
+          <button id="servicesInquireBtn" type="button" class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs px-6 py-2.5 rounded-full shadow-glow-gold transition cursor-pointer">
+            Inquire About Services
+          </button>
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -640,6 +742,7 @@
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Mobile / Hamburger Drawer Toggle
       const menuToggleBtn = document.getElementById('menuToggleBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
       const drawerLinks = document.querySelectorAll('.drawer-link');
@@ -654,6 +757,7 @@
         });
       });
 
+      // Toast Notification Helper
       const toastBanner = document.getElementById('toastBanner');
       const toastTitle = document.getElementById('toastTitle');
       const toastMessage = document.getElementById('toastMessage');
@@ -672,6 +776,7 @@
         }, 4500);
       }
 
+      // Recruitment Application Form Validation & Feedback
       const recruitmentForm = document.getElementById('recruitmentForm');
       recruitmentForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -692,14 +797,17 @@
         recruitmentForm.reset();
       });
 
+      // 'Our Services' Popup Modal Controls (Triggered by both 'Our Services' button and 'SERVICES' nav link)
       const servicesModal = document.getElementById('servicesModal');
-      const openServicesModalBtn = document.getElementById('openServicesModalBtn');
+      const openServiceTriggers = document.querySelectorAll('.open-services-trigger');
       const closeServicesModalBtn = document.getElementById('closeServicesModalBtn');
       const servicesInquireBtn = document.getElementById('servicesInquireBtn');
 
-      openServicesModalBtn.addEventListener('click', () => {
-        servicesModal.classList.remove('hidden');
-        servicesModal.classList.add('flex');
+      openServiceTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          servicesModal.classList.remove('hidden');
+          servicesModal.classList.add('flex');
+        });
       });
 
       closeServicesModalBtn.addEventListener('click', () => {
@@ -721,6 +829,7 @@
         showToast('Direct Inquiry', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
       });
 
+      // Footer Legal & Social Links Feedback
       document.querySelectorAll('.legal-modal-trigger').forEach((btn) => {
         btn.addEventListener('click', () => {
           const type = btn.getAttribute('data-legal');
