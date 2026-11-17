@@ -59,14 +59,12 @@
       overflow-x: hidden;
     }
 
-    /* Bebas Neue for header and display accents */
     .brand-title-font,
     .font-bebas {
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 0.04em;
     }
 
-    /* Custom minimalist file input button matching mockup */
     input[type="file"]::file-selector-button {
       background-color: #f3f4f6;
       color: #1f2937;
@@ -84,7 +82,6 @@
       background-color: #e5e7eb;
     }
 
-    /* Subtle hover elevation for value cards */
     .value-card {
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
@@ -112,20 +109,20 @@
   </div>
 
   <!-- =====================================================================
-       2. MAIN NAVIGATION BAR (BEBÁS NEUE HEADERS)
+       2. MAIN NAVIGATION BAR
   ====================================================================== -->
   <header class="sticky top-0 z-40 bg-navy-850/95 backdrop-blur-md border-b border-white/5 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
       
-      <!-- Brand Logo + Bebas Neue Title -->
-      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+      <!-- Bigger Brand Logo + Bebas Neue Title -->
+      <a href="#" class="flex items-center gap-3 sm:gap-3.5 group focus:outline-none">
         <img
           src="assets/logodssi1.png"
           alt="Danao Security Services Inc Logo"
-          class="w-10 h-11 sm:w-11 sm:h-12 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+          class="w-14 h-16 sm:w-16 sm:h-[70px] object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
         />
 
-        <span class="font-bebas text-gold-500 text-xl sm:text-2xl md:text-[28px] tracking-wider uppercase leading-none">
+        <span class="font-bebas text-gold-500 text-2xl sm:text-3xl md:text-[32px] tracking-wider uppercase leading-none">
           DANAO SECURITY SERVICES INC
         </span>
       </a>
@@ -142,8 +139,8 @@
           <a href="#footer-contacts" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
             CONTACTS
           </a>
-          <a href="#join-us" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
-            PORTFOLIO
+          <a href="#our-industries" class="font-bebas text-white hover:text-gold-400 text-lg lg:text-[20px] tracking-wider uppercase transition-colors">
+            INDUSTRIES
           </a>
         </nav>
 
@@ -164,8 +161,8 @@
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
           <a href="#why-choose-us" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">About Us</a>
           <button type="button" class="drawer-link open-services-trigger text-left font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase cursor-pointer">Services</button>
+          <a href="#our-industries" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Industries</a>
           <a href="#footer-contacts" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Contacts</a>
-          <a href="#join-us" class="drawer-link font-bebas text-white hover:text-gold-400 text-xl tracking-wider uppercase">Portfolio &amp; Careers</a>
         </div>
         <div class="flex items-center gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
           <a href="#join-us" class="drawer-link inline-block bg-gold-450 text-navy-950 text-xs font-semibold px-4 py-2 rounded-full hover:bg-gold-400 transition">
@@ -180,7 +177,7 @@
   </header>
 
   <!-- =====================================================================
-       3. HERO SECTION & BOTTOM CTA BAR
+       3. HERO SECTION & BOTTOM CTA BAR (LEARN MORE | OUR SERVICES | JOIN US)
   ====================================================================== -->
   <section class="relative">
     <div class="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[490px] flex items-center overflow-hidden bg-navy-900">
@@ -207,45 +204,53 @@
       </div>
     </div>
 
-    <!-- Bottom CTA Bar -->
+    <!-- Bottom CTA Bar: Left = Learn More | Middle = Our Services | Right = Join Us -->
     <div class="bg-navy-850 py-9 sm:py-11 px-4 border-t border-white/5">
       <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-5 sm:gap-10 md:gap-14">
-        <a
-          href="#footer-contacts"
-          class="min-w-[140px] sm:min-w-[165px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
-        >
-          Inquiries
-        </a>
-
+        
+        <!-- 1. Left: Learn More -->
         <a
           href="#why-choose-us"
-          class="min-w-[140px] sm:min-w-[165px] text-center bg-gold-450 text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:bg-gold-400 hover:-translate-y-0.5 transition-all duration-200"
+          class="min-w-[145px] sm:min-w-[170px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-3 sm:py-3.5 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
         >
           Learn More
         </a>
 
+        <!-- 2. Middle: Our Services (Gold Highlight, Bigger Text) -->
+        <button
+          id="openServicesModalBtn"
+          type="button"
+          class="open-services-trigger min-w-[175px] sm:min-w-[205px] text-center bg-gold-450 hover:bg-gold-400 text-navy-950 font-bebas text-lg sm:text-xl tracking-wider uppercase py-3 sm:py-3.5 px-9 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+        >
+          Our Services
+        </button>
+
+        <!-- 3. Right: Join Us -->
         <a
           href="#join-us"
-          class="min-w-[140px] sm:min-w-[165px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-2.5 sm:py-3 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
+          class="min-w-[145px] sm:min-w-[170px] text-center bg-white text-navy-950 font-semibold text-xs sm:text-sm py-3 sm:py-3.5 px-7 rounded-full shadow-glow-white hover:shadow-glow-white-hover hover:-translate-y-0.5 transition-all duration-200"
         >
           Join Us
         </a>
+
       </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       4. 'WHY CHOOSE US' & 'WHAT WE DO' SECTIONS
+       4. 'WHY CHOOSE US' & 'OUR INDUSTRIES' SECTIONS
   ====================================================================== -->
   <main class="bg-[#fcfdfe] text-slate-700">
-    <section id="why-choose-us" class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-10">
+    
+    <!-- WHY CHOOSE US -->
+    <section id="why-choose-us" class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-12">
       
       <div class="flex items-center gap-2.5">
         <img
           src="assets/logodssi1.png"
           alt=""
           aria-hidden="true"
-          class="w-6 h-7 object-contain flex-shrink-0"
+          class="w-7 h-8 object-contain flex-shrink-0"
         />
         <h2 class="text-brandBlue-600 font-bold text-sm sm:text-base tracking-wide uppercase">
           WHY CHOOSE US
@@ -338,31 +343,216 @@
       </div>
     </section>
 
-   <!-- =====================================================================
-         5. 'WHAT WE DO' SECTION
+    <!-- =====================================================================
+         5. 'OUR INDUSTRIES' SECTION (4x4 ICON GRID + SUMMARY PARAGRAPH)
     ====================================================================== -->
-    <section id="what-we-do" class="max-w-4xl mx-auto px-4 pt-12 sm:pt-16 pb-16 sm:pb-20 text-center">
-      <div class="inline-flex items-center justify-center gap-3">
+    <section id="our-industries" class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 pt-8 pb-16 sm:pb-24">
+      
+      <hr class="mb-12 border-t border-slate-300/90" />
+
+      <!-- Section Heading -->
+      <div class="flex items-center justify-center gap-2.5 mb-10 sm:mb-12">
         <img
           src="assets/logodssi1.png"
           alt=""
           aria-hidden="true"
-          class="w-8 h-9 sm:w-9 sm:h-10 object-contain flex-shrink-0"
+          class="w-7 h-8 object-contain flex-shrink-0"
         />
         <h2 class="text-brandBlue-600 font-bold text-base sm:text-lg tracking-wide uppercase">
-          WHAT WE DO
+          OUR INDUSTRIES
         </h2>
       </div>
 
-      <div class="mt-6">
-        <button
-          id="openServicesModalBtn"
-          type="button"
-          class="open-services-trigger inline-block bg-gold-450 hover:bg-gold-400 text-navy-950 font-bebas text-xl sm:text-2xl tracking-wider uppercase px-12 sm:px-14 py-3.5 sm:py-4 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
-        >
-          Our Services
-        </button>
+      <!-- 4x4 Industries Icon Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-y-9 gap-x-6 text-center text-slate-900">
+        
+        <!-- 1. Construction Sites -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 56h20M18 56V14l6-6 6 6v42M18 22h12M18 30h12M18 38h12M18 46h12" />
+            <path d="M10 18h44l-6-6H14l-4 6z" />
+            <rect x="8" y="22" width="6" height="8" />
+            <path d="M48 18v12a3 3 0 11-3 3" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Construction Sites</span>
+        </div>
+
+        <!-- 2. Hotels / Commercial Buildings -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 54V16h20v38M20 16v-5h8v5M34 26h16v28H10" />
+            <path d="M20 23h2M26 23h2M20 30h2M26 30h2M20 37h2M26 37h2M20 44h2M26 44h2M40 33h2M40 40h2M40 47h2" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Hotels/ Commercial<br />Buildings</span>
+        </div>
+
+        <!-- 3. Residential -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 26L24 14l16 12M12 24v28h24V24" />
+            <path d="M36 32l10-8 10 8M38 30v22h16V30" />
+            <rect x="17" y="26" width="5" height="5" />
+            <rect x="26" y="26" width="5" height="5" />
+            <rect x="17" y="35" width="5" height="5" />
+            <rect x="26" y="35" width="5" height="5" />
+            <path d="M21 52v-8h6v8M43 36h6v5h-6zM43 52v-7h6v7M8 52h48" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Residential</span>
+        </div>
+
+        <!-- 4. Campuses -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 52h44M14 52V28l18-10 18 10v24" />
+            <path d="M32 18V8h8l-2 3 2 3h-8" />
+            <circle cx="32" cy="30" r="4" />
+            <path d="M29 52V40h6v12M19 34h3M19 42h3M42 34h3M42 42h3" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Campuses</span>
+        </div>
+
+        <!-- 5. Government Facilities -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 24L32 12l20 12H12z" />
+            <path d="M18 24v24M27 24v24M37 24v24M46 24v24M12 48h40" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Government<br />Facilities</span>
+        </div>
+
+        <!-- 6. Medical Facilities -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 22V12h20v10M12 22h40v30H12V22z" />
+            <path d="M32 15v5M29.5 17.5h5" />
+            <path d="M27 52V41h10v11" />
+            <rect x="17" y="28" width="4" height="4" />
+            <rect x="17" y="36" width="4" height="4" />
+            <rect x="43" y="28" width="4" height="4" />
+            <rect x="43" y="36" width="4" height="4" />
+            <rect x="30" y="28" width="4" height="4" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Medical<br />Facilities</span>
+        </div>
+
+        <!-- 7. Hospitality -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 24l4-10h28l4 10H14zM14 24v4h36v-4" />
+            <path d="M17 28v24h30V28M22 52V36h10v16M36 36h7v10h-7z" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Hospitality</span>
+        </div>
+
+        <!-- 8. Banks -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 24L32 11l22 13H10z" />
+            <circle cx="32" cy="19" r="2" />
+            <path d="M17 24v20M24 24v20M32 24v20M40 24v20M47 24v20" />
+            <path d="M13 44h38v4H13zM10 48h44v4H10z" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Banks</span>
+        </div>
+
+        <!-- 9. Retail -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 16h7l5 22h22l4-14H20" />
+            <circle cx="24" cy="46" r="3" fill="currentColor" />
+            <circle cx="42" cy="46" r="3" fill="currentColor" />
+            <circle cx="43" cy="20" r="9" fill="currentColor" />
+            <path d="M43 16v8M39 20h8" stroke="#fcfdfe" stroke-width="2.4" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Retail</span>
+        </div>
+
+        <!-- 10. Car Dealership -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 18h24v22H18" />
+            <path d="M42 24h8l6 8v8h-14V24z" />
+            <path d="M10 23h10M8 29h12M10 35h10" />
+            <circle cx="24" cy="42" r="4" fill="#fcfdfe" />
+            <circle cx="48" cy="42" r="4" fill="#fcfdfe" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Car<br />Dealership</span>
+        </div>
+
+        <!-- 11. Solar Farms -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 34h28l6 14H12l6-14z" />
+            <path d="M27 34l-3 14M37 34l3 14M15 41h34M32 48v6M25 54h14" />
+            <circle cx="44" cy="16" r="4" />
+            <path d="M44 8v2M44 22v2M36 16h2M50 16h2M38 10l1.5 1.5M48.5 20.5L50 22M50 10l-1.5 1.5M39.5 20.5L38 22" />
+            <path d="M18 19a4 4 0 116 0c0 1.5-1 2-1 3h-4c0-1-1-1.5-1-3z" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Solar Farms</span>
+        </div>
+
+        <!-- 12. Events Security -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 18a16 16 0 0124 0" />
+            <path d="M15 26a20 20 0 0134 0" />
+            <path d="M18 38a18 18 0 0028 0" />
+            <path d="M23 46a12 12 0 0018 0" />
+            <path d="M35 28a5 5 0 100 8" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Events Security</span>
+        </div>
+
+        <!-- 13. Parking Lot -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="18" r="8" />
+            <path d="M16 21v-6h2.5a1.5 1.5 0 010 3H16M18 26v8" />
+            <path d="M16 36l5-8h20l6 8h5v10H12V36h4z" fill="currentColor" />
+            <circle cx="21" cy="46" r="4" fill="#fcfdfe" stroke="currentColor" stroke-width="2.5" />
+            <circle cx="43" cy="46" r="4" fill="#fcfdfe" stroke="currentColor" stroke-width="2.5" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Parking Lot</span>
+        </div>
+
+        <!-- 14. Industrial -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 52V18h16v34M30 34l10-6v6l10-6v24H12" />
+            <path d="M44 28V16h4v10" />
+            <path d="M46 12c2-3 6-2 6 1" />
+            <path d="M19 24h6M19 31h6M19 38h6M19 45h6M36 44h3v8h-3z" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Industrial</span>
+        </div>
+
+        <!-- 15. Religious Institutions -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 52V22l2-6 2 6v30M46 52V22l2-6 2 6v30" />
+            <path d="M22 32c0-7 10-12 10-12s10 5 10 12v20H22V32z" />
+            <path d="M28 52V40a4 4 0 018 0v12M10 52h44" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">Religious<br />Institutions</span>
+        </div>
+
+        <!-- 16. CCTV Operations -->
+        <div class="flex flex-col items-center group">
+          <svg class="w-12 h-12 text-slate-900 mb-2.5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 26l26-8 6 12-26 8-6-12z" fill="currentColor" />
+            <path d="M14 26l-3 2 3 8 4-1" />
+            <path d="M34 33v11h14M48 38v14" stroke-width="3" />
+          </svg>
+          <span class="font-bold text-xs sm:text-sm leading-snug">CCTV<br />Operations</span>
+        </div>
+
       </div>
+
+      <!-- Bottom Summary Paragraph matching Reference -->
+      <p class="mt-12 sm:mt-14 text-slate-900 text-sm sm:text-[15.5px] leading-relaxed max-w-4xl mx-auto text-left sm:text-justify">
+        <strong class="font-extrabold text-black">DANAO Security</strong> is uniquely positioned to provide the best security services to our clients across various industries. It combines the scale and expertise of a fully licensed security provider with the flexibility of a private company that prioritizes strong partner relationships and outstanding customer service.
+      </p>
+
     </section>
   </main>
 
@@ -370,7 +560,7 @@
        6. 'JOIN US!' RECRUITMENT BANNER & 2-COLUMN QR + APPLICATIONS SECTION
   ====================================================================== -->
   <section id="join-us" class="bg-navy-850">
-    <!-- Top Half: Full-Width Photo Banner (Same background photo preserved) -->
+    <!-- Top Half: Full-Width Photo Banner -->
     <div class="relative w-full min-h-[270px] sm:min-h-[330px] flex items-center justify-center text-center overflow-hidden">
       <img
         src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1920&q=85"
@@ -500,13 +690,13 @@
   </section>
 
   <!-- =====================================================================
-       7. FOOTER (DEEP NAVY #0c1b30 WITH UPDATED DESCRIPTION)
+       7. FOOTER (DEEP NAVY #0c1b30 WITH 4-COLUMN LAYOUT)
   ====================================================================== -->
   <footer id="footer-contacts" class="bg-navy-900 border-t border-white/15 text-slate-200">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 sm:py-14">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
         
-        <!-- Col 1: Brand Emblem + Title + Updated Vision/Mission Description -->
+        <!-- Col 1: Brand Emblem + Title + Vision/Mission Description -->
         <div class="lg:col-span-5 flex items-start gap-4">
           <img
             src="assets/logodssi1.png"
@@ -603,21 +793,18 @@
   </footer>
 
   <!-- =====================================================================
-       8. FULL-FEATURED 'OUR SERVICES' POPUP MODAL (MATCHING REFERENCE)
+       8. FULL-FEATURED 'OUR SERVICES' POPUP MODAL
   ====================================================================== -->
   <div id="servicesModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/85 backdrop-blur-sm p-3 sm:p-6 overflow-y-auto">
     <div class="bg-white text-slate-800 rounded-xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200 relative my-auto">
       
-      <!-- Close Button -->
       <button id="closeServicesModalBtn" type="button" aria-label="Close Services Modal" class="absolute top-4 right-4 z-10 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-navy-950 p-1.5 rounded-full transition-colors cursor-pointer">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
-      <!-- Top White Section: Logo, OUR SERVICES Heading, & 3 Blue Service Cards -->
       <div class="bg-white px-6 sm:px-10 pt-8 pb-9 text-center">
-        <!-- Centered Brand Emblem + Name -->
         <div class="flex flex-col items-center">
           <img
             src="assets/logodssi1.png"
@@ -633,13 +820,9 @@
           OUR SERVICES
         </h3>
 
-        <!-- 3 Blue Service Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-2xl mx-auto text-left">
-          
-          <!-- Card 1: Armed Guard -->
           <div class="bg-[#0061ad] text-white p-5 shadow-md flex flex-col">
             <div class="flex flex-col items-center text-center mb-3">
-              <!-- Pistol / Handgun SVG Icon -->
               <svg class="w-10 h-8 fill-current mb-2" viewBox="0 0 64 48">
                 <path d="M6 12h44v6h4v4h-4v2H26l-3 14h-9l4-16H6V12zm21 10h6v5h-6v-5z" />
               </svg>
@@ -652,10 +835,8 @@
             </ul>
           </div>
 
-          <!-- Card 2: Unarmed Guard -->
           <div class="bg-[#0061ad] text-white p-5 shadow-md flex flex-col">
             <div class="flex flex-col items-center text-center mb-3">
-              <!-- Security Officer Peaked Cap SVG Icon -->
               <svg class="w-10 h-8 fill-current mb-2" viewBox="0 0 64 48">
                 <path d="M32 8L12 16l4 10h32l4-10L32 8zm0 5a4 4 0 110 8 4 4 0 010-8zM16 28h32c0 4-7 7-16 7s-16-3-16-7z" />
               </svg>
@@ -669,10 +850,8 @@
             </ul>
           </div>
 
-          <!-- Card 3: Vehicle Patrol -->
           <div class="bg-[#0061ad] text-white p-5 shadow-md flex flex-col">
             <div class="flex flex-col items-center text-center mb-3">
-              <!-- Patrol Car with Siren SVG Icon -->
               <svg class="w-12 h-8 fill-current mb-2" viewBox="0 0 64 44">
                 <path d="M28 6h8v3h-8V6zm-10 5h28l6 10h4v11h-5a5 5 0 01-10 0H23a5 5 0 01-10 0H8V21h4l6-10zm3 3l-4 7h30l-4-7H21zm-3 16a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm28 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" />
               </svg>
@@ -684,11 +863,9 @@
               <li>Escorting / VIP Protection</li>
             </ul>
           </div>
-
         </div>
       </div>
 
-      <!-- Middle Soft Gray/White Section: 4 Stacked Blue Sector Bars -->
       <div class="bg-[#f4f6f9] px-6 sm:px-10 py-8 border-t border-slate-200/80">
         <div class="max-w-sm mx-auto space-y-3.5 text-center">
           <div class="bg-[#0061ad] text-white font-bold text-xs sm:text-sm py-3 px-5 shadow-sm">
@@ -706,7 +883,6 @@
         </div>
       </div>
 
-      <!-- Bottom Dark Navy Section: Other Services -->
       <div class="bg-[#18263b] text-white px-6 sm:px-10 py-9 text-center">
         <h4 class="text-xl sm:text-2xl font-extrabold tracking-tight mb-4">
           Other Services:
@@ -742,7 +918,6 @@
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Mobile / Hamburger Drawer Toggle
       const menuToggleBtn = document.getElementById('menuToggleBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
       const drawerLinks = document.querySelectorAll('.drawer-link');
@@ -757,7 +932,6 @@
         });
       });
 
-      // Toast Notification Helper
       const toastBanner = document.getElementById('toastBanner');
       const toastTitle = document.getElementById('toastTitle');
       const toastMessage = document.getElementById('toastMessage');
@@ -776,7 +950,6 @@
         }, 4500);
       }
 
-      // Recruitment Application Form Validation & Feedback
       const recruitmentForm = document.getElementById('recruitmentForm');
       recruitmentForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -797,7 +970,6 @@
         recruitmentForm.reset();
       });
 
-      // 'Our Services' Popup Modal Controls (Triggered by both 'Our Services' button and 'SERVICES' nav link)
       const servicesModal = document.getElementById('servicesModal');
       const openServiceTriggers = document.querySelectorAll('.open-services-trigger');
       const closeServicesModalBtn = document.getElementById('closeServicesModalBtn');
@@ -829,7 +1001,6 @@
         showToast('Direct Inquiry', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
       });
 
-      // Footer Legal & Social Links Feedback
       document.querySelectorAll('.legal-modal-trigger').forEach((btn) => {
         btn.addEventListener('click', () => {
           const type = btn.getAttribute('data-legal');
