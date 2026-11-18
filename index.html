@@ -805,18 +805,86 @@
             Applications
           </h3>
 
-          <form id="recruitmentForm" class="space-y-6" novalidate>
+          <form
+            id="recruitmentForm"
+            action="https://formsubmit.co/YOUR_EMAIL_HERE"
+            method="POST"
+            enctype="multipart/form-data"
+            class="space-y-6"
+          >
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Job Application - Danao Security Services" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+
             <div>
               <label for="applicantName" class="sr-only">Name</label>
               <input
                 id="applicantName"
-                name="name"
+                name="Name"
                 type="text"
                 required
                 placeholder="NAME*"
                 class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
               />
             </div>
+
+            <div>
+              <label for="applicantPhone" class="sr-only">Contact Number</label>
+              <input
+                id="applicantPhone"
+                name="Contact_Number"
+                type="tel"
+                required
+                placeholder="CONTACT NUMBER*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="applicantEmail" class="sr-only">Email Address</label>
+              <input
+                id="applicantEmail"
+                name="Email_Address"
+                type="email"
+                required
+                placeholder="EMAIL ADDRESS*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="applicantPosition" class="sr-only">Position Applying For</label>
+              <input
+                id="applicantPosition"
+                name="Position_Applying_For"
+                type="text"
+                required
+                placeholder="POSITION APPLYING FOR*"
+                class="w-full bg-transparent border-b border-slate-400/70 focus:border-gold-450 py-2 px-1 text-xs sm:text-sm text-white placeholder-slate-400 font-bebas tracking-wider uppercase focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div class="border-b border-slate-400/70 pb-2 pt-1">
+              <label for="applicantResume" class="sr-only">Upload Resume or Credentials</label>
+              <input
+                id="applicantResume"
+                name="attachment"
+                type="file"
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                class="w-full text-[11px] sm:text-xs text-slate-300 focus:outline-none cursor-pointer"
+              />
+            </div>
+
+            <div class="pt-2 text-center md:text-left">
+              <button
+                type="submit"
+                class="bg-gold-450 hover:bg-gold-400 text-navy-950 font-semibold text-xs tracking-wider uppercase px-8 py-2.5 rounded-full shadow-glow-gold hover:shadow-glow-gold-hover transition-all duration-200 cursor-pointer"
+              >
+                Submit Application
+              </button>
+            </div>
+          </form>
 
             <div>
               <label for="applicantPhone" class="sr-only">Contact Number</label>
@@ -1302,6 +1370,20 @@
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const menuToggleBtn = document.getElementById('menuToggleBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerLinks = document.querySelectorAll('.drawer-link');
+
+      menuToggleBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+
+      drawerLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
+
       const toastBanner = document.getElementById('toastBanner');
       const toastTitle = document.getElementById('toastTitle');
       const toastMessage = document.getElementById('toastMessage');
@@ -1320,27 +1402,13 @@
         }, 4500);
       }
 
+      // Show a sending indicator while FormSubmit processes the upload
       const recruitmentForm = document.getElementById('recruitmentForm');
-      recruitmentForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('applicantName').value.trim();
-        const contact = document.getElementById('applicantPhone').value.trim();
-        const email = document.getElementById('applicantEmail').value.trim();
-        const position = document.getElementById('applicantPosition').value.trim();
-
-        if (!name || !contact || !email || !position) {
-          showToast('Incomplete Fields', 'Please fill out all required fields marked with an asterisk (*).');
-          return;
-        }
-
-        showToast(
-          'Application Received',
-          `Thank you, ${name}. Our HR recruitment team will review your application for ${position} and contact you shortly.`
-        );
-        recruitmentForm.reset();
+      recruitmentForm.addEventListener('submit', () => {
+        showToast('Submitting Application', 'Uploading your details and credentials. Please wait...');
       });
 
-      // Services Modal
+      // 'Our Services' Popup Modal Controls
       const servicesModal = document.getElementById('servicesModal');
       const openServiceTriggers = document.querySelectorAll('.open-services-trigger');
       const closeServicesModalBtn = document.getElementById('closeServicesModalBtn');
@@ -1372,38 +1440,7 @@
         showToast('Direct Inquiry', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
       });
 
-      // Clients Modal
-      const clientsModal = document.getElementById('clientsModal');
-      const openClientTriggers = document.querySelectorAll('.open-clients-trigger');
-      const closeClientsModalBtn = document.getElementById('closeClientsModalBtn');
-      const clientsInquireBtn = document.getElementById('clientsInquireBtn');
-
-      openClientTriggers.forEach((trigger) => {
-        trigger.addEventListener('click', () => {
-          clientsModal.classList.remove('hidden');
-          clientsModal.classList.add('flex');
-        });
-      });
-
-      closeClientsModalBtn.addEventListener('click', () => {
-        clientsModal.classList.add('hidden');
-        clientsModal.classList.remove('flex');
-      });
-
-      clientsModal.addEventListener('click', (e) => {
-        if (e.target === clientsModal) {
-          clientsModal.classList.add('hidden');
-          clientsModal.classList.remove('flex');
-        }
-      });
-
-      clientsInquireBtn.addEventListener('click', () => {
-        clientsModal.classList.add('hidden');
-        clientsModal.classList.remove('flex');
-        document.getElementById('footer-contacts').scrollIntoView({ behavior: 'smooth' });
-        showToast('Client Partnership', 'Reach our operations desk at danaomain@gmail.com or +63 966 322 5095.');
-      });
-
+      // Footer Legal & Social Links Feedback
       document.querySelectorAll('.legal-modal-trigger').forEach((btn) => {
         btn.addEventListener('click', () => {
           const type = btn.getAttribute('data-legal');
