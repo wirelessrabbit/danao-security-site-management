@@ -101,278 +101,278 @@
 <body class="antialiased selection:bg-gold-500 selection:text-navy-950">
 
   <!-- =====================================================================
-       1. TOP UTILITY BAR (HOTLINE)
+       1 & 2. FIXED TOP WRAPPER (UTILITY BAR + TRANSPARENT HEADER)
   ====================================================================== -->
-  <!-- Wrapper fixed to the very top of the viewport -->
-<div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-40 transition-all duration-300">
+  <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-40 transition-all duration-300">
 
-  <div id="top-bar" class="bg-navy-950/90 border-b border-white/10 text-[11px] sm:text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-8 flex items-center justify-between">
-      <a href="tel:+639683226695" class="text-slate-200 hover:text-gold-400 transition-colors tracking-wide">
-        Hotline: <span class="text-gold-450 font-medium">63 968 322 6695</span>
-      </a>
+    <!-- Top Utility Bar (Hotline) -->
+    <div id="top-bar" class="bg-navy-950/90 border-b border-white/10 text-[11px] sm:text-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-8 flex items-center justify-between">
+        <a href="tel:+639683226695" class="text-slate-200 hover:text-gold-400 transition-colors tracking-wide">
+          Hotline: <span class="text-gold-450 font-medium">63 968 322 6695</span>
+        </a>
+      </div>
     </div>
-  </div>
-  <!-- =====================================================================
-       2. STICKY MAIN HEADER WITH DROPDOWNS & SECTION LINE INDICATOR
-  ====================================================================== -->
-  <header id="mainHeader" class="bg-transparent">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
 
-      <!-- Left: Logo + Brand Name -->
-      <a href="index.html" class="flex items-center gap-3 sm:gap-3.5 group focus:outline-none">
-        <img
-          src="assets/logodssi1.png"
-          alt="Danao Security Services Inc Logo"
-          class="w-12 h-14 sm:w-14 sm:h-16 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
-        />
-        <span class="font-bebas text-gold-500 text-2xl sm:text-3xl md:text-[32px] tracking-wider uppercase leading-none">
-          DANAO SECURITY SERVICES INC
-        </span>
-      </a>
+    <!-- Main Navigation Header -->
+    <header id="mainHeader" class="bg-transparent transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
 
-      <!-- Right: Desktop Navigation with Click Dropdowns & Bottom Line Indicator -->
-      <nav id="desktopNav" class="hidden lg:flex items-center gap-7 xl:gap-8">
+        <!-- Left: Logo + Brand Name -->
+        <a href="index.html" class="flex items-center gap-3 sm:gap-3.5 group focus:outline-none">
+          <img
+            src="assets/logodssi1.png"
+            alt="Danao Security Services Inc Logo"
+            class="w-12 h-14 sm:w-14 sm:h-16 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+          />
+          <span class="font-bebas text-gold-500 text-2xl sm:text-3xl md:text-[32px] tracking-wider uppercase leading-none">
+            DANAO SECURITY SERVICES INC
+          </span>
+        </a>
 
-        <!-- HOME (Dropdown with HOME redirect) -->
-        <div class="relative nav-item" data-section="home">
-          <button
-            type="button"
-            class="nav-btn active font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
-            aria-expanded="false"
-          >
+        <!-- Right: Desktop Navigation with Click Dropdowns & Bottom Line Indicator -->
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-7 xl:gap-8">
+
+          <!-- HOME -->
+          <div class="relative nav-item" data-section="home">
+            <button
+              type="button"
+              class="nav-btn active font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              aria-expanded="false"
+            >
+              <span>HOME</span>
+            </button>
+            <div class="dropdown-panel absolute left-0 mt-3 w-48 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="index.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                HOME
+              </a>
+              <a href="#hero-section" class="dropdown-scroll-link block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                Overview
+              </a>
+              <a href="#services-section" class="dropdown-scroll-link block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                Our Services
+              </a>
+              <a href="#showcase-section" class="dropdown-scroll-link block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                Operations Showcase
+              </a>
+            </div>
+          </div>
+
+          <!-- ABOUT US -->
+          <div class="relative nav-item" data-section="about">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              aria-expanded="false"
+            >
+              <span>ABOUT US</span>
+            </button>
+            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="about-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                ABOUT US
+              </a>
+              <a href="purpose.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                PURPOSE
+              </a>
+              <a href="our-people.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                OUR PEOPLE
+              </a>
+              <a href="clients.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                CLIENTS
+              </a>
+              <a href="location.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                LOCATION
+              </a>
+            </div>
+          </div>
+
+          <!-- WHAT WE DO -->
+          <div class="relative nav-item" data-section="what-we-do">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              aria-expanded="false"
+            >
+              <span>WHAT WE DO</span>
+            </button>
+            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="what-we-do.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                WHAT WE DO
+              </a>
+              <a href="services.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                SERVICES
+              </a>
+              <a href="industries.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                INDUSTRIES
+              </a>
+            </div>
+          </div>
+
+          <!-- SUSTAINABILITY -->
+          <div class="relative nav-item" data-section="sustainability">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              aria-expanded="false"
+            >
+              <span>SUSTAINABILITY</span>
+            </button>
+            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="sustainability.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                SUSTAINABILITY
+              </a>
+              <a href="articles.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                ARTICLES
+              </a>
+            </div>
+          </div>
+
+          <!-- CAREER -->
+          <div class="relative nav-item" data-section="career">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              aria-expanded="false"
+            >
+              <span>CAREER</span>
+            </button>
+            <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="career.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                CAREER
+              </a>
+              <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                APPLICATIONS
+              </a>
+              <a href="careers-available.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                CAREERS AVAILABLE
+              </a>
+            </div>
+          </div>
+
+          <!-- CONTACT US -->
+          <div class="relative nav-item" data-section="contact">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              aria-expanded="false"
+            >
+              <span>CONTACT US</span>
+            </button>
+            <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="contact-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                CONTACT US
+              </a>
+              <a href="client-contact.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
+                Client Contact/Request
+              </a>
+              <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
+                Applications
+              </a>
+            </div>
+          </div>
+
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
+          <div class="w-6 flex flex-col justify-between gap-[5px]">
+            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Mobile Accordion Drawer -->
+      <div id="mobileDrawer" class="hidden lg:hidden bg-navy-900 border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
+        <!-- HOME -->
+        <div class="border-b border-white/10 pb-2">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-gold-450 text-xl tracking-wider uppercase py-1">
             <span>HOME</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
           </button>
-          <div class="dropdown-panel absolute left-0 mt-3 w-48 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-            <a href="index.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-              HOME
-            </a>
-            <a href="#hero-section" class="dropdown-scroll-link block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              Overview
-            </a>
-            <a href="#services-section" class="dropdown-scroll-link block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              Our Services
-            </a>
-            <a href="#showcase-section" class="dropdown-scroll-link block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              Operations Showcase
-            </a>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="index.html" class="block text-gold-400 font-semibold uppercase">HOME</a>
+            <a href="#services-section" class="block text-slate-300 hover:text-white uppercase">Our Services</a>
+            <a href="#showcase-section" class="block text-slate-300 hover:text-white uppercase">Showcase</a>
           </div>
         </div>
 
         <!-- ABOUT US -->
-        <div class="relative nav-item" data-section="about">
-          <button
-            type="button"
-            class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
-            aria-expanded="false"
-          >
+        <div class="border-b border-white/10 pb-2">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
             <span>ABOUT US</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
           </button>
-          <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-            <a href="about-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-              ABOUT US
-            </a>
-            <a href="purpose.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              PURPOSE
-            </a>
-            <a href="our-people.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              OUR PEOPLE
-            </a>
-            <a href="clients.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              CLIENTS
-            </a>
-            <a href="location.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              LOCATION
-            </a>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="about-us.html" class="block text-gold-400 font-semibold uppercase">ABOUT US</a>
+            <a href="purpose.html" class="block text-slate-300 hover:text-white uppercase">PURPOSE</a>
+            <a href="our-people.html" class="block text-slate-300 hover:text-white uppercase">OUR PEOPLE</a>
+            <a href="clients.html" class="block text-slate-300 hover:text-white uppercase">CLIENTS</a>
+            <a href="location.html" class="block text-slate-300 hover:text-white uppercase">LOCATION</a>
           </div>
         </div>
 
         <!-- WHAT WE DO -->
-        <div class="relative nav-item" data-section="what-we-do">
-          <button
-            type="button"
-            class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
-            aria-expanded="false"
-          >
+        <div class="border-b border-white/10 pb-2">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
             <span>WHAT WE DO</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
           </button>
-          <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-            <a href="what-we-do.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-              WHAT WE DO
-            </a>
-            <a href="services.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              SERVICES
-            </a>
-            <a href="industries.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              INDUSTRIES
-            </a>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="what-we-do.html" class="block text-gold-400 font-semibold uppercase">WHAT WE DO</a>
+            <a href="services.html" class="block text-slate-300 hover:text-white uppercase">SERVICES</a>
+            <a href="industries.html" class="block text-slate-300 hover:text-white uppercase">INDUSTRIES</a>
           </div>
         </div>
 
         <!-- SUSTAINABILITY -->
-        <div class="relative nav-item" data-section="sustainability">
-          <button
-            type="button"
-            class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
-            aria-expanded="false"
-          >
+        <div class="border-b border-white/10 pb-2">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
             <span>SUSTAINABILITY</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
           </button>
-          <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-            <a href="sustainability.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-              SUSTAINABILITY
-            </a>
-            <a href="articles.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              ARTICLES
-            </a>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="sustainability.html" class="block text-gold-400 font-semibold uppercase">SUSTAINABILITY</a>
+            <a href="articles.html" class="block text-slate-300 hover:text-white uppercase">ARTICLES</a>
           </div>
         </div>
 
         <!-- CAREER -->
-        <div class="relative nav-item" data-section="career">
-          <button
-            type="button"
-            class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
-            aria-expanded="false"
-          >
+        <div class="border-b border-white/10 pb-2">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
             <span>CAREER</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
           </button>
-          <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-            <a href="career.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-              CAREER
-            </a>
-            <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              APPLICATIONS
-            </a>
-            <a href="careers-available.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-              CAREERS AVAILABLE
-            </a>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="career.html" class="block text-gold-400 font-semibold uppercase">CAREER</a>
+            <a href="applications.html" class="block text-slate-300 hover:text-white uppercase">APPLICATIONS</a>
+            <a href="careers-available.html" class="block text-slate-300 hover:text-white uppercase">CAREERS AVAILABLE</a>
           </div>
         </div>
 
         <!-- CONTACT US -->
-        <div class="relative nav-item" data-section="contact">
-          <button
-            type="button"
-            class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
-            aria-expanded="false"
-          >
+        <div>
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
             <span>CONTACT US</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
           </button>
-          <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-            <a href="contact-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-              CONTACT US
-            </a>
-            <a href="client-contact.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
-              Client Contact/Request
-            </a>
-            <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
-              Applications
-            </a>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="contact-us.html" class="block text-gold-400 font-semibold uppercase">CONTACT US</a>
+            <a href="client-contact.html" class="block text-slate-300 hover:text-white">Client Contact/Request</a>
+            <a href="applications.html" class="block text-slate-300 hover:text-white">Applications</a>
           </div>
         </div>
-
-      </nav>
-
-      <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
-        <div class="w-6 flex flex-col justify-between gap-[5px]">
-          <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
-          <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
-          <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
-        </div>
-      </button>
-    </div>
-
-    <!-- Mobile Accordion Drawer -->
-    <div id="mobileDrawer" class="hidden lg:hidden bg-navy-900 border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
-      <!-- HOME -->
-      <div class="border-b border-white/10 pb-2">
-        <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-gold-450 text-xl tracking-wider uppercase py-1">
-          <span>HOME</span>
-          <span class="text-xs font-sans text-slate-400">+</span>
-        </button>
-        <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-          <a href="index.html" class="block text-gold-400 font-semibold uppercase">HOME</a>
-          <a href="#services-section" class="block text-slate-300 hover:text-white uppercase">Our Services</a>
-          <a href="#showcase-section" class="block text-slate-300 hover:text-white uppercase">Showcase</a>
-        </div>
       </div>
-
-      <!-- ABOUT US -->
-      <div class="border-b border-white/10 pb-2">
-        <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
-          <span>ABOUT US</span>
-          <span class="text-xs font-sans text-slate-400">+</span>
-        </button>
-        <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-          <a href="about-us.html" class="block text-gold-400 font-semibold uppercase">ABOUT US</a>
-          <a href="purpose.html" class="block text-slate-300 hover:text-white uppercase">PURPOSE</a>
-          <a href="our-people.html" class="block text-slate-300 hover:text-white uppercase">OUR PEOPLE</a>
-          <a href="clients.html" class="block text-slate-300 hover:text-white uppercase">CLIENTS</a>
-          <a href="location.html" class="block text-slate-300 hover:text-white uppercase">LOCATION</a>
-        </div>
-      </div>
-
-      <!-- WHAT WE DO -->
-      <div class="border-b border-white/10 pb-2">
-        <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
-          <span>WHAT WE DO</span>
-          <span class="text-xs font-sans text-slate-400">+</span>
-        </button>
-        <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-          <a href="what-we-do.html" class="block text-gold-400 font-semibold uppercase">WHAT WE DO</a>
-          <a href="services.html" class="block text-slate-300 hover:text-white uppercase">SERVICES</a>
-          <a href="industries.html" class="block text-slate-300 hover:text-white uppercase">INDUSTRIES</a>
-        </div>
-      </div>
-
-      <!-- SUSTAINABILITY -->
-      <div class="border-b border-white/10 pb-2">
-        <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
-          <span>SUSTAINABILITY</span>
-          <span class="text-xs font-sans text-slate-400">+</span>
-        </button>
-        <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-          <a href="sustainability.html" class="block text-gold-400 font-semibold uppercase">SUSTAINABILITY</a>
-          <a href="articles.html" class="block text-slate-300 hover:text-white uppercase">ARTICLES</a>
-        </div>
-      </div>
-
-      <!-- CAREER -->
-      <div class="border-b border-white/10 pb-2">
-        <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
-          <span>CAREER</span>
-          <span class="text-xs font-sans text-slate-400">+</span>
-        </button>
-        <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-          <a href="career.html" class="block text-gold-400 font-semibold uppercase">CAREER</a>
-          <a href="applications.html" class="block text-slate-300 hover:text-white uppercase">APPLICATIONS</a>
-          <a href="careers-available.html" class="block text-slate-300 hover:text-white uppercase">CAREERS AVAILABLE</a>
-        </div>
-      </div>
-
-      <!-- CONTACT US -->
-      <div>
-        <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
-          <span>CONTACT US</span>
-          <span class="text-xs font-sans text-slate-400">+</span>
-        </button>
-        <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-          <a href="contact-us.html" class="block text-gold-400 font-semibold uppercase">CONTACT US</a>
-          <a href="client-contact.html" class="block text-slate-300 hover:text-white">Client Contact/Request</a>
-          <a href="applications.html" class="block text-slate-300 hover:text-white">Applications</a>
-        </div>
-      </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <!-- =====================================================================
        3. HERO SECTION (VAULT BACKGROUND + STATS STRIP)
   ====================================================================== -->
   <section id="hero-section" class="page-section relative">
     <!-- Background Image Container -->
-    <div class="relative w-full min-h-[420px] sm:min-h-[480px] md:min-h-[530px] flex items-center overflow-hidden bg-navy-900">
+    <div class="relative w-full min-h-[460px] sm:min-h-[520px] md:min-h-[570px] flex items-center overflow-hidden bg-navy-900">
       <img
         src="assets/bgvault.jpg"
         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1920&q=85';"
@@ -382,8 +382,8 @@
       <!-- Gradient Overlay for Text Legibility -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#0b192c]/90 via-[#10233d]/65 to-transparent"></div>
 
-      <!-- Hero Content -->
-      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 py-16 sm:py-24">
+      <!-- Hero Content (with top padding to clear fixed header) -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-32 sm:pt-36 pb-16 sm:pb-24">
         <div class="max-w-lg">
           <h1 class="text-3xl sm:text-4xl md:text-[40px] font-bold leading-tight tracking-tight">
             <span class="block text-gold-450">Safeguarding Assets</span>
@@ -488,7 +488,7 @@
 
           <div class="h-44 w-full overflow-hidden rounded-t-2xl bg-navy-800">
             <img
-              src="assets/patrolcarcard.jpeg"
+              src="assets/patrolcard.jpeg"
               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
               alt="Vehicle Patrol"
               class="w-full h-full object-cover object-center"
@@ -831,10 +831,25 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // -------------------------------------------------------------------
-      // 1. HEADER DROPDOWNS & ACTIVE LINE INDICATOR
+      // 1. HEADER SCROLL TRANSPARENCY & DROPDOWNS
       // -------------------------------------------------------------------
+      const mainHeader = document.getElementById('mainHeader');
       const navItems = document.querySelectorAll('.nav-item');
       const navButtons = document.querySelectorAll('.nav-btn');
+
+      function updateHeaderOnScroll() {
+        if (!mainHeader) return;
+        if (window.scrollY > 40) {
+          mainHeader.classList.remove('bg-transparent');
+          mainHeader.classList.add('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
+        } else {
+          mainHeader.classList.add('bg-transparent');
+          mainHeader.classList.remove('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
+        }
+      }
+
+      window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+      updateHeaderOnScroll();
 
       function closeAllDropdowns() {
         navItems.forEach((item) => {
@@ -843,24 +858,6 @@
           if (panel) panel.classList.remove('open');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
-
-        const mainHeader = document.getElementById('mainHeader');
-
-        function updateHeaderOnScroll() {
-            if (!mainHeader) return;
-            if (window.scrollY > 40) {
-             mainHeader.classList.remove('bg-transparent');
-            mainHeader.classList.add('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
-            } else {
-            mainHeader.classList.add('bg-transparent');
-            mainHeader.classList.remove('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
-            }
-}
-
-window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
-updateHeaderOnScroll();
-
-
       }
 
       navItems.forEach((item) => {
@@ -947,7 +944,7 @@ updateHeaderOnScroll();
           return;
         }
 
-        const headerOffset = 90;
+        const headerOffset = 110;
         const currentScroll = window.scrollY + headerOffset + 15;
 
         const nextSection = sections.find((sec) => sec.offsetTop > currentScroll);
