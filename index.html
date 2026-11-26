@@ -103,20 +103,20 @@
   <!-- =====================================================================
        1. TOP UTILITY BAR (HOTLINE)
   ====================================================================== -->
-  <div id="top-bar" class="bg-navy-950 border-b border-white/10 text-[11px] sm:text-xs">
+  <!-- Wrapper fixed to the very top of the viewport -->
+<div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-40 transition-all duration-300">
+
+  <div id="top-bar" class="bg-navy-950/90 border-b border-white/10 text-[11px] sm:text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-8 flex items-center justify-between">
       <a href="tel:+639683226695" class="text-slate-200 hover:text-gold-400 transition-colors tracking-wide">
         Hotline: <span class="text-gold-450 font-medium">63 968 322 6695</span>
       </a>
-      <span class="hidden sm:inline text-slate-400 tracking-wide">
-      </span>
     </div>
   </div>
-
   <!-- =====================================================================
        2. STICKY MAIN HEADER WITH DROPDOWNS & SECTION LINE INDICATOR
   ====================================================================== -->
-  <header id="mainHeader" class="fixed top-8 inset-x-0 z-40 bg-transparent">
+  <header id="mainHeader" class="bg-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
 
       <!-- Left: Logo + Brand Name -->
