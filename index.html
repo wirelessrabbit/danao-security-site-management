@@ -116,7 +116,7 @@
   <!-- =====================================================================
        2. STICKY MAIN HEADER WITH DROPDOWNS & SECTION LINE INDICATOR
   ====================================================================== -->
-  <header class="fixed top-8 inset-x-0 z-40 bg-transparent">
+  <header id="mainHeader" class="fixed top-8 inset-x-0 z-40 bg-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
 
       <!-- Left: Logo + Brand Name -->
@@ -843,6 +843,24 @@
           if (panel) panel.classList.remove('open');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
+
+        const mainHeader = document.getElementById('mainHeader');
+
+        function updateHeaderOnScroll() {
+            if (!mainHeader) return;
+            if (window.scrollY > 40) {
+             mainHeader.classList.remove('bg-transparent');
+            mainHeader.classList.add('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
+            } else {
+            mainHeader.classList.add('bg-transparent');
+            mainHeader.classList.remove('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
+            }
+}
+
+window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+updateHeaderOnScroll();
+
+
       }
 
       navItems.forEach((item) => {
