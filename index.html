@@ -4,13 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Danao Security Services Inc | Safeguarding Assets, Empowering Operations</title>
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danao Security Services Inc | Safeguarding Assets, Empowering Operations</title>
   <link rel="icon" type="image/png" href="assets/logodssi1.png" />
 
-  
   <!-- Google Fonts: Inter & Bebas Neue -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,7 +57,7 @@
     /* Active Bottom Line Indicator on Header Nav Buttons */
     .nav-btn {
       position: relative;
-      padding-bottom: 6px;
+      padding-bottom: 4px;
     }
     .nav-btn::after {
       content: '';
@@ -70,7 +65,7 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 2.5px;
+      height: 2px;
       background-color: #efc464;
       transform: scaleX(0);
       transform-origin: center;
@@ -107,56 +102,45 @@
 <body class="antialiased selection:bg-gold-500 selection:text-navy-950">
 
   <!-- =====================================================================
-       1 & 2. FIXED TOP WRAPPER (UTILITY BAR + TRANSPARENT HEADER)
+       1 & 2. FIXED COMPACT HEADER
   ====================================================================== -->
   <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-40 transition-all duration-300">
+    <header id="mainHeader" class="bg-navy-950/75 backdrop-blur-sm transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
 
-    <!-- Top Utility Bar (Hotline) -->
-    <div id="top-bar" class="bg-navy-950/90 border-b border-white/10 text-[11px] sm:text-xs">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-8 flex items-center justify-between">
-        <a href="tel:+639683226695" class="text-slate-200 hover:text-gold-400 transition-colors tracking-wide">
-          Hotline: <span class="text-gold-450 font-medium">63 968 322 6695</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Main Navigation Header -->
-    <header id="mainHeader" class="bg-transparent transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 flex items-center justify-between">
-
-        <!-- Left: Logo + Brand Name -->
-        <a href="index.html" class="flex items-center gap-3 sm:gap-3.5 group focus:outline-none">
+        <!-- Left: Compact Logo + Brand Name -->
+        <a href="index.html" class="flex items-center gap-2.5 group focus:outline-none shrink-0">
           <img
             src="assets/logodssi1.png"
             alt="Danao Security Services Inc Logo"
-            class="w-12 h-14 sm:w-14 sm:h-16 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+            class="w-9 h-11 sm:w-10 sm:h-12 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
-          <span class="font-bebas text-gold-500 text-2xl sm:text-3xl md:text-[32px] tracking-wider uppercase leading-none">
+          <span class="font-bebas text-gold-500 text-lg sm:text-xl md:text-[22px] tracking-wider uppercase leading-none whitespace-nowrap">
             DANAO SECURITY SERVICES INC
           </span>
         </a>
 
-        <!-- Right: Desktop Navigation with Click Dropdowns & Bottom Line Indicator -->
-        <nav id="desktopNav" class="hidden lg:flex items-center gap-7 xl:gap-8">
+        <!-- Right: Compact Desktop Navigation -->
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-5 xl:gap-6 shrink-0">
 
           <!-- HOME -->
           <a
-  href="index.html"
-  class="nav-btn active font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors flex items-center"
->
-  HOME
-</a>
+            href="index.html"
+            class="nav-btn active font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors flex items-center whitespace-nowrap"
+          >
+            HOME
+          </a>
 
           <!-- ABOUT US -->
           <div class="relative nav-item" data-section="about">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
               aria-expanded="false"
             >
               <span>ABOUT US</span>
             </button>
-            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute left-0 mt-2.5 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="about-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 ABOUT US
               </a>
@@ -179,12 +163,12 @@
           <div class="relative nav-item" data-section="what-we-do">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
               aria-expanded="false"
             >
               <span>WHAT WE DO</span>
             </button>
-            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute left-0 mt-2.5 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="what-we-do.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 WHAT WE DO
               </a>
@@ -201,12 +185,12 @@
           <div class="relative nav-item" data-section="sustainability">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
               aria-expanded="false"
             >
               <span>SUSTAINABILITY</span>
             </button>
-            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute left-0 mt-2.5 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="sustainability.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 SUSTAINABILITY
               </a>
@@ -220,12 +204,12 @@
           <div class="relative nav-item" data-section="career">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
               aria-expanded="false"
             >
               <span>CAREER</span>
             </button>
-            <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute right-0 mt-2.5 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="career.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 CAREER
               </a>
@@ -242,12 +226,12 @@
           <div class="relative nav-item" data-section="contact">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[19px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
               aria-expanded="false"
             >
               <span>CONTACT US</span>
             </button>
-            <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute right-0 mt-2.5 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="contact-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 CONTACT US
               </a>
@@ -264,10 +248,10 @@
 
         <!-- Mobile Hamburger Button -->
         <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
-          <div class="w-6 flex flex-col justify-between gap-[5px]">
-            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
-            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
-            <span class="block h-[2.5px] w-full bg-gold-500 rounded-full"></span>
+          <div class="w-5 flex flex-col justify-between gap-[4px]">
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
           </div>
         </button>
       </div>
@@ -275,19 +259,18 @@
       <!-- Mobile Accordion Drawer -->
       <div id="mobileDrawer" class="hidden lg:hidden bg-navy-900 border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
         <!-- HOME -->
-      
-<div class="border-b border-white/10 pb-2">
-  <a
-    href="index.html"
-    class="block font-bebas text-gold-450 text-xl tracking-wider uppercase py-1"
-  >
-    HOME
-  </a>
-</div>
+        <div class="border-b border-white/10 pb-2">
+          <a
+            href="index.html"
+            class="block font-bebas text-gold-450 text-lg tracking-wider uppercase py-1"
+          >
+            HOME
+          </a>
+        </div>
 
         <!-- ABOUT US -->
         <div class="border-b border-white/10 pb-2">
-          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>ABOUT US</span>
             <span class="text-xs font-sans text-slate-400">+</span>
           </button>
@@ -302,7 +285,7 @@
 
         <!-- WHAT WE DO -->
         <div class="border-b border-white/10 pb-2">
-          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>WHAT WE DO</span>
             <span class="text-xs font-sans text-slate-400">+</span>
           </button>
@@ -315,7 +298,7 @@
 
         <!-- SUSTAINABILITY -->
         <div class="border-b border-white/10 pb-2">
-          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>SUSTAINABILITY</span>
             <span class="text-xs font-sans text-slate-400">+</span>
           </button>
@@ -327,7 +310,7 @@
 
         <!-- CAREER -->
         <div class="border-b border-white/10 pb-2">
-          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>CAREER</span>
             <span class="text-xs font-sans text-slate-400">+</span>
           </button>
@@ -340,7 +323,7 @@
 
         <!-- CONTACT US -->
         <div>
-          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-xl tracking-wider uppercase py-1">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>CONTACT US</span>
             <span class="text-xs font-sans text-slate-400">+</span>
           </button>
@@ -369,8 +352,8 @@
       <!-- Gradient Overlay for Text Legibility -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#0b192c]/90 via-[#10233d]/65 to-transparent"></div>
 
-      <!-- Hero Content (with top padding to clear fixed header) -->
-      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-32 sm:pt-36 pb-16 sm:pb-24">
+      <!-- Hero Content (with top padding to clear compact fixed header) -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-24 sm:pt-28 pb-16 sm:pb-24">
         <div class="max-w-lg">
           <h1 class="text-3xl sm:text-4xl md:text-[40px] font-bold leading-tight tracking-tight">
             <span class="block text-gold-450">Safeguarding Assets</span>
@@ -425,7 +408,6 @@
 
         <!-- Card 1: Armed & Unarmed Security -->
         <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
-          <!-- Floating Top-Right Badge Icon -->
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -466,7 +448,6 @@
 
         <!-- Card 2: Vehicle Patrol -->
         <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
-          <!-- Floating Top-Right Badge Icon -->
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 17h.01M16 17h.01M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0v6a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-6" />
@@ -507,7 +488,6 @@
 
         <!-- Card 3: Emergency Response -->
         <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
-          <!-- Floating Top-Right Badge Icon -->
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46 0L3.34 16c-.77 1.33.19 3 1.73 3z" />
@@ -548,7 +528,6 @@
 
         <!-- Card 4: Executive Protection -->
         <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
-          <!-- Floating Top-Right Badge Icon -->
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -603,7 +582,6 @@
 
         <!-- Slides Container -->
         <div id="slidesContainer" class="w-full h-full relative">
-          <!-- Slide 1 -->
           <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-100">
             <img
               src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=85"
@@ -621,7 +599,6 @@
             </div>
           </div>
 
-          <!-- Slide 2 -->
           <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
             <img
               src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1400&q=85"
@@ -639,7 +616,6 @@
             </div>
           </div>
 
-          <!-- Slide 3 -->
           <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
             <img
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85"
@@ -657,7 +633,6 @@
             </div>
           </div>
 
-          <!-- Slide 4 -->
           <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
             <img
               src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1400&q=85"
@@ -683,11 +658,9 @@
           aria-label="Toggle Slideshow Autoplay"
           class="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full border-[3px] border-gold-450 bg-navy-950/50 hover:bg-navy-950/75 text-gold-450 flex items-center justify-center transition-transform hover:scale-105 cursor-pointer z-20"
         >
-          <!-- Play Icon (shown when paused) -->
           <svg id="playIcon" class="w-8 h-8 ml-1 hidden fill-current" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
-          <!-- Pause Icon (shown when autoplaying) -->
           <svg id="pauseIcon" class="w-7 h-7 fill-current" viewBox="0 0 24 24">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
           </svg>
@@ -817,21 +790,18 @@
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // -------------------------------------------------------------------
-      // 1. HEADER SCROLL TRANSPARENCY & DROPDOWNS
-      // -------------------------------------------------------------------
       const mainHeader = document.getElementById('mainHeader');
       const navItems = document.querySelectorAll('.nav-item');
       const navButtons = document.querySelectorAll('.nav-btn');
 
       function updateHeaderOnScroll() {
         if (!mainHeader) return;
-        if (window.scrollY > 40) {
-          mainHeader.classList.remove('bg-transparent');
-          mainHeader.classList.add('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
+        if (window.scrollY > 30) {
+          mainHeader.classList.remove('bg-navy-950/75', 'backdrop-blur-sm');
+          mainHeader.classList.add('bg-navy-900/95', 'backdrop-blur-md', 'shadow-md');
         } else {
-          mainHeader.classList.add('bg-transparent');
-          mainHeader.classList.remove('bg-navy-850/95', 'backdrop-blur-md', 'shadow-md');
+          mainHeader.classList.add('bg-navy-950/75', 'backdrop-blur-sm');
+          mainHeader.classList.remove('bg-navy-900/95', 'backdrop-blur-md', 'shadow-md');
         }
       }
 
@@ -857,7 +827,6 @@
 
           closeAllDropdowns();
 
-          // Move active bottom line indicator to clicked section
           navButtons.forEach((b) => b.classList.remove('active'));
           btn.classList.add('active');
 
@@ -868,21 +837,16 @@
         });
       });
 
-      // Close dropdowns when clicking outside
       document.addEventListener('click', () => {
         closeAllDropdowns();
       });
 
-      // Close dropdown after clicking an in-page anchor
       document.querySelectorAll('.dropdown-scroll-link').forEach((link) => {
         link.addEventListener('click', () => {
           closeAllDropdowns();
         });
       });
 
-      // -------------------------------------------------------------------
-      // 2. MOBILE MENU & ACCORDIONS
-      // -------------------------------------------------------------------
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
 
@@ -899,9 +863,6 @@
         });
       });
 
-      // -------------------------------------------------------------------
-      // 3. ARROW CIRCLE BUTTON: NEXT SECTION / BACK TO TOP AT BOTTOM
-      // -------------------------------------------------------------------
       const cycleBtn = document.getElementById('sectionCycleBtn');
       const cycleIcon = document.getElementById('cycleArrowIcon');
       const sections = Array.from(document.querySelectorAll('.page-section'));
@@ -931,7 +892,7 @@
           return;
         }
 
-        const headerOffset = 110;
+        const headerOffset = 76;
         const currentScroll = window.scrollY + headerOffset + 15;
 
         const nextSection = sections.find((sec) => sec.offsetTop > currentScroll);
@@ -944,9 +905,6 @@
         }
       });
 
-      // -------------------------------------------------------------------
-      // 4. BOTTOM SLIDESHOW CAROUSEL
-      // -------------------------------------------------------------------
       const slides = document.querySelectorAll('.slide-item');
       const dots = document.querySelectorAll('.slide-dot');
       const prevSlideBtn = document.getElementById('prevSlideBtn');
