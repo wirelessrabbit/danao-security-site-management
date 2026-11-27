@@ -140,25 +140,42 @@
       box-shadow: 0 22px 36px -12px rgba(12, 27, 48, 0.42);
     }
 
-    /* Interactive Map Region & Pin States */
-    .map-region {
-      fill: #1a3356;
-      stroke: #0b192c;
-      stroke-width: 1;
-      transition: fill 0.25s ease, filter 0.25s ease;
-    }
-    .map-region.highlight-zone {
-      fill: rgba(239, 196, 100, 0.65);
+    /* Interactive Map Pins over map.png */
+    .map-pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
       cursor: pointer;
+      z-index: 10;
+      transition: transform 0.2s ease;
     }
-    .map-region.highlight-zone:hover {
-      fill: rgba(239, 196, 100, 0.88);
+    .map-pin:hover {
+      transform: translate(-50%, -50%) scale(1.18);
     }
-    .map-region.highlight-zone.active {
-      fill: #efc464;
-      stroke: #ffffff;
-      stroke-width: 1.4;
-      filter: drop-shadow(0 0 8px rgba(239, 196, 100, 0.55));
+    .map-pin .pin-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px;
+      background-color: #0b192c;
+      border: 2.5px solid #efc464;
+      box-shadow: 0 0 8px rgba(11, 25, 44, 0.8);
+      position: relative;
+      z-index: 2;
+    }
+    .map-pin .pin-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      background-color: rgba(239, 196, 100, 0.55);
+      opacity: 0;
+      z-index: 1;
+    }
+    .map-pin.active .pin-dot {
+      background-color: #efc464;
+      border-color: #ffffff;
+      box-shadow: 0 0 12px rgba(239, 196, 100, 0.9);
+    }
+    .map-pin.active .pin-ring {
+      animation: pulseRing 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
     }
 
     @keyframes pulseRing {
@@ -170,11 +187,6 @@
         transform: scale(2.3);
         opacity: 0;
       }
-    }
-    .pin-pulse {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: pulseRing 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
     }
 
     /* Location Detail Panel Transition */
@@ -625,13 +637,13 @@
                 <div id="heroSlidesContainer" class="relative h-48 sm:h-56 w-full">
 
                   <!-- Slide 1: Autoplaying YouTube Video -->
-                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-100">
+                  <div class="hero-slide relative w-full aspect-video overflow-hidden transition-opacity duration-500 opacity-100">
                     <iframe
                       class="w-full h-full"
-                      src="https://youtu.be/UO3rkjJa-Ew?autoplay=1&mute=1&loop=1&playlist=HkYshJYlBxY&controls=1&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/UO3rkjJa-Ew?autoplay=1&mute=1&loop=1&playlist=UO3rkjJa-Ew&controls=1&rel=0&playsinline=1"
                       title="Danao Security Services Inc - Latest From Us"
-                      frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
                       allowfullscreen
                     ></iframe>
                   </div>
@@ -705,7 +717,7 @@
         <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
       </div>
 
-     <!-- 4x4 Client Logo Grid -->
+      <!-- 4x4 Client Logo Grid -->
       <div class="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
 
         <!-- Row 1 -->
@@ -794,7 +806,7 @@
 
       </div>
     </section>
-    
+
     <!-- ===================================================================
          SECTION B: OUR SERVICES (DEEP-LINKED READ MORE & OTHER SERVICES)
     ==================================================================== -->
@@ -999,7 +1011,7 @@
     </section>
 
     <!-- ===================================================================
-         SECTION C: LOCATIONS (INTERACTIVE PHILIPPINE MAP + UNIFIED DETAIL CARD)
+         SECTION C: LOCATIONS (MAP.PNG COVERAGE MAP + UNIFIED DETAIL CARD)
     ==================================================================== -->
     <section id="locations-section" class="page-section max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-16">
       <div class="reveal-up">
@@ -1014,7 +1026,7 @@
 
       <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
-        <!-- Left Card: Dark Navy Radar Coverage Map + Quick-Select Pills -->
+        <!-- Left Card: Map Image + Interactive Pins + Quick-Select Pills -->
         <div class="lg:col-span-5 bg-navy-radar-grid rounded-2xl p-5 sm:p-6 shadow-xl border border-navy-800 flex flex-col justify-between reveal-up">
           <div class="flex items-center justify-between">
             <span class="text-[11px] font-semibold uppercase tracking-widest text-slate-400">
@@ -1026,106 +1038,78 @@
             </span>
           </div>
 
-          <!-- Interactive Vector Map of the Philippines (Highlighting Metro Manila/CALABARZON, Bicol, Boracay, Cebu) -->
+          <!-- Map Image Container with Clickable Region Pins -->
           <div class="my-4 flex items-center justify-center">
-            <svg viewBox="0 0 320 440" class="w-full max-w-[270px] h-auto select-none" role="img" aria-label="Interactive Map of Danao Security Operational Regions">
-              <!-- Subtle Radar Rings -->
-              <circle cx="165" cy="215" r="65" fill="none" stroke="rgba(239,196,100,0.12)" stroke-width="1" />
-              <circle cx="165" cy="215" r="120" fill="none" stroke="rgba(239,196,100,0.08)" stroke-width="1" />
-              <circle cx="165" cy="215" r="175" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+            <div class="relative w-full max-w-[290px] rounded-xl overflow-hidden bg-navy-950/70 border border-white/10 shadow-inner">
+              <img
+                src="assets/map.png"
+                onerror="this.onerror=null;this.style.opacity='0.25';"
+                alt="Map of Danao Security Operational Regions across the Philippines"
+                class="w-full h-auto max-h-[340px] object-contain mx-auto select-none block"
+              />
 
-              <!-- Non-Highlighted Regions: Northern & Central Luzon -->
-              <path class="map-region" d="M118,28 L138,24 L152,42 L154,78 L149,112 L139,138 L112,135 L98,118 L93,95 L103,62 L112,42 Z" />
-              <!-- Bataan / Zambales Peninsula -->
-              <path class="map-region" d="M98,118 L112,135 L108,154 L99,156 L94,140 Z" />
-              <!-- Quezon / Southern Tagalog Coast -->
-              <path class="map-region" d="M139,138 L152,146 L160,168 L178,176 L172,188 L152,186 L138,176 Z" />
-              <!-- Mindoro -->
-              <path class="map-region" d="M112,190 L128,194 L138,216 L128,230 L114,218 L108,202 Z" />
-              <!-- Palawan -->
-              <path class="map-region" d="M78,256 L92,248 L96,262 L72,306 L52,338 L42,332 L62,292 Z" />
-              <!-- Panay (Mainland) -->
-              <path class="map-region" d="M148,236 L172,238 L176,264 L156,274 L144,258 Z" />
-              <!-- Negros -->
-              <path class="map-region" d="M178,266 L192,262 L194,298 L178,314 L168,298 Z" />
-              <!-- Samar & Leyte -->
-              <path class="map-region" d="M222,208 L248,212 L254,242 L238,250 L234,278 L220,276 L218,244 L222,226 Z" />
-              <!-- Bohol -->
-              <path class="map-region" d="M206,282 L222,282 L224,296 L208,298 Z" />
-              <!-- Mindanao -->
-              <path class="map-region" d="M214,316 L248,308 L272,324 L276,362 L262,394 L236,396 L218,382 L202,374 L174,382 L162,368 L184,352 L206,342 Z" />
-              <!-- Sulu Archipelago -->
-              <path class="map-region" d="M144,388 L156,386 L154,394 L142,396 Z M124,398 L136,396 L134,404 L122,406 Z" />
+              <!-- Pin: South Luzon -->
+              <button
+                type="button"
+                data-location="south-luzon"
+                aria-label="South Luzon"
+                title="South Luzon"
+                style="top: 38%; left: 42%;"
+                class="map-pin"
+              >
+                <span class="pin-ring"></span>
+                <span class="pin-dot block"></span>
+              </button>
 
-              <!-- HIGHLIGHTED ZONE 1: Metro Manila / Laguna-Cavite Corridor -->
-              <g class="map-zone-group" data-location="metro-manila">
-                <path
-                  class="map-region highlight-zone"
-                  data-location="metro-manila"
-                  d="M112,135 L139,138 L138,176 L118,178 L108,166 L114,154 Z"
-                />
-                <circle class="pin-pulse" cx="123" cy="154" r="6" fill="#efc464" />
-                <circle cx="123" cy="154" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
-              </g>
+              <!-- Pin: Bicol Region -->
+              <button
+                type="button"
+                data-location="bicol"
+                aria-label="Bicol Region"
+                title="Bicol Region"
+                style="top: 47%; left: 62%;"
+                class="map-pin"
+              >
+                <span class="pin-ring"></span>
+                <span class="pin-dot block"></span>
+              </button>
 
-              <!-- HIGHLIGHTED ZONE 2: Bicol Region (CamSur, Albay, Sorsogon, Catanduanes, Masbate) -->
-              <g class="map-zone-group" data-location="bicol">
-                <!-- Mainland Bicol Peninsula -->
-                <path
-                  class="map-region highlight-zone"
-                  data-location="bicol"
-                  d="M178,172 L198,174 L212,188 L220,204 L206,210 L194,196 L176,188 Z"
-                />
-                <!-- Catanduanes -->
-                <path
-                  class="map-region highlight-zone"
-                  data-location="bicol"
-                  d="M222,172 L232,172 L234,188 L224,190 Z"
-                />
-                <!-- Masbate, Ticao & Burias -->
-                <path
-                  class="map-region highlight-zone"
-                  data-location="bicol"
-                  d="M174,196 L186,204 L184,210 L172,202 Z M188,210 L204,216 L210,234 L198,236 L192,224 L182,232 L178,224 Z"
-                />
-                <circle class="pin-pulse" cx="198" cy="192" r="6" fill="#efc464" />
-                <circle cx="198" cy="192" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
-              </g>
+              <!-- Pin: Boracay -->
+              <button
+                type="button"
+                data-location="boracay"
+                aria-label="Boracay"
+                title="Boracay"
+                style="top: 56%; left: 48%;"
+                class="map-pin active"
+              >
+                <span class="pin-ring"></span>
+                <span class="pin-dot block"></span>
+              </button>
 
-              <!-- HIGHLIGHTED ZONE 3: Boracay (Off NW Tip of Panay) -->
-              <g class="map-zone-group" data-location="boracay">
-                <circle
-                  class="map-region highlight-zone active"
-                  data-location="boracay"
-                  cx="145"
-                  cy="231"
-                  r="5.5"
-                />
-                <circle class="pin-pulse" cx="145" cy="231" r="7" fill="#efc464" />
-                <circle cx="145" cy="231" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
-              </g>
-
-              <!-- HIGHLIGHTED ZONE 4: Cebu -->
-              <g class="map-zone-group" data-location="cebu">
-                <path
-                  class="map-region highlight-zone"
-                  data-location="cebu"
-                  d="M204,254 L212,256 L204,284 L194,306 L188,302 L196,276 Z"
-                />
-                <circle class="pin-pulse" cx="199" cy="280" r="6" fill="#efc464" />
-                <circle cx="199" cy="280" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
-              </g>
-            </svg>
+              <!-- Pin: Cebu -->
+              <button
+                type="button"
+                data-location="cebu"
+                aria-label="Cebu"
+                title="Cebu"
+                style="top: 64%; left: 61%;"
+                class="map-pin"
+              >
+                <span class="pin-ring"></span>
+                <span class="pin-dot block"></span>
+              </button>
+            </div>
           </div>
 
           <!-- Quick-Select Location Pill Buttons -->
           <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2 pt-2">
             <button
               type="button"
-              data-loc-btn="metro-manila"
+              data-loc-btn="south-luzon"
               class="loc-pill px-3 py-2 rounded-full text-xs font-semibold border border-white/15 bg-navy-850 text-slate-200 hover:border-gold-450 hover:text-white transition-all cursor-pointer text-center"
             >
-              Metro Manila
+              South Luzon
             </button>
             <button
               type="button"
@@ -1501,12 +1485,12 @@
          3. Interactive Locations Map & Unified Detail Card
       -------------------------------------------------------------------- */
       const locationData = {
-        'metro-manila': {
-          title: 'METRO MANILA & CALABARZON',
-          description: 'Delivering corporate tower access control, residential estate guarding, roving mobile patrols, and executive protection details across Metro Manila, Cavite, and Laguna.',
+        'south-luzon': {
+          title: 'SOUTH LUZON',
+          description: 'Delivering corporate tower access control, residential estate guarding, roving mobile patrols, and executive protection details across South Luzon, Cavite, and Laguna.',
           sectors: 'Corporate Towers, Estates & Industrial Parks',
           services: 'Armed Guarding, Vehicle Patrol, VIP Escort',
-          image: 'assets/loc-metro-manila.jpg',
+          image: 'assets/loc-south-luzon.jpg',
           fallback: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85'
         },
         'boracay': {
@@ -1536,8 +1520,7 @@
       };
 
       const locPills = document.querySelectorAll('.loc-pill');
-      const mapZoneGroups = document.querySelectorAll('.map-zone-group');
-      const mapRegions = document.querySelectorAll('.map-region.highlight-zone');
+      const mapPins = document.querySelectorAll('.map-pin');
       const locationContent = document.getElementById('locationContent');
       const locTitle = document.getElementById('locTitle');
       const locDescription = document.getElementById('locDescription');
@@ -1561,12 +1544,12 @@
           }
         });
 
-        // Update SVG map regions
-        mapRegions.forEach((region) => {
-          if (region.getAttribute('data-location') === key) {
-            region.classList.add('active');
+        // Update map pins
+        mapPins.forEach((pin) => {
+          if (pin.getAttribute('data-location') === key) {
+            pin.classList.add('active');
           } else {
-            region.classList.remove('active');
+            pin.classList.remove('active');
           }
         });
 
@@ -1593,9 +1576,9 @@
         });
       });
 
-      mapZoneGroups.forEach((group) => {
-        group.addEventListener('click', () => {
-          selectLocation(group.getAttribute('data-location'));
+      mapPins.forEach((pin) => {
+        pin.addEventListener('click', () => {
+          selectLocation(pin.getAttribute('data-location'));
         });
       });
 
