@@ -303,86 +303,55 @@
 
         </nav>
 
-        <!-- Mobile Hamburger Button -->
-        <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
-          <div class="w-5 flex flex-col justify-between gap-[4px]">
-            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
-            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
-            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
-          </div>
-        </button>
-      </div>
+       <!-- Mobile Hamburger Button -->
+  <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
+    <div class="w-5 flex flex-col justify-between gap-[4px]">
+      <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+      <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+      <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+    </div>
+  </button>
+</div>
 
-      <!-- Full-Width Visual Mega-Menu Panel (Outside Flex Row + Solid #0b192c Background) -->
-      <div id="whatWeDoMegaMenu" class="dropdown-panel hidden lg:block absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.75)] z-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
-          <div class="grid grid-cols-4 gap-5">
+<!-- Visual Mega-Menu Panel (Mobile + Desktop) -->
+<div id="whatWeDoMegaMenu" class="dropdown-panel hidden absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.75)] max-h-[78vh] overflow-y-auto z-50">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-6 sm:py-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 
-            <!-- Tile 1: Armed & Unarmed Security -->
-            <a href="whatwedo.html?service=armed-unarmed#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-              <img
-                src="assets/securitycard.jpg"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
-                alt="Armed & Unarmed Security"
-                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                  ARMED &amp; UNARMED<br />SECURITY
-                </span>
-              </div>
-            </a>
+      <!-- Tile 1: Armed & Unarmed Security -->
+      <a href="whatwedo.html?service=armed-unarmed#services-provided" class="group relative h-40 sm:h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+        <img
+          src="assets/securitycard.jpg"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
+          alt="Armed & Unarmed Security"
+          class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <span class="font-bebas text-white group-hover:text-gold-450 text-xl sm:text-2xl leading-tight tracking-wide uppercase block transition-colors">
+            ARMED &amp; UNARMED<br />SECURITY
+          </span>
+        </div>
+      </a>
 
-            <!-- Tile 2: Vehicle Patrol -->
-            <a href="whatwedo.html?service=vehicle-patrol#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-              <img
-                src="assets/patrolcarcard.jpeg"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
-                alt="Vehicle Patrol"
-                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                  VEHICLE PATROL
-                </span>
-              </div>
-            </a>
+      <!-- Tile 2: Vehicle Patrol -->
+      <a href="whatwedo.html?service=vehicle-patrol#services-provided" class="group relative h-40 sm:h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+        <img
+          src="assets/patrolcarcard.jpeg"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
+          alt="Vehicle Patrol"
+          class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <span class="font-bebas text-white group-hover:text-gold-450 text-xl sm:text-2xl leading-tight tracking-wide uppercase block transition-colors">
+            VEHICLE PATROL
+          </span>
+        </div>
+      </a>
 
-            <!-- Tile 3: Emergency Response -->
-            <a href="whatwedo.html?service=emergency-response#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-              <img
-                src="assets/emergencyresponsecard.jpg"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';"
-                alt="Emergency Response"
-                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                  EMERGENCY RESPONSE
-                </span>
-              </div>
-            </a>
-
-            <!-- Tile 4: Executive Protection -->
-            <a href="whatwedo.html?service=executive-protection#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-              <img
-                src="assets/execprotectioncard.jpg"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80';"
-                alt="Executive Protection"
-                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                  EXECUTIVE PROTECTION
-                </span>
-              </div>
-            </a>
-
-          </div>
+      <!-- Tile 3: Emergency Response -->
+      <a href="whatwedo.html?service=emergency-response#services-provided" class="group relative h-40 sm:h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
 
           <!-- Bottom Mega-Menu Quick Links -->
           <div class="mt-6 pt-4 border-t border-white/15 flex items-center gap-8 text-xs font-semibold text-white">
