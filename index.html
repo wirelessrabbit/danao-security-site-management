@@ -69,19 +69,19 @@
       background-color: #efc464;
       transform: scaleX(0);
       transform-origin: center;
-      transition: transform 0.22s ease;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .nav-btn.active::after,
     .nav-btn:hover::after {
       transform: scaleX(1);
     }
 
-    /* Dropdown Reveal Animation */
+    /* Dropdown & Mega-Menu Reveal Animation */
     .dropdown-panel {
       opacity: 0;
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease;
+      transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1), transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .dropdown-panel.open {
       opacity: 1;
@@ -89,26 +89,114 @@
       pointer-events: auto;
     }
 
+    /* Stelsen-Inspired Scroll Reveal Animations */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Architectural / Tactical Grid Pattern for Clients & Locations */
+    .bg-tactical-grid {
+      background-color: #f8fafc;
+      background-image:
+        linear-gradient(to right, rgba(15, 30, 54, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 30, 54, 0.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    .bg-navy-radar-grid {
+      background-color: #0b192c;
+      background-image:
+        radial-gradient(circle at 48% 45%, rgba(239, 196, 100, 0.08) 0%, transparent 55%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
+    }
+
+    /* Client Logo Pill Card */
+    .client-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 14px -4px rgba(12, 27, 48, 0.06);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .client-card:hover {
+      transform: translateY(-3px);
+      border-color: #efc464;
+      box-shadow: 0 12px 24px -8px rgba(12, 27, 48, 0.14);
+    }
+
     /* Service Card Hover Lift */
     .service-card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
     }
     .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 32px -10px rgba(12, 27, 48, 0.35);
+      transform: translateY(-6px);
+      box-shadow: 0 22px 36px -12px rgba(12, 27, 48, 0.42);
+    }
+
+    /* Interactive Map Region & Pin States */
+    .map-region {
+      fill: #1a3356;
+      stroke: #0b192c;
+      stroke-width: 1;
+      transition: fill 0.25s ease, filter 0.25s ease;
+    }
+    .map-region.highlight-zone {
+      fill: rgba(239, 196, 100, 0.65);
+      cursor: pointer;
+    }
+    .map-region.highlight-zone:hover {
+      fill: rgba(239, 196, 100, 0.88);
+    }
+    .map-region.highlight-zone.active {
+      fill: #efc464;
+      stroke: #ffffff;
+      stroke-width: 1.4;
+      filter: drop-shadow(0 0 8px rgba(239, 196, 100, 0.55));
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(2.3);
+        opacity: 0;
+      }
+    }
+    .pin-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulseRing 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+
+    /* Location Detail Panel Transition */
+    .location-fade {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .location-fade.switching {
+      opacity: 0.25;
+      transform: translateY(4px);
     }
   </style>
 </head>
 <body class="antialiased selection:bg-gold-500 selection:text-navy-950">
 
   <!-- =====================================================================
-       1 & 2. FIXED COMPACT HEADER
+       1. FIXED COMPACT HEADER WITH VISUAL MEGA-MENU
   ====================================================================== -->
-  <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-40 transition-all duration-300">
-    <header id="mainHeader" class="bg-navy-950/75 backdrop-blur-sm transition-all duration-300">
+  <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <header id="mainHeader" class="bg-navy-950/80 backdrop-blur-md border-b border-white/10 transition-all duration-300 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
 
-        <!-- Left: Compact Logo + Brand Name -->
+        <!-- Left: Logo + Brand Name -->
         <a href="index.html" class="flex items-center gap-2.5 group focus:outline-none shrink-0">
           <img
             src="assets/logodssi1.png"
@@ -120,64 +208,125 @@
           </span>
         </a>
 
-        <!-- Right: Compact Desktop Navigation -->
-        <nav id="desktopNav" class="hidden lg:flex items-center gap-5 xl:gap-6 shrink-0">
+        <!-- Right: Desktop Navigation -->
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-5 xl:gap-7 shrink-0">
 
           <!-- HOME -->
           <a
-            href="index.html"
+            href="#hero-section"
             class="nav-btn active font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors flex items-center whitespace-nowrap"
           >
             HOME
           </a>
 
-          <!-- ABOUT US -->
+          <!-- ABOUT US (Smooth-scrolls to #about-us on Landing Page) -->
           <div class="relative nav-item" data-section="about">
-            <button
-              type="button"
+            <a
+              href="#about-us"
               class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
-              aria-expanded="false"
             >
               <span>ABOUT US</span>
-            </button>
-            <div class="dropdown-panel absolute left-0 mt-2.5 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-              <a href="about-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-                ABOUT US
-              </a>
-              <a href="purpose.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-                PURPOSE
-              </a>
-              <a href="our-people.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-                OUR PEOPLE
-              </a>
-              <a href="clients.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-                CLIENTS
-              </a>
-              <a href="location.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-                LOCATION
-              </a>
-            </div>
+            </a>
           </div>
 
-          <!-- WHAT WE DO -->
-          <div class="relative nav-item" data-section="what-we-do">
+          <!-- WHAT WE DO (Visual Photo-Tile Mega-Menu) -->
+          <div class="nav-item" data-section="what-we-do">
             <button
               type="button"
+              id="whatWeDoBtn"
               class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
               aria-expanded="false"
             >
               <span>WHAT WE DO</span>
             </button>
-            <div class="dropdown-panel absolute left-0 mt-2.5 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
-              <a href="what-we-do.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
-                WHAT WE DO
-              </a>
-              <a href="services.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-                SERVICES
-              </a>
-              <a href="industries.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
-                INDUSTRIES
-              </a>
+
+            <!-- Full-Width Visual Mega-Menu Panel -->
+            <div id="whatWeDoMegaMenu" class="dropdown-panel absolute inset-x-0 top-full bg-navy-950/98 backdrop-blur-xl border-b border-white/15 shadow-2xl z-50">
+              <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
+                <div class="grid grid-cols-4 gap-5">
+
+                  <!-- Tile 1: Armed & Unarmed Security -->
+                  <a href="what-we-do.html?service=armed-unarmed#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+                    <img
+                      src="assets/securitycard.jpg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
+                      alt="Armed & Unarmed Security"
+                      class="w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                        ARMED &amp; UNARMED<br />SECURITY
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Tile 2: Vehicle Patrol -->
+                  <a href="what-we-do.html?service=vehicle-patrol#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+                    <img
+                      src="assets/patrolcarcard.jpeg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
+                      alt="Vehicle Patrol"
+                      class="w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                        VEHICLE PATROL
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Tile 3: Emergency Response -->
+                  <a href="what-we-do.html?service=emergency-response#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+                    <img
+                      src="assets/emergencyresponsecard.jpg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';"
+                      alt="Emergency Response"
+                      class="w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                        EMERGENCY RESPONSE
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Tile 4: Executive Protection -->
+                  <a href="what-we-do.html?service=executive-protection#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+                    <img
+                      src="assets/execprotectioncard.jpg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80';"
+                      alt="Executive Protection"
+                      class="w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                        EXECUTIVE PROTECTION
+                      </span>
+                    </div>
+                  </a>
+
+                </div>
+
+                <!-- Bottom Mega-Menu Quick Links -->
+                <div class="mt-6 pt-4 border-t border-white/15 flex items-center gap-8 text-xs font-semibold text-white">
+                  <a href="what-we-do.html" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+                    <span>What We Do overview</span>
+                    <span class="text-gold-450">&rarr;</span>
+                  </a>
+                  <a href="what-we-do.html#services-provided" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+                    <span>All services</span>
+                    <span class="text-gold-450">&rarr;</span>
+                  </a>
+                  <a href="what-we-do.html#industries" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+                    <span>Industries</span>
+                    <span class="text-gold-450">&rarr;</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -190,7 +339,7 @@
             >
               <span>SUSTAINABILITY</span>
             </button>
-            <div class="dropdown-panel absolute left-0 mt-2.5 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="sustainability.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 SUSTAINABILITY
               </a>
@@ -209,7 +358,7 @@
             >
               <span>CAREER</span>
             </button>
-            <div class="dropdown-panel absolute right-0 mt-2.5 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="career.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 CAREER
               </a>
@@ -231,12 +380,12 @@
             >
               <span>CONTACT US</span>
             </button>
-            <div class="dropdown-panel absolute right-0 mt-2.5 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="contact-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 CONTACT US
               </a>
               <a href="client-contact.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
-                Client Contact/Request
+                Client Contact / Request
               </a>
               <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
                 Applications
@@ -258,45 +407,33 @@
 
       <!-- Mobile Accordion Drawer -->
       <div id="mobileDrawer" class="hidden lg:hidden bg-navy-900 border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
-        <!-- HOME -->
         <div class="border-b border-white/10 pb-2">
-          <a
-            href="index.html"
-            class="block font-bebas text-gold-450 text-lg tracking-wider uppercase py-1"
-          >
+          <a href="#hero-section" class="mobile-nav-link block font-bebas text-gold-450 text-lg tracking-wider uppercase py-1">
             HOME
           </a>
         </div>
 
-        <!-- ABOUT US -->
         <div class="border-b border-white/10 pb-2">
-          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
-            <span>ABOUT US</span>
-            <span class="text-xs font-sans text-slate-400">+</span>
-          </button>
-          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-            <a href="about-us.html" class="block text-gold-400 font-semibold uppercase">ABOUT US</a>
-            <a href="purpose.html" class="block text-slate-300 hover:text-white uppercase">PURPOSE</a>
-            <a href="our-people.html" class="block text-slate-300 hover:text-white uppercase">OUR PEOPLE</a>
-            <a href="clients.html" class="block text-slate-300 hover:text-white uppercase">CLIENTS</a>
-            <a href="location.html" class="block text-slate-300 hover:text-white uppercase">LOCATION</a>
-          </div>
+          <a href="#about-us" class="mobile-nav-link block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">
+            ABOUT US
+          </a>
         </div>
 
-        <!-- WHAT WE DO -->
         <div class="border-b border-white/10 pb-2">
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>WHAT WE DO</span>
             <span class="text-xs font-sans text-slate-400">+</span>
           </button>
           <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
-            <a href="what-we-do.html" class="block text-gold-400 font-semibold uppercase">WHAT WE DO</a>
-            <a href="services.html" class="block text-slate-300 hover:text-white uppercase">SERVICES</a>
-            <a href="industries.html" class="block text-slate-300 hover:text-white uppercase">INDUSTRIES</a>
+            <a href="what-we-do.html" class="block text-gold-400 font-semibold uppercase">What We Do Overview</a>
+            <a href="what-we-do.html?service=armed-unarmed#services-provided" class="block text-slate-300 hover:text-white">Armed &amp; Unarmed Security</a>
+            <a href="what-we-do.html?service=vehicle-patrol#services-provided" class="block text-slate-300 hover:text-white">Vehicle Patrol</a>
+            <a href="what-we-do.html?service=emergency-response#services-provided" class="block text-slate-300 hover:text-white">Emergency Response</a>
+            <a href="what-we-do.html?service=executive-protection#services-provided" class="block text-slate-300 hover:text-white">Executive Protection</a>
+            <a href="what-we-do.html#services-provided" class="block text-gold-400/90 hover:text-white pt-1">All Services &rarr;</a>
           </div>
         </div>
 
-        <!-- SUSTAINABILITY -->
         <div class="border-b border-white/10 pb-2">
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>SUSTAINABILITY</span>
@@ -308,7 +445,6 @@
           </div>
         </div>
 
-        <!-- CAREER -->
         <div class="border-b border-white/10 pb-2">
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>CAREER</span>
@@ -321,7 +457,6 @@
           </div>
         </div>
 
-        <!-- CONTACT US -->
         <div>
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>CONTACT US</span>
@@ -329,8 +464,8 @@
           </button>
           <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
             <a href="contact-us.html" class="block text-gold-400 font-semibold uppercase">CONTACT US</a>
-            <a href="client-contact.html" class="block text-slate-300 hover:text-white">CLIENT CONTACT</a>
-            <a href="applications.html" class="block text-slate-300 hover:text-white">JOIN US</a>
+            <a href="client-contact.html" class="block text-slate-300 hover:text-white">Client Contact / Request</a>
+            <a href="applications.html" class="block text-slate-300 hover:text-white">Applications</a>
           </div>
         </div>
       </div>
@@ -338,76 +473,287 @@
   </div>
 
   <!-- =====================================================================
-       3. HERO SECTION (VAULT BACKGROUND + STATS STRIP)
+       2. HERO SECTION (VAULT BACKGROUND, LATEST FROM US CAROUSEL & STATS STRIP)
   ====================================================================== -->
   <section id="hero-section" class="page-section relative">
-    <!-- Background Image Container -->
-    <div class="relative w-full min-h-[460px] sm:min-h-[520px] md:min-h-[570px] flex items-center overflow-hidden bg-navy-900">
+    <div class="relative w-full min-h-[520px] sm:min-h-[560px] md:min-h-[600px] flex items-center overflow-hidden bg-navy-900">
       <img
         src="assets/bgvault.jpg"
         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1920&q=85';"
         alt="High-Security Bank Vault Door"
         class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90 contrast-105"
       />
-      <!-- Gradient Overlay for Text Legibility -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0b192c]/90 via-[#10233d]/65 to-transparent"></div>
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0b192c]/95 via-[#10233d]/75 to-[#0b192c]/55"></div>
 
-      <!-- Hero Content (with top padding to clear compact fixed header) -->
-      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-24 sm:pt-28 pb-16 sm:pb-24">
-        <div class="max-w-lg">
-          <h1 class="text-3xl sm:text-4xl md:text-[40px] font-bold leading-tight tracking-tight">
-            <span class="block text-gold-450">Safeguarding Assets</span>
-            <span class="block text-white mt-0.5">Empowering Operations</span>
-          </h1>
+      <!-- Hero Grid Content -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-24 sm:pt-28 pb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-          <p class="mt-4 sm:mt-5 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal max-w-md">
-            Providing trusted security and protection services to ensure the safety of our clients, their personnel, assets, and operations.
-          </p>
+          <!-- Left Column: Headline + "What we offer" Mini Preview -->
+          <div class="lg:col-span-6 reveal-up is-visible">
+            <h1 class="text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight tracking-tight">
+              <span class="block text-gold-450">Safeguarding Assets</span>
+              <span class="block text-white mt-0.5">Empowering Operations</span>
+            </h1>
+
+            <p class="mt-4 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal max-w-md">
+              Providing trusted security and protection services to ensure the safety of our clients, their personnel, assets, and operations.
+            </p>
+
+            <!-- "What we offer" Quick Preview Card -->
+            <div class="mt-8 max-w-[230px]">
+              <a href="#services-section" class="inline-block text-gold-450 text-xs font-bold underline underline-offset-4 hover:text-white transition-colors mb-2">
+                What we offer
+              </a>
+              <a href="#services-section" class="group block rounded-lg overflow-hidden bg-navy-950 border border-white/15 shadow-xl">
+                <div class="h-16 overflow-hidden relative">
+                  <img
+                    src="assets/securitycard.jpg"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=500&q=80';"
+                    alt="Danao Security Personnel"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div class="absolute inset-0 bg-navy-950/30"></div>
+                </div>
+                <div class="py-1.5 px-3 flex items-center justify-center gap-1.5 bg-navy-950">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-450"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: "Latest From Us" Showcase Carousel -->
+          <div class="lg:col-span-6 reveal-up is-visible" style="transition-delay: 120ms;">
+            <div class="max-w-md lg:ml-auto">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-white font-bold text-sm tracking-wide ml-auto">Latest From Us</span>
+              </div>
+
+              <div class="relative rounded-xl overflow-hidden shadow-2xl bg-navy-950 border border-white/15">
+                <div id="heroSlidesContainer" class="relative h-48 sm:h-56 w-full">
+                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
+                      alt="Industrial Site Deployment"
+                      class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
+                      24/7 Infrastructure &amp; Industrial Site Protection
+                    </p>
+                  </div>
+
+                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+                    <img
+                      src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=80"
+                      alt="Command & Surveillance Operations"
+                      class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
+                      Centralized CCTV Monitoring &amp; Electronic Guard Tours
+                    </p>
+                  </div>
+
+                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+                    <img
+                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+                      alt="Corporate & Resort Security"
+                      class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
+                      Hospitality, Commercial &amp; Corporate Asset Safeguarding
+                    </p>
+                  </div>
+
+                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+                    <img
+                      src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=900&q=80"
+                      alt="Vetted Security Force"
+                      class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
+                      Rigorously Screened &amp; Certified Security Professionals
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Carousel Controls Bar -->
+                <div class="bg-navy-950 py-2 px-4 flex items-center justify-center gap-3 border-t border-white/10">
+                  <button type="button" id="heroPrevBtn" aria-label="Previous" class="text-white hover:text-gold-450 text-xs font-bold px-1.5 cursor-pointer">&lt;</button>
+                  <div class="flex items-center gap-1.5" id="heroDots">
+                    <button type="button" data-idx="0" class="hero-dot w-2 h-2 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
+                    <button type="button" data-idx="1" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+                    <button type="button" data-idx="2" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+                    <button type="button" data-idx="3" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+                  </div>
+                  <button type="button" id="heroNextBtn" aria-label="Next" class="text-white hover:text-gold-450 text-xs font-bold px-1.5 cursor-pointer">&gt;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <!-- Bottom 3-Column Metrics Bar -->
-    <div class="bg-navy-850 border-t border-white/10 py-8 sm:py-10 px-4">
+    <!-- Bottom 3-Column Metrics Bar with Animated Counters -->
+    <div class="bg-navy-850 border-t border-white/10 py-8 sm:py-9 px-4">
       <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/20 text-center">
-        <div class="py-3 sm:py-1 px-4">
-          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">50 Years+</p>
-          <p class="text-slate-300 text-xs sm:text-sm mt-1">Collective Experience</p>
+        <div class="py-3 sm:py-1 px-4 reveal-up">
+          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">
+            <span class="stat-counter" data-target="50">50</span>+
+          </p>
+          <p class="text-slate-300 text-xs sm:text-sm mt-1">Years of Collective Experience</p>
         </div>
-        <div class="py-3 sm:py-1 px-4">
-          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">20+</p>
-          <p class="text-slate-300 text-xs sm:text-sm mt-1">Trusted Brands</p>
+        <div class="py-3 sm:py-1 px-4 reveal-up" style="transition-delay: 80ms;">
+          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">
+            <span class="stat-counter" data-target="150">150</span>+
+          </p>
+          <p class="text-slate-300 text-xs sm:text-sm mt-1">Sites Protected</p>
         </div>
-        <div class="py-3 sm:py-1 px-4">
-          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">2500+</p>
-          <p class="text-slate-300 text-xs sm:text-sm mt-1">Clients Served</p>
+        <div class="py-3 sm:py-1 px-4 reveal-up" style="transition-delay: 160ms;">
+          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">
+            <span class="stat-counter" data-target="2500">2500</span>+
+          </p>
+          <p class="text-slate-300 text-xs sm:text-sm mt-1">International Clients Served</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       4. MAIN LIGHT CONTENT: 'OUR SERVICES' & 'SLIDESHOW DISPLAY'
+       3. MAIN LIGHT CONTENT: CLIENTS, OUR SERVICES, LOCATIONS & ABOUT US
   ====================================================================== -->
-  <main class="bg-[#f8fafc] text-slate-800">
+  <main class="bg-tactical-grid text-slate-800">
 
-    <!-- SECTION: OUR SERVICES -->
-    <section id="services-section" class="page-section max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-14 sm:pt-20 pb-12">
+    <!-- ===================================================================
+         SECTION A: CLIENTS (ARCHITECTURAL GRID + SOLID WHITE LOGO CARDS)
+    ==================================================================== -->
+    <section id="clients-section" class="page-section max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-16 sm:pt-20 pb-14">
+      <div class="reveal-up">
+        <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase">
+          CLIENTS
+        </h2>
+        <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
+      </div>
+
+      <!-- 4x4 Client Logo Grid (Ready for your named PNGs in assets/) -->
+      <div class="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+
+        <!-- Row 1 -->
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up">
+          <img src="assets/client-stronghold.png" alt="Stronghold Steel" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Stronghold Steel</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 40ms;">
+          <img src="assets/client-pakophil.png" alt="Pakophil Enterprises Inc." class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Pakophil Enterprises Inc.</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 80ms;">
+          <img src="assets/client-nwsc.png" alt="Northstar World Steel Corporation" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Northstar World Steel</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 120ms;">
+          <img src="assets/client-pagss.png" alt="PAGSS" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">PAGSS</span>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up">
+          <img src="assets/client-mactan-cebu.png" alt="Mactan Cebu International Airport" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Mactan Cebu Airport</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 40ms;">
+          <img src="assets/client-diamond-bay.png" alt="Diamond Bay Tower" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Diamond Bay Tower</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 80ms;">
+          <img src="assets/client-sur-beach.png" alt="Sur Beach Resort Boracay" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Sur Beach Resort Boracay</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 120ms;">
+          <img src="assets/client-lime-hotel.png" alt="Lime Hotel Boracay" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Lime Hotel Boracay</span>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up">
+          <img src="assets/client-sn-aboitiz.png" alt="SN Aboitiz Power Group" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">SN Aboitiz Power Group</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 40ms;">
+          <img src="assets/client-global-estate.png" alt="Global-Estate Resorts, Inc." class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Global-Estate Resorts</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 80ms;">
+          <img src="assets/client-point-digital.png" alt="Point Digital Finance BPO / Call Center" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Point Digital Finance</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 120ms;">
+          <img src="assets/client-el-pueblo.png" alt="El Pueblo Condominium" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">El Pueblo Condominium</span>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up">
+          <img src="assets/client-mn-electro.png" alt="MN Electro Industrial Supply and Services Inc" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">MN Electro Industrial</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 40ms;">
+          <img src="assets/client-monte-cielo.png" alt="Monte Cielo" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Monte Cielo</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 80ms;">
+          <img src="assets/client-arden.png" alt="Arden Botanical Estate" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Arden Botanical Estate</span>
+        </div>
+
+        <div class="client-card h-24 sm:h-28 rounded-2xl p-4 flex items-center justify-center reveal-up" style="transition-delay: 120ms;">
+          <img src="assets/client-tierra-bella.png" alt="Tierra Bella Subdivision" class="max-h-14 sm:max-h-16 max-w-full object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <span class="hidden text-center font-bold text-xs text-navy-900 tracking-wide uppercase">Tierra Bella Subdivision</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION B: OUR SERVICES (DEEP-LINKED READ MORE & OTHER SERVICES)
+    ==================================================================== -->
+    <section id="services-section" class="page-section max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-16">
       <!-- Header -->
-      <div class="max-w-2xl">
+      <div class="max-w-2xl reveal-up">
         <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase">
           OUR SERVICES
         </h2>
-        <p class="mt-2 text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+        <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
+        <p class="mt-3 text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
           Proactive <span class="text-gold-600 font-semibold">protection</span> for businesses, residences, and high-profile individuals. Explore our core <span class="text-gold-600 font-semibold">security</span> services below—built on rapid response, visible deterrence, and uncompromising vigilance.
         </p>
       </div>
 
       <!-- 4 Service Cards Grid -->
-      <div class="mt-9 sm:mt-11 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Card 1: Armed & Unarmed Security -->
-        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
+        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col reveal-up">
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -439,15 +785,18 @@
             </div>
 
             <div class="mt-6 pt-2 text-center">
-              <button type="button" class="text-gold-450 text-xs font-semibold underline underline-offset-4 cursor-default">
+              <a
+                href="what-we-do.html?service=armed-unarmed#services-provided"
+                class="text-gold-450 hover:text-white text-xs font-semibold underline underline-offset-4 transition-colors"
+              >
                 Read More
-              </button>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Card 2: Vehicle Patrol -->
-        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
+        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col reveal-up" style="transition-delay: 80ms;">
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 17h.01M16 17h.01M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0v6a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-6" />
@@ -479,15 +828,18 @@
             </div>
 
             <div class="mt-6 pt-2 text-center">
-              <button type="button" class="text-gold-450 text-xs font-semibold underline underline-offset-4 cursor-default">
+              <a
+                href="what-we-do.html?service=vehicle-patrol#services-provided"
+                class="text-gold-450 hover:text-white text-xs font-semibold underline underline-offset-4 transition-colors"
+              >
                 Read More
-              </button>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Card 3: Emergency Response -->
-        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
+        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col reveal-up" style="transition-delay: 160ms;">
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46 0L3.34 16c-.77 1.33.19 3 1.73 3z" />
@@ -519,15 +871,18 @@
             </div>
 
             <div class="mt-6 pt-2 text-center">
-              <button type="button" class="text-gold-450 text-xs font-semibold underline underline-offset-4 cursor-default">
+              <a
+                href="what-we-do.html?service=emergency-response#services-provided"
+                class="text-gold-450 hover:text-white text-xs font-semibold underline underline-offset-4 transition-colors"
+              >
                 Read More
-              </button>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Card 4: Executive Protection -->
-        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col">
+        <article class="service-card relative bg-navy-900 text-white rounded-2xl overflow-visible shadow-lg flex flex-col reveal-up" style="transition-delay: 240ms;">
           <div class="w-10 h-10 rounded-xl bg-navy-900 border border-white/15 shadow-md flex items-center justify-center absolute -top-3.5 -right-2.5 z-20 text-white">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -559,148 +914,290 @@
             </div>
 
             <div class="mt-6 pt-2 text-center">
-              <button type="button" class="text-gold-450 text-xs font-semibold underline underline-offset-4 cursor-default">
+              <a
+                href="what-we-do.html?service=executive-protection#services-provided"
+                class="text-gold-450 hover:text-white text-xs font-semibold underline underline-offset-4 transition-colors"
+              >
                 Read More
-              </button>
+              </a>
             </div>
           </div>
         </article>
 
       </div>
 
-      <!-- Temporary Non-Functional 'Other Services' Link Button -->
-      <div class="mt-10 text-center">
-        <button type="button" class="text-navy-900 font-bold text-sm underline underline-offset-4 cursor-default">
-          Other Services
-        </button>
+      <!-- Redirects to Services Provided section on What We Do page -->
+      <div class="mt-10 text-center reveal-up">
+        <a
+          href="what-we-do.html#services-provided"
+          class="inline-flex items-center gap-1.5 text-navy-900 hover:text-gold-600 font-bold text-sm underline underline-offset-4 transition-colors"
+        >
+          <span>Other Services</span>
+        </a>
       </div>
     </section>
 
-    <!-- SECTION: SLIDESHOW DISPLAY -->
-    <section id="showcase-section" class="page-section max-w-4xl mx-auto px-5 sm:px-8 pt-6 pb-20 sm:pb-24">
-      <div class="relative rounded-xl overflow-hidden shadow-2xl bg-navy-950 border border-slate-300/80 aspect-[16/9]">
+    <!-- ===================================================================
+         SECTION C: LOCATIONS (INTERACTIVE PHILIPPINE MAP + UNIFIED DETAIL CARD)
+    ==================================================================== -->
+    <section id="locations-section" class="page-section max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-16">
+      <div class="reveal-up">
+        <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase">
+          OPERATIONAL FOOTPRINT
+        </h2>
+        <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
+        <p class="mt-3 text-xs sm:text-sm text-slate-600 font-medium max-w-xl">
+          Strategic deployment hubs and active client installations across Luzon and the Visayas. Select a highlighted region or pin to view local operations.
+        </p>
+      </div>
 
-        <!-- Slides Container -->
-        <div id="slidesContainer" class="w-full h-full relative">
-          <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-100">
-            <img
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=85"
-              alt="Industrial & Construction Site Security Operations"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent"></div>
-            <div class="absolute bottom-12 left-6 right-6 text-left">
-              <span class="inline-block bg-gold-450 text-navy-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded">
-                Field Operations
-              </span>
-              <h3 class="text-white font-bold text-base sm:text-xl mt-1.5">
-                24/7 Infrastructure &amp; Commercial Site Protection
-              </h3>
-            </div>
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+
+        <!-- Left Card: Dark Navy Radar Coverage Map + Quick-Select Pills -->
+        <div class="lg:col-span-5 bg-navy-radar-grid rounded-2xl p-5 sm:p-6 shadow-xl border border-navy-800 flex flex-col justify-between reveal-up">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-slate-400">
+              Coverage Map
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-gold-450">
+              <span class="w-2 h-2 rounded-full bg-gold-450 animate-pulse"></span>
+              4 Active Regions
+            </span>
           </div>
 
-          <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-            <img
-              src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1400&q=85"
-              alt="Security Command and Surveillance Operations Center"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent"></div>
-            <div class="absolute bottom-12 left-6 right-6 text-left">
-              <span class="inline-block bg-gold-450 text-navy-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded">
-                Command &amp; Surveillance
-              </span>
-              <h3 class="text-white font-bold text-base sm:text-xl mt-1.5">
-                Centralized CCTV Monitoring &amp; Electronic Guard Tour Systems
-              </h3>
-            </div>
+          <!-- Interactive Vector Map of the Philippines (Highlighting Metro Manila/CALABARZON, Bicol, Boracay, Cebu) -->
+          <div class="my-4 flex items-center justify-center">
+            <svg viewBox="0 0 320 440" class="w-full max-w-[270px] h-auto select-none" role="img" aria-label="Interactive Map of Danao Security Operational Regions">
+              <!-- Subtle Radar Rings -->
+              <circle cx="165" cy="215" r="65" fill="none" stroke="rgba(239,196,100,0.12)" stroke-width="1" />
+              <circle cx="165" cy="215" r="120" fill="none" stroke="rgba(239,196,100,0.08)" stroke-width="1" />
+              <circle cx="165" cy="215" r="175" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+
+              <!-- Non-Highlighted Regions: Northern & Central Luzon -->
+              <path class="map-region" d="M118,28 L138,24 L152,42 L154,78 L149,112 L139,138 L112,135 L98,118 L93,95 L103,62 L112,42 Z" />
+              <!-- Bataan / Zambales Peninsula -->
+              <path class="map-region" d="M98,118 L112,135 L108,154 L99,156 L94,140 Z" />
+              <!-- Quezon / Southern Tagalog Coast -->
+              <path class="map-region" d="M139,138 L152,146 L160,168 L178,176 L172,188 L152,186 L138,176 Z" />
+              <!-- Mindoro -->
+              <path class="map-region" d="M112,190 L128,194 L138,216 L128,230 L114,218 L108,202 Z" />
+              <!-- Palawan -->
+              <path class="map-region" d="M78,256 L92,248 L96,262 L72,306 L52,338 L42,332 L62,292 Z" />
+              <!-- Panay (Mainland) -->
+              <path class="map-region" d="M148,236 L172,238 L176,264 L156,274 L144,258 Z" />
+              <!-- Negros -->
+              <path class="map-region" d="M178,266 L192,262 L194,298 L178,314 L168,298 Z" />
+              <!-- Samar & Leyte -->
+              <path class="map-region" d="M222,208 L248,212 L254,242 L238,250 L234,278 L220,276 L218,244 L222,226 Z" />
+              <!-- Bohol -->
+              <path class="map-region" d="M206,282 L222,282 L224,296 L208,298 Z" />
+              <!-- Mindanao -->
+              <path class="map-region" d="M214,316 L248,308 L272,324 L276,362 L262,394 L236,396 L218,382 L202,374 L174,382 L162,368 L184,352 L206,342 Z" />
+              <!-- Sulu Archipelago -->
+              <path class="map-region" d="M144,388 L156,386 L154,394 L142,396 Z M124,398 L136,396 L134,404 L122,406 Z" />
+
+              <!-- HIGHLIGHTED ZONE 1: Metro Manila / Laguna-Cavite Corridor -->
+              <g class="map-zone-group" data-location="metro-manila">
+                <path
+                  class="map-region highlight-zone"
+                  data-location="metro-manila"
+                  d="M112,135 L139,138 L138,176 L118,178 L108,166 L114,154 Z"
+                />
+                <circle class="pin-pulse" cx="123" cy="154" r="6" fill="#efc464" />
+                <circle cx="123" cy="154" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
+              </g>
+
+              <!-- HIGHLIGHTED ZONE 2: Bicol Region (CamSur, Albay, Sorsogon, Catanduanes, Masbate) -->
+              <g class="map-zone-group" data-location="bicol">
+                <!-- Mainland Bicol Peninsula -->
+                <path
+                  class="map-region highlight-zone"
+                  data-location="bicol"
+                  d="M178,172 L198,174 L212,188 L220,204 L206,210 L194,196 L176,188 Z"
+                />
+                <!-- Catanduanes -->
+                <path
+                  class="map-region highlight-zone"
+                  data-location="bicol"
+                  d="M222,172 L232,172 L234,188 L224,190 Z"
+                />
+                <!-- Masbate, Ticao & Burias -->
+                <path
+                  class="map-region highlight-zone"
+                  data-location="bicol"
+                  d="M174,196 L186,204 L184,210 L172,202 Z M188,210 L204,216 L210,234 L198,236 L192,224 L182,232 L178,224 Z"
+                />
+                <circle class="pin-pulse" cx="198" cy="192" r="6" fill="#efc464" />
+                <circle cx="198" cy="192" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
+              </g>
+
+              <!-- HIGHLIGHTED ZONE 3: Boracay (Off NW Tip of Panay) -->
+              <g class="map-zone-group" data-location="boracay">
+                <circle
+                  class="map-region highlight-zone active"
+                  data-location="boracay"
+                  cx="145"
+                  cy="231"
+                  r="5.5"
+                />
+                <circle class="pin-pulse" cx="145" cy="231" r="7" fill="#efc464" />
+                <circle cx="145" cy="231" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
+              </g>
+
+              <!-- HIGHLIGHTED ZONE 4: Cebu -->
+              <g class="map-zone-group" data-location="cebu">
+                <path
+                  class="map-region highlight-zone"
+                  data-location="cebu"
+                  d="M204,254 L212,256 L204,284 L194,306 L188,302 L196,276 Z"
+                />
+                <circle class="pin-pulse" cx="199" cy="280" r="6" fill="#efc464" />
+                <circle cx="199" cy="280" r="4.5" fill="#0b192c" stroke="#efc464" stroke-width="2" class="cursor-pointer" />
+              </g>
+            </svg>
           </div>
 
-          <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-            <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85"
-              alt="Corporate Tower & Commercial Asset Security"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent"></div>
-            <div class="absolute bottom-12 left-6 right-6 text-left">
-              <span class="inline-block bg-gold-450 text-navy-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded">
-                Corporate Security
-              </span>
-              <h3 class="text-white font-bold text-base sm:text-xl mt-1.5">
-                Access Control &amp; Executive Facility Safeguarding
-              </h3>
-            </div>
+          <!-- Quick-Select Location Pill Buttons -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2 pt-2">
+            <button
+              type="button"
+              data-loc-btn="metro-manila"
+              class="loc-pill px-3 py-2 rounded-full text-xs font-semibold border border-white/15 bg-navy-850 text-slate-200 hover:border-gold-450 hover:text-white transition-all cursor-pointer text-center"
+            >
+              Metro Manila
+            </button>
+            <button
+              type="button"
+              data-loc-btn="boracay"
+              class="loc-pill active px-3 py-2 rounded-full text-xs font-bold border border-gold-450 bg-gold-450 text-navy-950 shadow-md transition-all cursor-pointer text-center"
+            >
+              Boracay
+            </button>
+            <button
+              type="button"
+              data-loc-btn="cebu"
+              class="loc-pill px-3 py-2 rounded-full text-xs font-semibold border border-white/15 bg-navy-850 text-slate-200 hover:border-gold-450 hover:text-white transition-all cursor-pointer text-center"
+            >
+              Cebu
+            </button>
+            <button
+              type="button"
+              data-loc-btn="bicol"
+              class="loc-pill px-3 py-2 rounded-full text-xs font-semibold border border-white/15 bg-navy-850 text-slate-200 hover:border-gold-450 hover:text-white transition-all cursor-pointer text-center"
+            >
+              Bicol Region
+            </button>
           </div>
+        </div>
 
-          <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-            <img
-              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1400&q=85"
-              alt="Disciplined Personnel & Client Assistance"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent"></div>
-            <div class="absolute bottom-12 left-6 right-6 text-left">
-              <span class="inline-block bg-gold-450 text-navy-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded">
-                Trained Personnel
+        <!-- Right Card: Unified Dark Navy Location Detail Card -->
+        <div id="locationDetailCard" class="lg:col-span-7 bg-navy-900 rounded-2xl overflow-hidden shadow-xl border border-navy-800 flex flex-col justify-between reveal-up" style="transition-delay: 100ms;">
+          <div id="locationContent" class="location-fade flex-1 flex flex-col">
+            <!-- Top Landscape Photo + Badge -->
+            <div class="relative h-56 sm:h-64 w-full bg-navy-850 overflow-hidden">
+              <img
+                id="locImage"
+                src="assets/loc-boracay.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85';"
+                alt="Boracay Deployment Area"
+                class="w-full h-full object-cover object-center transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent"></div>
+              <span
+                id="locBadge"
+                class="absolute top-4 right-4 inline-flex items-center gap-1.5 bg-gold-450 text-navy-950 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>ACTIVE DEPLOYMENT HUB</span>
               </span>
-              <h3 class="text-white font-bold text-base sm:text-xl mt-1.5">
-                Rigorously Screened &amp; Certified Security Professionals
-              </h3>
+            </div>
+
+            <!-- Middle Title & Operational Description -->
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 id="locTitle" class="font-bebas text-white text-3xl sm:text-4xl tracking-wider uppercase">
+                  BORACAY
+                </h3>
+                <div class="w-12 h-0.5 bg-gold-450 mt-1 mb-4"></div>
+                <p id="locDescription" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  Providing 24/7 resort perimeter security, hospitality access control, and rapid emergency response for premier beachfront properties and commercial establishments across Boracay Island.
+                </p>
+              </div>
+
+              <!-- Bottom Micro-Proof Strip -->
+              <div class="mt-6 pt-5 border-t border-white/15 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                <div>
+                  <span class="block text-slate-400 uppercase tracking-wider text-[10px] font-semibold">Key Sectors</span>
+                  <span id="locSectors" class="text-white font-semibold mt-0.5 block">Hospitality, Resorts &amp; Commercial</span>
+                </div>
+                <div>
+                  <span class="block text-slate-400 uppercase tracking-wider text-[10px] font-semibold">Active Services</span>
+                  <span id="locServices" class="text-gold-450 font-semibold mt-0.5 block">Guarding, Patrol, VIP Escort</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Center Play/Pause Overlay Button -->
-        <button
-          id="slidePlayPauseBtn"
-          type="button"
-          aria-label="Toggle Slideshow Autoplay"
-          class="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full border-[3px] border-gold-450 bg-navy-950/50 hover:bg-navy-950/75 text-gold-450 flex items-center justify-center transition-transform hover:scale-105 cursor-pointer z-20"
-        >
-          <svg id="playIcon" class="w-8 h-8 ml-1 hidden fill-current" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-          <svg id="pauseIcon" class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-          </svg>
-        </button>
+      </div>
+    </section>
 
-        <!-- Bottom Carousel Controls (< . . . . >) -->
-        <div class="absolute bottom-3 inset-x-0 flex items-center justify-center gap-3 z-20">
-          <button
-            id="prevSlideBtn"
-            type="button"
-            aria-label="Previous Slide"
-            class="text-white hover:text-gold-450 text-sm font-bold px-2 py-0.5 transition-colors cursor-pointer"
-          >
-            &lt;
-          </button>
-
-          <div id="slideDots" class="flex items-center gap-2">
-            <button type="button" data-index="0" aria-label="Slide 1" class="slide-dot w-2 h-2 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
-            <button type="button" data-index="1" aria-label="Slide 2" class="slide-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer"></button>
-            <button type="button" data-index="2" aria-label="Slide 3" class="slide-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer"></button>
-            <button type="button" data-index="3" aria-label="Slide 4" class="slide-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer"></button>
+    <!-- ===================================================================
+         SECTION D: ABOUT US (ANCHOR TARGET FOR HEADER 'ABOUT US' LINK)
+    ==================================================================== -->
+    <section id="about-us" class="page-section scroll-mt-20 max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-20 sm:pb-24">
+      <div class="bg-white/90 backdrop-blur-sm border border-slate-200/90 rounded-2xl p-6 sm:p-10 shadow-sm reveal-up">
+        <!-- Header Row with Internal Quick Toggle -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-200">
+          <div>
+            <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase">
+              ABOUT US
+            </h2>
+            <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
           </div>
 
-          <button
-            id="nextSlideBtn"
-            type="button"
-            aria-label="Next Slide"
-            class="text-white hover:text-gold-450 text-sm font-bold px-2 py-0.5 transition-colors cursor-pointer"
-          >
-            &gt;
-          </button>
+          <div class="flex items-center gap-5 text-xs font-bold tracking-wider uppercase">
+            <button
+              type="button"
+              id="tabAboutBtn"
+              class="about-tab-btn text-navy-900 border-b-2 border-gold-500 pb-1 cursor-pointer"
+            >
+              ABOUT US
+            </button>
+            <a
+              href="#locations-section"
+              class="text-slate-500 hover:text-navy-900 pb-1 transition-colors"
+            >
+              LOCATIONS
+            </a>
+          </div>
         </div>
 
+        <!-- Company Narrative -->
+        <div class="mt-6 space-y-4">
+          <p class="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-normal">
+            Registered with the SEC on September 12, 2024 (<strong class="text-navy-900 font-semibold">SEC Reg. No. 2024090168354-26</strong>), Danao Security Services Inc. exists to protect people, property, assets, and operations through reliable, responsive, and compliant security solutions. We pair personal, accessible service with modern security methods and digital reporting tools to elevate industry standards across the Philippines—guided by our vision to become one of the country’s leading and most trusted security providers and our core values of <strong class="text-navy-900 font-semibold">Client Commitment, Integrity, Professionalism, Reliability, Excellence, and Innovation</strong>.
+          </p>
+
+          <!-- Core Values Pill Strip -->
+          <div class="pt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-navy-900 text-gold-450 text-[11px] font-semibold tracking-wide">Client Commitment</span>
+            <span class="px-3 py-1 rounded-full bg-navy-900 text-white text-[11px] font-semibold tracking-wide">Integrity</span>
+            <span class="px-3 py-1 rounded-full bg-navy-900 text-white text-[11px] font-semibold tracking-wide">Professionalism</span>
+            <span class="px-3 py-1 rounded-full bg-navy-900 text-white text-[11px] font-semibold tracking-wide">Reliability</span>
+            <span class="px-3 py-1 rounded-full bg-navy-900 text-white text-[11px] font-semibold tracking-wide">Excellence</span>
+            <span class="px-3 py-1 rounded-full bg-navy-900 text-gold-450 text-[11px] font-semibold tracking-wide">Innovation</span>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <!-- =====================================================================
-       5. FOOTER (DEEP NAVY WITH LOGO, CONTACTS, LEGAL)
+       4. FOOTER (DEEP NAVY WITH LOGO, CONTACTS, LEGAL)
   ====================================================================== -->
   <footer id="footer-section" class="page-section bg-navy-900 border-t border-white/10 text-slate-200">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-12 sm:py-14">
@@ -771,7 +1268,7 @@
   </footer>
 
   <!-- =====================================================================
-       6. FLOATING ARROW CIRCLE BUTTON (NEXT SECTION / BACK TO TOP)
+       5. FLOATING ARROW CIRCLE BUTTON (NEXT SECTION / BACK TO TOP)
   ====================================================================== -->
   <button
     id="sectionCycleBtn"
@@ -786,10 +1283,13 @@
   </button>
 
   <!-- =====================================================================
-       7. JAVASCRIPT INTERACTIVITY
+       6. JAVASCRIPT INTERACTIVITY & STELSEN-STYLE ANIMATIONS
   ====================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      /* -------------------------------------------------------------------
+         1. Header Scroll & Mega-Menu / Dropdown Controls
+      -------------------------------------------------------------------- */
       const mainHeader = document.getElementById('mainHeader');
       const navItems = document.querySelectorAll('.nav-item');
       const navButtons = document.querySelectorAll('.nav-btn');
@@ -797,11 +1297,11 @@
       function updateHeaderOnScroll() {
         if (!mainHeader) return;
         if (window.scrollY > 30) {
-          mainHeader.classList.remove('bg-navy-950/75', 'backdrop-blur-sm');
-          mainHeader.classList.add('bg-navy-900/95', 'backdrop-blur-md', 'shadow-md');
+          mainHeader.classList.remove('bg-navy-950/80');
+          mainHeader.classList.add('bg-navy-950/95', 'shadow-lg');
         } else {
-          mainHeader.classList.add('bg-navy-950/75', 'backdrop-blur-sm');
-          mainHeader.classList.remove('bg-navy-900/95', 'backdrop-blur-md', 'shadow-md');
+          mainHeader.classList.add('bg-navy-950/80');
+          mainHeader.classList.remove('bg-navy-950/95', 'shadow-lg');
         }
       }
 
@@ -811,15 +1311,16 @@
       function closeAllDropdowns() {
         navItems.forEach((item) => {
           const panel = item.querySelector('.dropdown-panel');
-          const btn = item.querySelector('.nav-btn');
+          const btn = item.querySelector('button.nav-btn');
           if (panel) panel.classList.remove('open');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
       }
 
       navItems.forEach((item) => {
-        const btn = item.querySelector('.nav-btn');
+        const btn = item.querySelector('button.nav-btn');
         const panel = item.querySelector('.dropdown-panel');
+        if (!btn || !panel) return;
 
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -835,23 +1336,32 @@
             btn.setAttribute('aria-expanded', 'true');
           }
         });
+
+        panel.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
       });
 
       document.addEventListener('click', () => {
         closeAllDropdowns();
       });
 
-      document.querySelectorAll('.dropdown-scroll-link').forEach((link) => {
-        link.addEventListener('click', () => {
-          closeAllDropdowns();
-        });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeAllDropdowns();
       });
 
+      /* Mobile Navigation Drawer */
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
 
       mobileMenuBtn.addEventListener('click', () => {
         mobileDrawer.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
       });
 
       document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
@@ -863,6 +1373,219 @@
         });
       });
 
+      /* -------------------------------------------------------------------
+         2. Hero "Latest From Us" Carousel
+      -------------------------------------------------------------------- */
+      const heroSlides = document.querySelectorAll('.hero-slide');
+      const heroDots = document.querySelectorAll('.hero-dot');
+      const heroPrevBtn = document.getElementById('heroPrevBtn');
+      const heroNextBtn = document.getElementById('heroNextBtn');
+      let heroIndex = 0;
+
+      function showHeroSlide(idx) {
+        heroIndex = (idx + heroSlides.length) % heroSlides.length;
+        heroSlides.forEach((slide, i) => {
+          if (i === heroIndex) {
+            slide.classList.remove('opacity-0', 'pointer-events-none');
+            slide.classList.add('opacity-100');
+          } else {
+            slide.classList.add('opacity-0', 'pointer-events-none');
+            slide.classList.remove('opacity-100');
+          }
+        });
+        heroDots.forEach((dot, i) => {
+          if (i === heroIndex) {
+            dot.classList.remove('bg-white/40');
+            dot.classList.add('bg-gold-450', 'scale-125');
+          } else {
+            dot.classList.add('bg-white/40');
+            dot.classList.remove('bg-gold-450', 'scale-125');
+          }
+        });
+      }
+
+      let heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), 4500);
+
+      function resetHeroTimer() {
+        clearInterval(heroTimer);
+        heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), 4500);
+      }
+
+      heroPrevBtn.addEventListener('click', () => {
+        showHeroSlide(heroIndex - 1);
+        resetHeroTimer();
+      });
+
+      heroNextBtn.addEventListener('click', () => {
+        showHeroSlide(heroIndex + 1);
+        resetHeroTimer();
+      });
+
+      heroDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          showHeroSlide(parseInt(dot.getAttribute('data-idx'), 10));
+          resetHeroTimer();
+        });
+      });
+
+      /* -------------------------------------------------------------------
+         3. Interactive Locations Map & Unified Detail Card
+      -------------------------------------------------------------------- */
+      const locationData = {
+        'metro-manila': {
+          title: 'METRO MANILA & CALABARZON',
+          badge: 'REGIONAL COMMAND HUB',
+          description: 'Delivering corporate tower access control, residential estate guarding, roving mobile patrols, and executive protection details across Metro Manila, Cavite, and Laguna.',
+          sectors: 'Corporate Towers, Estates & Industrial Parks',
+          services: 'Armed Guarding, Vehicle Patrol, VIP Escort',
+          image: 'assets/loc-metro-manila.jpg',
+          fallback: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85'
+        },
+        'boracay': {
+          title: 'BORACAY',
+          badge: 'ACTIVE DEPLOYMENT HUB',
+          description: 'Providing 24/7 resort perimeter security, hospitality access control, and rapid emergency response for premier beachfront properties and commercial establishments across Boracay Island.',
+          sectors: 'Hospitality, Resorts & Commercial',
+          services: 'Guarding, Patrol, VIP Escort',
+          image: 'assets/loc-boracay.jpg',
+          fallback: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85'
+        },
+        'cebu': {
+          title: 'CEBU',
+          badge: 'VISAYAS OPERATIONS HUB',
+          description: 'Supporting aviation logistics, BPO centers, and high-rise commercial developments with disciplined security personnel, CCTV surveillance operations, and rapid response units.',
+          sectors: 'Aviation Support, BPO & High-Rise Commercial',
+          services: 'Armed & Unarmed Security, SOC Monitoring',
+          image: 'assets/loc-cebu.jpg',
+          fallback: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=85'
+        },
+        'bicol': {
+          title: 'BICOL REGION',
+          badge: 'PROVINCIAL DEPLOYMENT NETWORK',
+          description: 'Safeguarding energy infrastructure, industrial facilities, and commercial centers across Camarines Sur, Albay, Sorsogon, Catanduanes, and Masbate with 24/7 site vigilance.',
+          sectors: 'Energy Infrastructure, Industrial & Retail',
+          services: 'Perimeter Security, Emergency Response, Patrol',
+          image: 'assets/loc-bicol.jpg',
+          fallback: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85'
+        }
+      };
+
+      const locPills = document.querySelectorAll('.loc-pill');
+      const mapZoneGroups = document.querySelectorAll('.map-zone-group');
+      const mapRegions = document.querySelectorAll('.map-region.highlight-zone');
+      const locationContent = document.getElementById('locationContent');
+      const locTitle = document.getElementById('locTitle');
+      const locBadge = document.getElementById('locBadge').querySelector('span');
+      const locDescription = document.getElementById('locDescription');
+      const locSectors = document.getElementById('locSectors');
+      const locServices = document.getElementById('locServices');
+      const locImage = document.getElementById('locImage');
+
+      function selectLocation(key) {
+        const data = locationData[key];
+        if (!data) return;
+
+        // Update pill states
+        locPills.forEach((pill) => {
+          const isMatch = pill.getAttribute('data-loc-btn') === key;
+          if (isMatch) {
+            pill.classList.add('active', 'bg-gold-450', 'text-navy-950', 'border-gold-450', 'font-bold', 'shadow-md');
+            pill.classList.remove('bg-navy-850', 'text-slate-200', 'border-white/15', 'font-semibold');
+          } else {
+            pill.classList.remove('active', 'bg-gold-450', 'text-navy-950', 'border-gold-450', 'font-bold', 'shadow-md');
+            pill.classList.add('bg-navy-850', 'text-slate-200', 'border-white/15', 'font-semibold');
+          }
+        });
+
+        // Update SVG map regions
+        mapRegions.forEach((region) => {
+          if (region.getAttribute('data-location') === key) {
+            region.classList.add('active');
+          } else {
+            region.classList.remove('active');
+          }
+        });
+
+        // Smooth crossfade on detail card
+        locationContent.classList.add('switching');
+        setTimeout(() => {
+          locTitle.textContent = data.title;
+          locBadge.textContent = data.badge;
+          locDescription.textContent = data.description;
+          locSectors.textContent = data.sectors;
+          locServices.textContent = data.services;
+          locImage.onerror = function () {
+            this.onerror = null;
+            this.src = data.fallback;
+          };
+          locImage.src = data.image;
+          locImage.alt = data.title + ' Deployment Area';
+          locationContent.classList.remove('switching');
+        }, 160);
+      }
+
+      locPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          selectLocation(pill.getAttribute('data-loc-btn'));
+        });
+      });
+
+      mapZoneGroups.forEach((group) => {
+        group.addEventListener('click', () => {
+          selectLocation(group.getAttribute('data-location'));
+        });
+      });
+
+      /* -------------------------------------------------------------------
+         4. Stelsen-Inspired Scroll Reveal & Metric Counter Animation
+      -------------------------------------------------------------------- */
+      const revealEls = document.querySelectorAll('.reveal-up');
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+
+      const counters = document.querySelectorAll('.stat-counter');
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const duration = 1200;
+            const startTime = performance.now();
+
+            function tick(now) {
+              const progress = Math.min((now - startTime) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(eased * target);
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                el.textContent = target;
+              }
+            }
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(el);
+          });
+        },
+        { threshold: 0.4 }
+      );
+
+      counters.forEach((c) => counterObserver.observe(c));
+
+      /* -------------------------------------------------------------------
+         5. Floating Next-Section / Back-to-Top Button
+      -------------------------------------------------------------------- */
       const cycleBtn = document.getElementById('sectionCycleBtn');
       const cycleIcon = document.getElementById('cycleArrowIcon');
       const sections = Array.from(document.querySelectorAll('.page-section'));
@@ -894,96 +1617,12 @@
 
         const headerOffset = 76;
         const currentScroll = window.scrollY + headerOffset + 15;
-
         const nextSection = sections.find((sec) => sec.offsetTop > currentScroll);
 
         if (nextSection) {
-          const targetY = nextSection.offsetTop - headerOffset;
-          window.scrollTo({ top: targetY, behavior: 'smooth' });
+          window.scrollTo({ top: nextSection.offsetTop - headerOffset, behavior: 'smooth' });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-
-      const slides = document.querySelectorAll('.slide-item');
-      const dots = document.querySelectorAll('.slide-dot');
-      const prevSlideBtn = document.getElementById('prevSlideBtn');
-      const nextSlideBtn = document.getElementById('nextSlideBtn');
-      const slidePlayPauseBtn = document.getElementById('slidePlayPauseBtn');
-      const playIcon = document.getElementById('playIcon');
-      const pauseIcon = document.getElementById('pauseIcon');
-
-      let currentSlide = 0;
-      let isPlaying = true;
-      let slideInterval = setInterval(nextSlide, 4500);
-
-      function showSlide(index) {
-        currentSlide = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, idx) => {
-          if (idx === currentSlide) {
-            slide.classList.remove('opacity-0', 'pointer-events-none');
-            slide.classList.add('opacity-100');
-          } else {
-            slide.classList.add('opacity-0', 'pointer-events-none');
-            slide.classList.remove('opacity-100');
-          }
-        });
-
-        dots.forEach((dot, idx) => {
-          if (idx === currentSlide) {
-            dot.classList.remove('bg-white/50');
-            dot.classList.add('bg-gold-450', 'scale-125');
-          } else {
-            dot.classList.add('bg-white/50');
-            dot.classList.remove('bg-gold-450', 'scale-125');
-          }
-        });
-      }
-
-      function nextSlide() {
-        showSlide(currentSlide + 1);
-      }
-
-      function prevSlide() {
-        showSlide(currentSlide - 1);
-      }
-
-      function resetTimer() {
-        if (isPlaying) {
-          clearInterval(slideInterval);
-          slideInterval = setInterval(nextSlide, 4500);
-        }
-      }
-
-      prevSlideBtn.addEventListener('click', () => {
-        prevSlide();
-        resetTimer();
-      });
-
-      nextSlideBtn.addEventListener('click', () => {
-        nextSlide();
-        resetTimer();
-      });
-
-      dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-          const idx = parseInt(dot.getAttribute('data-index'), 10);
-          showSlide(idx);
-          resetTimer();
-        });
-      });
-
-      slidePlayPauseBtn.addEventListener('click', () => {
-        isPlaying = !isPlaying;
-        if (isPlaying) {
-          playIcon.classList.add('hidden');
-          pauseIcon.classList.remove('hidden');
-          slideInterval = setInterval(nextSlide, 4500);
-        } else {
-          pauseIcon.classList.add('hidden');
-          playIcon.classList.remove('hidden');
-          clearInterval(slideInterval);
         }
       });
     });
