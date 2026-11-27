@@ -1306,6 +1306,7 @@
         });
         if (whatWeDoMegaMenu) whatWeDoMegaMenu.classList.remove('open');
         if (whatWeDoBtn) whatWeDoBtn.setAttribute('aria-expanded', 'false');
+        if (mobileDrawer) mobileDrawer.classList.add('hidden');
       }
 
       if (whatWeDoBtn && whatWeDoMegaMenu) {
@@ -1353,35 +1354,40 @@
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileDrawer = document.getElementById('mobileDrawer');
 
-function closeMobileDrawer() {
-  mobileDrawer.classList.add('hidden');
-  mobileDrawer.classList.remove('open');
-}
-
-mobileMenuBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const willOpen = mobileDrawer.classList.contains('hidden');
-  closeAllDropdowns();
-  if (willOpen) {
-    mobileDrawer.classList.remove('hidden');
-    mobileDrawer.classList.add('open');
-  } else {
-    closeMobileDrawer();
-  }
-});
-
-document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-  link.addEventListener('click', closeMobileDrawer);
-});
-
-document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
-  accBtn.addEventListener('click', () => {
-    const content = accBtn.nextElementSibling;
-    const symbol = accBtn.querySelector('span:last-child');
-    content.classList.toggle('hidden');
-    symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
+if (mobileMenuBtn && mobileDrawer) {
+  mobileMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isHidden = mobileDrawer.classList.contains('hidden');
+    closeAllDropdowns();
+    if (isHidden) {
+      mobileDrawer.classList.remove('hidden');
+    } else {
+      mobileDrawer.classList.add('hidden');
+    }
   });
-});
+
+  mobileDrawer.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileDrawer.classList.add('hidden');
+    });
+  });
+
+  document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
+    accBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const content = accBtn.nextElementSibling;
+      const symbol = accBtn.querySelector('span:last-child');
+      content.classList.toggle('hidden');
+      if (symbol) {
+        symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
+      }
+    });
+  });
+}
 
       /* -------------------------------------------------------------------
          2A. "What we offer" Mini Slideshow
