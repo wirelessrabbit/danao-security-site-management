@@ -565,7 +565,7 @@
 
                   <!-- 7. Guard Force Management -->
                   <a href="whatwedo.html?service=guard-force-management#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/guardenforcment.webp" alt="Guard Force Management" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                    <img src="assets/guardenforcement.webp" alt="Guard Force Management" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
                     <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Guard Force Management</span>
                   </a>
@@ -634,10 +634,10 @@
               </div>
 
               <div class="relative rounded-xl overflow-hidden shadow-2xl bg-navy-950 border border-white/15">
-                <div id="heroSlidesContainer" class="relative h-48 sm:h-56 w-full">
+                <div id="heroSlidesContainer" class="relative h-52 sm:h-60 w-full">
 
                   <!-- Slide 1: Autoplaying YouTube Video -->
-                  <div class="hero-slide relative w-full aspect-video overflow-hidden transition-opacity duration-500 opacity-100">
+                  <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-500 opacity-100">
                     <iframe
                       class="w-full h-full"
                       src="https://www.youtube.com/embed/UO3rkjJa-Ew?autoplay=1&mute=1&loop=1&playlist=UO3rkjJa-Ew&controls=1&rel=0&playsinline=1"
@@ -649,7 +649,7 @@
                   </div>
 
                   <!-- Slide 2: Coming Soon -->
-                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+                  <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 pointer-events-none">
                     <img
                       src="assets/comingsoon.png"
                       alt="Coming Soon"
@@ -1054,7 +1054,7 @@
                 data-location="south-luzon"
                 aria-label="South Luzon"
                 title="South Luzon"
-                style="top: 38%; left: 42%;"
+                style="top: 34%; left: 42%;"
                 class="map-pin"
               >
                 <span class="pin-ring"></span>
@@ -1067,7 +1067,7 @@
                 data-location="bicol"
                 aria-label="Bicol Region"
                 title="Bicol Region"
-                style="top: 47%; left: 62%;"
+                style="top: 41%; left: 68%;"
                 class="map-pin"
               >
                 <span class="pin-ring"></span>
@@ -1080,7 +1080,7 @@
                 data-location="boracay"
                 aria-label="Boracay"
                 title="Boracay"
-                style="top: 56%; left: 48%;"
+                style="top: 49%; left: 53%;"
                 class="map-pin active"
               >
                 <span class="pin-ring"></span>
@@ -1093,7 +1093,7 @@
                 data-location="cebu"
                 aria-label="Cebu"
                 title="Cebu"
-                style="top: 64%; left: 61%;"
+                style="top: 61%; left: 71%;"
                 class="map-pin"
               >
                 <span class="pin-ring"></span>
@@ -1460,7 +1460,6 @@
           }
         });
 
-        // Keep the video slide active without auto-advancing away from it
         clearInterval(heroTimer);
         if (heroIndex !== 0) {
           heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), 5000);
