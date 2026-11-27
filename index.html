@@ -658,31 +658,29 @@
       </div>
     </div>
 
-    <!-- Bottom 3-Column Metrics Bar with Animated Counters -->
-    <div class="bg-navy-850 border-t border-white/10 py-8 sm:py-9 px-4">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/20 text-center">
-        <div class="py-3 sm:py-1 px-4 reveal-up">
-          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">
-            <span class="stat-counter" data-target="50">50</span>+
-          </p>
-          <p class="text-slate-300 text-xs sm:text-sm mt-1">Years of Collective Experience</p>
-        </div>
-        <div class="py-3 sm:py-1 px-4 reveal-up" style="transition-delay: 80ms;">
-          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">
-            <span class="stat-counter" data-target="150">150</span>+
-          </p>
-          <p class="text-slate-300 text-xs sm:text-sm mt-1">Sites Protected</p>
-        </div>
-        <div class="py-3 sm:py-1 px-4 reveal-up" style="transition-delay: 160ms;">
-          <p class="text-white font-bold text-xl sm:text-2xl tracking-tight">
-            <span class="stat-counter" data-target="2500">2500</span>+
-          </p>
-          <p class="text-slate-300 text-xs sm:text-sm mt-1">International Clients Served</p>
-        </div>
-      </div>
+    <!-- Bottom 3-Column Metrics Bar with Animated Counters (Horizontal Row on All Screens) -->
+<div class="bg-navy-850 border-t border-white/10 py-6 sm:py-9 px-2 sm:px-4">
+  <div class="max-w-5xl mx-auto grid grid-cols-3 divide-x divide-white/20 text-center">
+    <div class="py-1 px-2 sm:px-4 reveal-up">
+      <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
+        <span class="stat-counter" data-target="50">50</span>+
+      </p>
+      <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">Years of Collective Experience</p>
     </div>
-  </section>
-
+    <div class="py-1 px-2 sm:px-4 reveal-up" style="transition-delay: 80ms;">
+      <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
+        <span class="stat-counter" data-target="150">150</span>+
+      </p>
+      <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">Sites Protected</p>
+    </div>
+    <div class="py-1 px-2 sm:px-4 reveal-up" style="transition-delay: 160ms;">
+      <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
+        <span class="stat-counter" data-target="2500">2500</span>+
+      </p>
+      <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">International Clients Served</p>
+    </div>
+  </div>
+</div>
   <!-- =====================================================================
        3. MAIN LIGHT CONTENT: CLIENTS, OUR SERVICES, LOCATIONS & ABOUT US
   ====================================================================== -->
@@ -1376,27 +1374,38 @@
       });
 
       /* Mobile Navigation Drawer */
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileDrawer = document.getElementById('mobileDrawer');
 
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileDrawer.classList.toggle('hidden');
-      });
+function closeMobileDrawer() {
+  mobileDrawer.classList.add('hidden');
+  mobileDrawer.classList.remove('open');
+}
 
-      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileDrawer.classList.add('hidden');
-        });
-      });
+mobileMenuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const willOpen = mobileDrawer.classList.contains('hidden');
+  closeAllDropdowns();
+  if (willOpen) {
+    mobileDrawer.classList.remove('hidden');
+    mobileDrawer.classList.add('open');
+  } else {
+    closeMobileDrawer();
+  }
+});
 
-      document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
-        accBtn.addEventListener('click', () => {
-          const content = accBtn.nextElementSibling;
-          const symbol = accBtn.querySelector('span:last-child');
-          content.classList.toggle('hidden');
-          symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
-        });
-      });
+document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+  link.addEventListener('click', closeMobileDrawer);
+});
+
+document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
+  accBtn.addEventListener('click', () => {
+    const content = accBtn.nextElementSibling;
+    const symbol = accBtn.querySelector('span:last-child');
+    content.classList.toggle('hidden');
+    symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
+  });
+});
 
       /* -------------------------------------------------------------------
          2A. "What we offer" Mini Slideshow
