@@ -46,7 +46,7 @@
       background-color: #10233d;
       color: #ffffff;
       overflow-x: hidden;
-      zoom: 1.2;
+      zoom: 0.9;
     }
 
     .font-bebas {
@@ -192,7 +192,7 @@
   <!-- =====================================================================
        1. FIXED COMPACT HEADER WITH VISUAL MEGA-MENU
   ====================================================================== -->
- <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <!-- Under Construction Notice Bar -->
     <div class="bg-gold-500 text-navy-950 text-[11px] sm:text-xs font-semibold tracking-wide text-center py-1.5 px-4 border-b border-navy-950/15">
       <span class="inline-flex items-center justify-center gap-2">
@@ -310,55 +310,86 @@
 
         </nav>
 
-       <!-- Mobile Hamburger Button -->
-  <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
-    <div class="w-5 flex flex-col justify-between gap-[4px]">
-      <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
-      <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
-      <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
-    </div>
-  </button>
-</div>
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
+          <div class="w-5 flex flex-col justify-between gap-[4px]">
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+          </div>
+        </button>
+      </div>
 
-<!-- Visual Mega-Menu Panel (Mobile + Desktop) -->
-<div id="whatWeDoMegaMenu" class="dropdown-panel hidden absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.75)] max-h-[78vh] overflow-y-auto z-50">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-6 sm:py-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      <!-- Full-Width Visual Mega-Menu Panel (Outside Flex Row + Solid #0b192c Background) -->
+      <div id="whatWeDoMegaMenu" class="dropdown-panel hidden lg:block absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.75)] z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
+          <div class="grid grid-cols-4 gap-5">
 
-      <!-- Tile 1: Armed & Unarmed Security -->
-      <a href="whatwedo.html?service=armed-unarmed#services-provided" class="group relative h-40 sm:h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-        <img
-          src="assets/securitycard.jpg"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
-          alt="Armed & Unarmed Security"
-          class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-        <div class="absolute bottom-4 left-4 right-4">
-          <span class="font-bebas text-white group-hover:text-gold-450 text-xl sm:text-2xl leading-tight tracking-wide uppercase block transition-colors">
-            ARMED &amp; UNARMED<br />SECURITY
-          </span>
-        </div>
-      </a>
+            <!-- Tile 1: Armed & Unarmed Security -->
+            <a href="whatwedo.html?service=armed-unarmed#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/securitycard.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
+                alt="Armed & Unarmed Security"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  ARMED &amp; UNARMED<br />SECURITY
+                </span>
+              </div>
+            </a>
 
-      <!-- Tile 2: Vehicle Patrol -->
-      <a href="whatwedo.html?service=vehicle-patrol#services-provided" class="group relative h-40 sm:h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-        <img
-          src="assets/patrolcarcard.jpeg"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
-          alt="Vehicle Patrol"
-          class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-        <div class="absolute bottom-4 left-4 right-4">
-          <span class="font-bebas text-white group-hover:text-gold-450 text-xl sm:text-2xl leading-tight tracking-wide uppercase block transition-colors">
-            VEHICLE PATROL
-          </span>
-        </div>
-      </a>
+            <!-- Tile 2: Vehicle Patrol -->
+            <a href="whatwedo.html?service=vehicle-patrol#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/patrolcarcard.jpeg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
+                alt="Vehicle Patrol"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  VEHICLE PATROL
+                </span>
+              </div>
+            </a>
 
-      <!-- Tile 3: Emergency Response -->
-      <a href="whatwedo.html?service=emergency-response#services-provided" class="group relative h-40 sm:h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+            <!-- Tile 3: Emergency Response -->
+            <a href="whatwedo.html?service=emergency-response#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/emergencyresponsecard.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';"
+                alt="Emergency Response"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  EMERGENCY RESPONSE
+                </span>
+              </div>
+            </a>
+
+            <!-- Tile 4: Executive Protection -->
+            <a href="whatwedo.html?service=executive-protection#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/execprotectioncard.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80';"
+                alt="Executive Protection"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  EXECUTIVE PROTECTION
+                </span>
+              </div>
+            </a>
+
+          </div>
 
           <!-- Bottom Mega-Menu Quick Links -->
           <div class="mt-6 pt-4 border-t border-white/15 flex items-center gap-8 text-xs font-semibold text-white">
@@ -469,120 +500,116 @@
               Providing trusted security and protection services to ensure the safety of our clients, their personnel, assets, and operations.
             </p>
 
-          <!-- "What we offer" Mini Slideshow (Links to whatwedo.html & individual services) -->
+            <!-- "What we offer" Mini Slideshow (Links to whatwedo.html & individual services) -->
             <div class="mt-8 max-w-[260px]">
               <a href="whatwedo.html" class="inline-block text-gold-450 text-xs font-bold underline underline-offset-4 hover:text-white transition-colors mb-2">
                 What we offer
               </a>
 
-              <div class="rounded-lg overflow-hidden bg-navy-950 border border-white/15 shadow-xl">
-                <div id="offerSlidesContainer" class="relative h-24 overflow-hidden">
+             <div class="rounded-lg overflow-hidden bg-navy-950 border border-white/15 shadow-xl">
+  <div id="offerSlidesContainer" class="relative h-24 overflow-hidden">
 
-                  <!-- 1. Armed & Unarmed Security -->
-                  <a href="whatwedo.html?service=armed-unarmed#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-100 block">
-                    <img src="assets/securitycard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=500&q=80';" alt="Armed & Unarmed Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Armed &amp; Unarmed Security</span>
-                  </a>
+    <!-- 1. Armed & Unarmed Security -->
+    <a href="whatwedo.html?service=armed-unarmed#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-100 block">
+      <img src="assets/securitycard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=500&q=80';" alt="Armed & Unarmed Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Armed &amp; Unarmed Security</span>
+    </a>
 
-                  <!-- 2. Vehicle Patrol -->
-                  <a href="whatwedo.html?service=vehicle-patrol#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/patrolcarcard.jpeg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=500&q=80';" alt="Vehicle Patrol" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Vehicle Patrol</span>
-                  </a>
+    <!-- 2. Vehicle Patrol -->
+    <a href="whatwedo.html?service=vehicle-patrol#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/patrolcarcard.jpeg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=500&q=80';" alt="Vehicle Patrol" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Vehicle Patrol</span>
+    </a>
 
-                  <!-- 3. Emergency Response -->
-                  <a href="whatwedo.html?service=emergency-response#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/emergencyresponsecard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=500&q=80';" alt="Emergency Response" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Emergency Response</span>
-                  </a>
+    <!-- 3. Emergency Response -->
+    <a href="whatwedo.html?service=emergency-response#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/emergencyresponsecard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=500&q=80';" alt="Emergency Response" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Emergency Response</span>
+    </a>
 
-                  <!-- 4. Executive Protection -->
-                  <a href="whatwedo.html?service=executive-protection#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/execprotectioncard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80';" alt="Executive Protection" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Executive Protection</span>
-                  </a>
+    <!-- 4. Executive Protection -->
+    <a href="whatwedo.html?service=executive-protection#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/execprotectioncard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80';" alt="Executive Protection" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Executive Protection</span>
+    </a>
 
-                  <!-- 5. Corporate Facility Security -->
-                  <a href="whatwedo.html?service=corporate-facility#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/corporatesecu.webp" alt="Corporate Facility Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Corporate Facility Security</span>
-                  </a>
+    <!-- 5. Corporate Facility Security -->
+    <a href="whatwedo.html?service=corporate-facility#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/corporatesecu.webp" alt="Corporate Facility Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Corporate Facility Security</span>
+    </a>
 
-                  <!-- 6. Industrial Security -->
-                  <a href="whatwedo.html?service=industrial-security#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/powerplant.jpg" alt="Industrial Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Industrial Security</span>
-                  </a>
+    <!-- 6. Industrial Security -->
+    <a href="whatwedo.html?service=industrial-security#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/powerplant.jpg" alt="Industrial Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Industrial Security</span>
+    </a>
 
-                  <!-- 7. Guard Force Management -->
-                  <a href="whatwedo.html?service=guard-force-management#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/guardenforcment.webp" alt="Guard Force Management" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Guard Force Management</span>
-                  </a>
+    <!-- 7. Guard Force Management -->
+    <a href="whatwedo.html?service=guard-force-management#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/guardenforcment.webp" alt="Guard Force Management" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Guard Force Management</span>
+    </a>
 
-                  <!-- 8. Travel Security -->
-                  <a href="whatwedo.html?service=travel-security#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/travelsecurity.jpg" alt="Travel Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Travel Security</span>
-                  </a>
+    <!-- 8. Travel Security -->
+    <a href="whatwedo.html?service=travel-security#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/travelsecurity.jpg" alt="Travel Security" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Travel Security</span>
+    </a>
 
-                  <!-- 9. Search and Rescue -->
-                  <a href="whatwedo.html?service=search-and-rescue#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/searchandrescue.jpg" alt="Search and Rescue" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Search and Rescue</span>
-                  </a>
+    <!-- 9. Search and Rescue -->
+    <a href="whatwedo.html?service=search-and-rescue#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/searchandrescue.jpg" alt="Search and Rescue" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Search and Rescue</span>
+    </a>
 
-                  <!-- 10. Off-Site Security Supervision & Monitoring -->
-                  <a href="whatwedo.html?service=offsite-supervision#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/supervision.jpg" alt="Off-Site Security Supervision & Monitoring" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Off-Site Security Supervision &amp; Monitoring</span>
-                  </a>
+    <!-- 10. Off-Site Security Supervision & Monitoring -->
+    <a href="whatwedo.html?service=offsite-supervision#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/supervision.jpg" alt="Off-Site Security Supervision & Monitoring" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Off-Site Security Supervision &amp; Monitoring</span>
+    </a>
 
-                  <!-- 11. Command Center Operation -->
-                  <a href="whatwedo.html?service=command-center#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/commandcenter.webp" alt="Command Center Operation" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Command Center Operation</span>
-                  </a>
+    <!-- 11. Command Center Operation -->
+    <a href="whatwedo.html?service=command-center#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/commandcenter.webp" alt="Command Center Operation" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Command Center Operation</span>
+    </a>
 
-                  <!-- 12. Security Inspection / Auditing -->
-                  <a href="whatwedo.html?service=security-inspection#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
-                    <img src="assets/inspection.webp" alt="Security Inspection / Auditing" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
-                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Security Inspection / Auditing</span>
-                  </a>
+    <!-- 12. Security Inspection / Auditing -->
+    <a href="whatwedo.html?service=security-inspection#services-provided" class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block">
+      <img src="assets/inspection.webp" alt="Security Inspection / Auditing" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+      <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">Security Inspection / Auditing</span>
+    </a>
 
-                </div>
+  </div>
 
-                <div class="py-1.5 px-2 flex items-center justify-center flex-wrap gap-1 bg-navy-950 border-t border-white/10" id="offerDots">
-                  <button type="button" data-offer-idx="0" aria-label="Armed & Unarmed Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="1" aria-label="Vehicle Patrol" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="2" aria-label="Emergency Response" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="3" aria-label="Executive Protection" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="4" aria-label="Corporate Facility Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="5" aria-label="Industrial Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="6" aria-label="Guard Force Management" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="7" aria-label="Travel Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="8" aria-label="Search and Rescue" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="9" aria-label="Off-Site Security Supervision & Monitoring" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="10" aria-label="Command Center Operation" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                  <button type="button" data-offer-idx="11" aria-label="Security Inspection / Auditing" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-  
+  <div class="py-1.5 px-2 flex items-center justify-center flex-wrap gap-1 bg-navy-950 border-t border-white/10" id="offerDots">
+    <button type="button" data-offer-idx="0" aria-label="Armed & Unarmed Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="1" aria-label="Vehicle Patrol" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="2" aria-label="Emergency Response" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="3" aria-label="Executive Protection" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="4" aria-label="Corporate Facility Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="5" aria-label="Industrial Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="6" aria-label="Guard Force Management" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="7" aria-label="Travel Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="8" aria-label="Search and Rescue" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="9" aria-label="Off-Site Security Supervision & Monitoring" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="10" aria-label="Command Center Operation" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+    <button type="button" data-offer-idx="11" aria-label="Security Inspection / Auditing" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+  </div>
+</div>
 
           <!-- Right Column: "Latest From Us" Showcase Carousel -->
           <div class="lg:col-span-6 reveal-up is-visible" style="transition-delay: 120ms;">
@@ -634,29 +661,31 @@
       </div>
     </div>
 
-    <!-- Bottom 3-Column Metrics Bar with Animated Counters (Horizontal Row on All Screens) -->
-<div class="bg-navy-850 border-t border-white/10 py-6 sm:py-9 px-2 sm:px-4">
-  <div class="max-w-5xl mx-auto grid grid-cols-3 divide-x divide-white/20 text-center">
-    <div class="py-1 px-2 sm:px-4 reveal-up">
-      <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
-        <span class="stat-counter" data-target="50">50</span>+
-      </p>
-      <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">Years of Collective Experience</p>
+    <!-- Bottom 3-Column Metrics Bar with Animated Counters -->
+    <div class="bg-navy-850 border-t border-white/10 py-6 sm:py-9 px-2 sm:px-4">
+      <div class="max-w-5xl mx-auto grid grid-cols-3 divide-x divide-white/20 text-center">
+        <div class="py-1 px-2 sm:px-4 reveal-up">
+          <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
+            <span class="stat-counter" data-target="50">50</span>+
+          </p>
+          <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">Years of Collective Experience</p>
+        </div>
+        <div class="py-1 px-2 sm:px-4 reveal-up" style="transition-delay: 80ms;">
+          <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
+            <span class="stat-counter" data-target="150">150</span>+
+          </p>
+          <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">Sites Protected</p>
+        </div>
+        <div class="py-1 px-2 sm:px-4 reveal-up" style="transition-delay: 160ms;">
+          <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
+            <span class="stat-counter" data-target="2500">2500</span>+
+          </p>
+          <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">International Clients Served</p>
+        </div>
+      </div>
     </div>
-    <div class="py-1 px-2 sm:px-4 reveal-up" style="transition-delay: 80ms;">
-      <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
-        <span class="stat-counter" data-target="150">150</span>+
-      </p>
-      <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">Sites Protected</p>
-    </div>
-    <div class="py-1 px-2 sm:px-4 reveal-up" style="transition-delay: 160ms;">
-      <p class="text-white font-bold text-base sm:text-2xl tracking-tight">
-        <span class="stat-counter" data-target="2500">2500</span>+
-      </p>
-      <p class="text-slate-300 text-[10px] sm:text-sm mt-1 leading-tight">International Clients Served</p>
-    </div>
-  </div>
-</div>
+  </section>
+
   <!-- =====================================================================
        3. MAIN LIGHT CONTENT: CLIENTS, OUR SERVICES, LOCATIONS & ABOUT US
   ====================================================================== -->
@@ -986,11 +1015,11 @@
         <div class="lg:col-span-5 bg-navy-radar-grid rounded-2xl p-5 sm:p-6 shadow-xl border border-navy-800 flex flex-col justify-between reveal-up">
           <div class="flex items-center justify-between">
             <span class="text-[11px] font-semibold uppercase tracking-widest text-slate-400">
-              Philippines
+              Coverage Map
             </span>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-gold-450">
               <span class="w-2 h-2 rounded-full bg-gold-450 animate-pulse"></span>
-              Locations
+              4 Active Regions
             </span>
           </div>
 
@@ -1306,7 +1335,6 @@
         });
         if (whatWeDoMegaMenu) whatWeDoMegaMenu.classList.remove('open');
         if (whatWeDoBtn) whatWeDoBtn.setAttribute('aria-expanded', 'false');
-        if (mobileDrawer) mobileDrawer.classList.add('hidden');
       }
 
       if (whatWeDoBtn && whatWeDoMegaMenu) {
@@ -1351,43 +1379,27 @@
       });
 
       /* Mobile Navigation Drawer */
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileDrawer = document.getElementById('mobileDrawer');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
 
-if (mobileMenuBtn && mobileDrawer) {
-  mobileMenuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isHidden = mobileDrawer.classList.contains('hidden');
-    closeAllDropdowns();
-    if (isHidden) {
-      mobileDrawer.classList.remove('hidden');
-    } else {
-      mobileDrawer.classList.add('hidden');
-    }
-  });
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
 
-  mobileDrawer.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
 
-  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      mobileDrawer.classList.add('hidden');
-    });
-  });
-
-  document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
-    accBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const content = accBtn.nextElementSibling;
-      const symbol = accBtn.querySelector('span:last-child');
-      content.classList.toggle('hidden');
-      if (symbol) {
-        symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
-      }
-    });
-  });
-}
+      document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
+        accBtn.addEventListener('click', () => {
+          const content = accBtn.nextElementSibling;
+          const symbol = accBtn.querySelector('span:last-child');
+          content.classList.toggle('hidden');
+          symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
+        });
+      });
 
       /* -------------------------------------------------------------------
          2A. "What we offer" Mini Slideshow
