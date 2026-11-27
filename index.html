@@ -193,7 +193,7 @@
        1. FIXED COMPACT HEADER WITH VISUAL MEGA-MENU
   ====================================================================== -->
   <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-    <header id="mainHeader" class="bg-navy-950/80 backdrop-blur-md border-b border-white/10 transition-all duration-300 relative">
+    <header id="mainHeader" class="bg-[#0b192c] border-b border-white/10 transition-all duration-300 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
 
         <!-- Left: Logo + Brand Name -->
@@ -208,137 +208,46 @@
           </span>
         </a>
 
-        <!-- Right: Desktop Navigation -->
-        <nav id="desktopNav" class="hidden lg:flex items-center gap-5 xl:gap-7 shrink-0">
+        <!-- Right: Desktop Navigation (Single Horizontal Row) -->
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
 
           <!-- HOME -->
           <a
             href="#hero-section"
-            class="nav-btn active font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors flex items-center whitespace-nowrap"
+            class="nav-btn active font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors whitespace-nowrap"
           >
             HOME
           </a>
 
-          <!-- ABOUT US (Smooth-scrolls to #about-us on Landing Page) -->
-          <div class="relative nav-item" data-section="about">
-            <a
-              href="#about-us"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
-            >
-              <span>ABOUT US</span>
-            </a>
-          </div>
+          <!-- ABOUT US -->
+          <a
+            href="#about-us"
+            class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors whitespace-nowrap"
+          >
+            ABOUT US
+          </a>
 
-          <!-- WHAT WE DO (Visual Photo-Tile Mega-Menu) -->
-          <div class="nav-item" data-section="what-we-do">
-            <button
-              type="button"
-              id="whatWeDoBtn"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
-              aria-expanded="false"
-            >
-              <span>WHAT WE DO</span>
-            </button>
-
-            <!-- Full-Width Visual Mega-Menu Panel (Solid Dark Navy Background) -->
-            <div id="whatWeDoMegaMenu" class="dropdown-panel absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.65)] z-50">
-              <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
-                <div class="grid grid-cols-4 gap-5">
-
-                  <!-- Tile 1: Armed & Unarmed Security -->
-                  <a href="what-we-do.html?service=armed-unarmed#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-                    <img
-                      src="assets/securitycard.jpg"
-                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
-                      alt="Armed & Unarmed Security"
-                      class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                        ARMED &amp; UNARMED<br />SECURITY
-                      </span>
-                    </div>
-                  </a>
-
-                  <!-- Tile 2: Vehicle Patrol -->
-                  <a href="what-we-do.html?service=vehicle-patrol#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-                    <img
-                      src="assets/patrolcarcard.jpeg"
-                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
-                      alt="Vehicle Patrol"
-                      class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                        VEHICLE PATROL
-                      </span>
-                    </div>
-                  </a>
-
-                  <!-- Tile 3: Emergency Response -->
-                  <a href="what-we-do.html?service=emergency-response#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-                    <img
-                      src="assets/emergencyresponsecard.jpg"
-                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';"
-                      alt="Emergency Response"
-                      class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                        EMERGENCY RESPONSE
-                      </span>
-                    </div>
-                  </a>
-
-                  <!-- Tile 4: Executive Protection -->
-                  <a href="what-we-do.html?service=executive-protection#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
-                    <img
-                      src="assets/execprotectioncard.jpg"
-                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80';"
-                      alt="Executive Protection"
-                      class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                      <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
-                        EXECUTIVE PROTECTION
-                      </span>
-                    </div>
-                  </a>
-
-                </div>
-
-                <!-- Bottom Mega-Menu Quick Links -->
-                <div class="mt-6 pt-4 border-t border-white/15 flex items-center gap-8 text-xs font-semibold text-white">
-                  <a href="what-we-do.html" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
-                    <span>What We Do overview</span>
-                    <span class="text-gold-450">&rarr;</span>
-                  </a>
-                  <a href="what-we-do.html#services-provided" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
-                    <span>All services</span>
-                    <span class="text-gold-450">&rarr;</span>
-                  </a>
-                  <a href="what-we-do.html#industries" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
-                    <span>Industries</span>
-                    <span class="text-gold-450">&rarr;</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <!-- WHAT WE DO (Triggers Full-Width Mega-Menu Below Header) -->
+          <button
+            type="button"
+            id="whatWeDoBtn"
+            data-mega-trigger="whatWeDoMegaMenu"
+            class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
+            aria-expanded="false"
+          >
+            WHAT WE DO
+          </button>
 
           <!-- SUSTAINABILITY -->
           <div class="relative nav-item" data-section="sustainability">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
               aria-expanded="false"
             >
-              <span>SUSTAINABILITY</span>
+              SUSTAINABILITY
             </button>
-            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-[#0b192c] border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="sustainability.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 SUSTAINABILITY
               </a>
@@ -352,12 +261,12 @@
           <div class="relative nav-item" data-section="career">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
               aria-expanded="false"
             >
-              <span>CAREER</span>
+              CAREER
             </button>
-            <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-[#0b192c] border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="career.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 CAREER
               </a>
@@ -374,12 +283,12 @@
           <div class="relative nav-item" data-section="contact">
             <button
               type="button"
-              class="nav-btn font-bebas text-white hover:text-gold-400 text-[15px] xl:text-[16px] tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-1 whitespace-nowrap"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
               aria-expanded="false"
             >
-              <span>CONTACT US</span>
+              CONTACT US
             </button>
-            <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-navy-900 border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+            <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-[#0b192c] border border-white/15 rounded-lg shadow-2xl py-2 z-50">
               <a href="contact-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
                 CONTACT US
               </a>
@@ -404,20 +313,107 @@
         </button>
       </div>
 
+      <!-- Full-Width Visual Mega-Menu Panel (Outside Flex Row + Solid #0b192c Background) -->
+      <div id="whatWeDoMegaMenu" class="dropdown-panel hidden lg:block absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.75)] z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
+          <div class="grid grid-cols-4 gap-5">
+
+            <!-- Tile 1: Armed & Unarmed Security -->
+            <a href="what-we-do.html?service=armed-unarmed#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/securitycard.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';"
+                alt="Armed & Unarmed Security"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  ARMED &amp; UNARMED<br />SECURITY
+                </span>
+              </div>
+            </a>
+
+            <!-- Tile 2: Vehicle Patrol -->
+            <a href="what-we-do.html?service=vehicle-patrol#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/patrolcarcard.jpeg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';"
+                alt="Vehicle Patrol"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  VEHICLE PATROL
+                </span>
+              </div>
+            </a>
+
+            <!-- Tile 3: Emergency Response -->
+            <a href="what-we-do.html?service=emergency-response#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/emergencyresponsecard.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';"
+                alt="Emergency Response"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  EMERGENCY RESPONSE
+                </span>
+              </div>
+            </a>
+
+            <!-- Tile 4: Executive Protection -->
+            <a href="what-we-do.html?service=executive-protection#services-provided" class="group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img
+                src="assets/execprotectioncard.jpg"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80';"
+                alt="Executive Protection"
+                class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  EXECUTIVE PROTECTION
+                </span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Bottom Mega-Menu Quick Links -->
+          <div class="mt-6 pt-4 border-t border-white/15 flex items-center gap-8 text-xs font-semibold text-white">
+            <a href="what-we-do.html" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+              <span>What We Do overview</span>
+              <span class="text-gold-450">&rarr;</span>
+            </a>
+            <a href="what-we-do.html#services-provided" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+              <span>All services</span>
+              <span class="text-gold-450">&rarr;</span>
+            </a>
+            <a href="what-we-do.html#industries" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+              <span>Industries</span>
+              <span class="text-gold-450">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Mobile Accordion Drawer -->
-      <div id="mobileDrawer" class="hidden lg:hidden bg-navy-900 border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
+      <div id="mobileDrawer" class="hidden lg:hidden bg-[#0b192c] border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
         <div class="border-b border-white/10 pb-2">
           <a href="#hero-section" class="mobile-nav-link block font-bebas text-gold-450 text-lg tracking-wider uppercase py-1">
             HOME
           </a>
         </div>
-
         <div class="border-b border-white/10 pb-2">
           <a href="#about-us" class="mobile-nav-link block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">
             ABOUT US
           </a>
         </div>
-
         <div class="border-b border-white/10 pb-2">
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>WHAT WE DO</span>
@@ -432,7 +428,6 @@
             <a href="what-we-do.html#services-provided" class="block text-gold-400/90 hover:text-white pt-1">All Services &rarr;</a>
           </div>
         </div>
-
         <div class="border-b border-white/10 pb-2">
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>SUSTAINABILITY</span>
@@ -443,7 +438,6 @@
             <a href="articles.html" class="block text-slate-300 hover:text-white uppercase">ARTICLES</a>
           </div>
         </div>
-
         <div class="border-b border-white/10 pb-2">
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>CAREER</span>
@@ -455,7 +449,6 @@
             <a href="careers-available.html" class="block text-slate-300 hover:text-white uppercase">CAREERS AVAILABLE</a>
           </div>
         </div>
-
         <div>
           <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-white text-lg tracking-wider uppercase py-1">
             <span>CONTACT US</span>
@@ -1289,23 +1282,10 @@
       /* -------------------------------------------------------------------
          1. Header Scroll & Mega-Menu / Dropdown Controls
       -------------------------------------------------------------------- */
-      const mainHeader = document.getElementById('mainHeader');
       const navItems = document.querySelectorAll('.nav-item');
       const navButtons = document.querySelectorAll('.nav-btn');
-
-      function updateHeaderOnScroll() {
-        if (!mainHeader) return;
-        if (window.scrollY > 30) {
-          mainHeader.classList.remove('bg-navy-950/80');
-          mainHeader.classList.add('bg-navy-950/95', 'shadow-lg');
-        } else {
-          mainHeader.classList.add('bg-navy-950/80');
-          mainHeader.classList.remove('bg-navy-950/95', 'shadow-lg');
-        }
-      }
-
-      window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
-      updateHeaderOnScroll();
+      const whatWeDoBtn = document.getElementById('whatWeDoBtn');
+      const whatWeDoMegaMenu = document.getElementById('whatWeDoMegaMenu');
 
       function closeAllDropdowns() {
         navItems.forEach((item) => {
@@ -1314,6 +1294,24 @@
           if (panel) panel.classList.remove('open');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
+        if (whatWeDoMegaMenu) whatWeDoMegaMenu.classList.remove('open');
+        if (whatWeDoBtn) whatWeDoBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      if (whatWeDoBtn && whatWeDoMegaMenu) {
+        whatWeDoBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = whatWeDoMegaMenu.classList.contains('open');
+          closeAllDropdowns();
+          navButtons.forEach((b) => b.classList.remove('active'));
+          whatWeDoBtn.classList.add('active');
+          if (!isOpen) {
+            whatWeDoMegaMenu.classList.add('open');
+            whatWeDoBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        whatWeDoMegaMenu.addEventListener('click', (e) => e.stopPropagation());
       }
 
       navItems.forEach((item) => {
@@ -1324,27 +1322,19 @@
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
           const isOpen = panel.classList.contains('open');
-
           closeAllDropdowns();
-
           navButtons.forEach((b) => b.classList.remove('active'));
           btn.classList.add('active');
-
           if (!isOpen) {
             panel.classList.add('open');
             btn.setAttribute('aria-expanded', 'true');
           }
         });
 
-        panel.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
+        panel.addEventListener('click', (e) => e.stopPropagation());
       });
 
-      document.addEventListener('click', () => {
-        closeAllDropdowns();
-      });
-
+      document.addEventListener('click', closeAllDropdowns);
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeAllDropdowns();
       });
