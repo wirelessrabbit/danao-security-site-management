@@ -482,7 +482,7 @@
       <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-24 sm:pt-28 pb-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-          <!-- Left Column: Headline + "What we offer" Mini Preview -->
+          <!-- Left Column: Headline + "What we offer" Mini Slideshow -->
           <div class="lg:col-span-6 reveal-up is-visible">
             <h1 class="text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight tracking-tight">
               <span class="block text-gold-450">Safeguarding Assets</span>
@@ -493,28 +493,92 @@
               Providing trusted security and protection services to ensure the safety of our clients, their personnel, assets, and operations.
             </p>
 
-            <!-- "What we offer" Quick Preview Card -->
-            <div class="mt-8 max-w-[230px]">
-              <a href="#services-section" class="inline-block text-gold-450 text-xs font-bold underline underline-offset-4 hover:text-white transition-colors mb-2">
+            <!-- "What we offer" Mini Slideshow (Links to whatwedo.html & individual services) -->
+            <div class="mt-8 max-w-[260px]">
+              <a href="whatwedo.html" class="inline-block text-gold-450 text-xs font-bold underline underline-offset-4 hover:text-white transition-colors mb-2">
                 What we offer
               </a>
-              <a href="#services-section" class="group block rounded-lg overflow-hidden bg-navy-950 border border-white/15 shadow-xl">
-                <div class="h-16 overflow-hidden relative">
-                  <img
-                    src="assets/securitycard.jpg"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=500&q=80';"
-                    alt="Danao Security Personnel"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div class="absolute inset-0 bg-navy-950/30"></div>
+
+              <div class="rounded-lg overflow-hidden bg-navy-950 border border-white/15 shadow-xl">
+                <div id="offerSlidesContainer" class="relative h-24 overflow-hidden">
+
+                  <!-- Slide 1: Armed & Unarmed Security -->
+                  <a
+                    href="whatwedo.html?service=armed-unarmed#services-provided"
+                    class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-100 block"
+                  >
+                    <img
+                      src="assets/securitycard.jpg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=500&q=80';"
+                      alt="Armed & Unarmed Security"
+                      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">
+                      Armed &amp; Unarmed Security
+                    </span>
+                  </a>
+
+                  <!-- Slide 2: Vehicle Patrol -->
+                  <a
+                    href="whatwedo.html?service=vehicle-patrol#services-provided"
+                    class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block"
+                  >
+                    <img
+                      src="assets/patrolcarcard.jpeg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=500&q=80';"
+                      alt="Vehicle Patrol"
+                      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">
+                      Vehicle Patrol
+                    </span>
+                  </a>
+
+                  <!-- Slide 3: Emergency Response -->
+                  <a
+                    href="whatwedo.html?service=emergency-response#services-provided"
+                    class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block"
+                  >
+                    <img
+                      src="assets/emergencyresponsecard.jpg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=500&q=80';"
+                      alt="Emergency Response"
+                      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">
+                      Emergency Response
+                    </span>
+                  </a>
+
+                  <!-- Slide 4: Executive Protection -->
+                  <a
+                    href="whatwedo.html?service=executive-protection#services-provided"
+                    class="offer-slide group absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none block"
+                  >
+                    <img
+                      src="assets/execprotectioncard.jpg"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80';"
+                      alt="Executive Protection"
+                      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/35 to-transparent"></div>
+                    <span class="absolute bottom-1.5 left-2.5 right-2.5 text-[11px] font-bold text-white group-hover:text-gold-450 truncate transition-colors">
+                      Executive Protection
+                    </span>
+                  </a>
+
                 </div>
-                <div class="py-1.5 px-3 flex items-center justify-center gap-1.5 bg-navy-950">
-                  <span class="w-1.5 h-1.5 rounded-full bg-gold-450"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+
+                <div class="py-1.5 px-3 flex items-center justify-center gap-1.5 bg-navy-950 border-t border-white/10" id="offerDots">
+                  <button type="button" data-offer-idx="0" aria-label="Armed & Unarmed Security" class="offer-dot w-1.5 h-1.5 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
+                  <button type="button" data-offer-idx="1" aria-label="Vehicle Patrol" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+                  <button type="button" data-offer-idx="2" aria-label="Emergency Response" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+                  <button type="button" data-offer-idx="3" aria-label="Executive Protection" class="offer-dot w-1.5 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
 
@@ -527,63 +591,36 @@
 
               <div class="relative rounded-xl overflow-hidden shadow-2xl bg-navy-950 border border-white/15">
                 <div id="heroSlidesContainer" class="relative h-48 sm:h-56 w-full">
+
+                  <!-- Slide 1: Autoplaying YouTube Video -->
                   <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-100">
-                    <img
-                      src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
-                      alt="Industrial Site Deployment"
-                      class="w-full h-full object-cover"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
-                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
-                      24/7 Infrastructure &amp; Industrial Site Protection
-                    </p>
+                    <iframe
+                      class="w-full h-full"
+                      src="https://www.youtube.com/embed/HkYshJYlBxY?autoplay=1&mute=1&loop=1&playlist=HkYshJYlBxY&controls=1&rel=0&modestbranding=1&playsinline=1"
+                      title="Danao Security Services Inc - Latest From Us"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
                   </div>
 
+                  <!-- Slide 2: Coming Soon -->
                   <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
                     <img
-                      src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=80"
-                      alt="Command & Surveillance Operations"
-                      class="w-full h-full object-cover"
+                      src="assets/comingsoon.png"
+                      alt="Coming Soon"
+                      class="w-full h-full object-cover object-center"
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
-                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
-                      Centralized CCTV Monitoring &amp; Electronic Guard Tours
-                    </p>
                   </div>
 
-                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-                    <img
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
-                      alt="Corporate & Resort Security"
-                      class="w-full h-full object-cover"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
-                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
-                      Hospitality, Commercial &amp; Corporate Asset Safeguarding
-                    </p>
-                  </div>
-
-                  <div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-                    <img
-                      src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=900&q=80"
-                      alt="Vetted Security Force"
-                      class="w-full h-full object-cover"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
-                    <p class="absolute bottom-3 left-4 right-4 text-xs text-white font-medium">
-                      Rigorously Screened &amp; Certified Security Professionals
-                    </p>
-                  </div>
                 </div>
 
                 <!-- Carousel Controls Bar -->
                 <div class="bg-navy-950 py-2 px-4 flex items-center justify-center gap-3 border-t border-white/10">
                   <button type="button" id="heroPrevBtn" aria-label="Previous" class="text-white hover:text-gold-450 text-xs font-bold px-1.5 cursor-pointer">&lt;</button>
                   <div class="flex items-center gap-1.5" id="heroDots">
-                    <button type="button" data-idx="0" class="hero-dot w-2 h-2 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
-                    <button type="button" data-idx="1" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                    <button type="button" data-idx="2" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
-                    <button type="button" data-idx="3" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
+                    <button type="button" data-idx="0" aria-label="Video slide" class="hero-dot w-2 h-2 rounded-full bg-gold-450 transition-all cursor-pointer"></button>
+                    <button type="button" data-idx="1" aria-label="Coming soon slide" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer"></button>
                   </div>
                   <button type="button" id="heroNextBtn" aria-label="Next" class="text-white hover:text-gold-450 text-xs font-bold px-1.5 cursor-pointer">&gt;</button>
                 </div>
@@ -1336,15 +1373,57 @@
       });
 
       /* -------------------------------------------------------------------
-         2. Hero "Latest From Us" Carousel
+         2A. "What we offer" Mini Slideshow
+      -------------------------------------------------------------------- */
+      const offerSlides = document.querySelectorAll('.offer-slide');
+      const offerDots = document.querySelectorAll('.offer-dot');
+      let offerIndex = 0;
+
+      function showOfferSlide(idx) {
+        if (!offerSlides.length) return;
+        offerIndex = (idx + offerSlides.length) % offerSlides.length;
+        offerSlides.forEach((slide, i) => {
+          if (i === offerIndex) {
+            slide.classList.remove('opacity-0', 'pointer-events-none');
+            slide.classList.add('opacity-100');
+          } else {
+            slide.classList.add('opacity-0', 'pointer-events-none');
+            slide.classList.remove('opacity-100');
+          }
+        });
+        offerDots.forEach((dot, i) => {
+          if (i === offerIndex) {
+            dot.classList.remove('bg-white/40');
+            dot.classList.add('bg-gold-450', 'scale-125');
+          } else {
+            dot.classList.add('bg-white/40');
+            dot.classList.remove('bg-gold-450', 'scale-125');
+          }
+        });
+      }
+
+      let offerTimer = setInterval(() => showOfferSlide(offerIndex + 1), 3500);
+
+      offerDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          showOfferSlide(parseInt(dot.getAttribute('data-offer-idx'), 10));
+          clearInterval(offerTimer);
+          offerTimer = setInterval(() => showOfferSlide(offerIndex + 1), 3500);
+        });
+      });
+
+      /* -------------------------------------------------------------------
+         2B. Hero "Latest From Us" Carousel (YouTube Video + Coming Soon)
       -------------------------------------------------------------------- */
       const heroSlides = document.querySelectorAll('.hero-slide');
       const heroDots = document.querySelectorAll('.hero-dot');
       const heroPrevBtn = document.getElementById('heroPrevBtn');
       const heroNextBtn = document.getElementById('heroNextBtn');
       let heroIndex = 0;
+      let heroTimer = null;
 
       function showHeroSlide(idx) {
+        if (!heroSlides.length) return;
         heroIndex = (idx + heroSlides.length) % heroSlides.length;
         heroSlides.forEach((slide, i) => {
           if (i === heroIndex) {
@@ -1364,29 +1443,25 @@
             dot.classList.remove('bg-gold-450', 'scale-125');
           }
         });
-      }
 
-      let heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), 4500);
-
-      function resetHeroTimer() {
+        // Keep the video slide active without auto-advancing away from it
         clearInterval(heroTimer);
-        heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), 4500);
+        if (heroIndex !== 0) {
+          heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), 5000);
+        }
       }
 
       heroPrevBtn.addEventListener('click', () => {
         showHeroSlide(heroIndex - 1);
-        resetHeroTimer();
       });
 
       heroNextBtn.addEventListener('click', () => {
         showHeroSlide(heroIndex + 1);
-        resetHeroTimer();
       });
 
       heroDots.forEach((dot) => {
         dot.addEventListener('click', () => {
           showHeroSlide(parseInt(dot.getAttribute('data-idx'), 10));
-          resetHeroTimer();
         });
       });
 
