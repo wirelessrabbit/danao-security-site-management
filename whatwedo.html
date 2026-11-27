@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What We Do | Danao Security Services Inc</title>
+  <link rel="icon" type="image/png" href="assets/logodssi1.png" />
+
+  <!-- Google Fonts: Inter & Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#0b192c',
+              900: '#0c1b30',
+              850: '#10233d',
+              800: '#152e4f',
+            },
+            gold: {
+              400: '#f0c363',
+              450: '#efc464',
+              500: '#e5b857',
+              600: '#d4a33c',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Bebas Neue"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #10233d;
+      color: #ffffff;
+      overflow-x: hidden;
+      zoom: 0.9;
+    }
+
+    .font-bebas {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* Active Bottom Line Indicator on Header Nav Buttons */
+    .nav-btn {
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #efc464;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-btn.active::after,
+    .nav-btn:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Dropdown & Mega-Menu Reveal Animation */
+    .dropdown-panel {
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+      transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1), transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .dropdown-panel.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Stelsen-Inspired Scroll Reveal Animations */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Architectural / Tactical Grid Pattern */
+    .bg-tactical-grid {
+      background-color: #f8fafc;
+      background-image:
+        linear-gradient(to right, rgba(15, 30, 54, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 30, 54, 0.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    /* G4S-Inspired Sleek Pillar Tab & Detail Card */
+    .pillar-tab {
+      transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Service Tile Card */
+    .service-tile {
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+    }
+    .service-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 32px -12px rgba(12, 27, 48, 0.38);
+    }
+
+    /* Semi-Fullscreen Popup Morph Animation */
+    @keyframes popupExpand {
+      0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(14px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    .popup-panel-enter {
+      animation: popupExpand 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Industry Tile Hover */
+    .industry-tile {
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .industry-tile:hover {
+      transform: translateY(-3px);
+      border-color: #efc464;
+      box-shadow: 0 12px 22px -10px rgba(12, 27, 48, 0.16);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-950">
+
+  <!-- =====================================================================
+       1. FIXED HEADER WITH VISUAL MEGA-MENU ('WHAT WE DO' ACTIVE)
+  ====================================================================== -->
+  <div id="siteHeaderWrapper" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <header id="mainHeader" class="bg-[#0b192c] border-b border-white/10 transition-all duration-300 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
+
+        <!-- Left: Logo + Brand Name -->
+        <a href="index.html" class="flex items-center gap-2.5 group focus:outline-none shrink-0">
+          <img
+            src="assets/logodssi1.png"
+            alt="Danao Security Services Inc Logo"
+            class="w-9 h-11 sm:w-10 sm:h-12 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+          />
+          <span class="font-bebas text-gold-500 text-lg sm:text-xl md:text-[22px] tracking-wider uppercase leading-none whitespace-nowrap">
+            DANAO SECURITY SERVICES INC
+          </span>
+        </a>
+
+        <!-- Right: Desktop Navigation -->
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
+
+          <!-- HOME -->
+          <a
+            href="index.html"
+            class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors whitespace-nowrap"
+          >
+            HOME
+          </a>
+
+          <!-- ABOUT US (Redirects to #about-us on Landing Page) -->
+          <a
+            href="index.html#about-us"
+            class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors whitespace-nowrap"
+          >
+            ABOUT US
+          </a>
+
+          <!-- WHAT WE DO (Active on this page) -->
+          <button
+            type="button"
+            id="whatWeDoBtn"
+            data-mega-trigger="whatWeDoMegaMenu"
+            class="nav-btn active font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
+            aria-expanded="false"
+          >
+            WHAT WE DO
+          </button>
+
+          <!-- SUSTAINABILITY -->
+          <div class="relative nav-item" data-section="sustainability">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
+              aria-expanded="false"
+            >
+              SUSTAINABILITY
+            </button>
+            <div class="dropdown-panel absolute left-0 mt-3 w-52 bg-[#0b192c] border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="sustainability.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                SUSTAINABILITY
+              </a>
+              <a href="articles.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                ARTICLES
+              </a>
+            </div>
+          </div>
+
+          <!-- CAREER -->
+          <div class="relative nav-item" data-section="career">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
+              aria-expanded="false"
+            >
+              CAREER
+            </button>
+            <div class="dropdown-panel absolute right-0 mt-3 w-56 bg-[#0b192c] border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="career.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                CAREER
+              </a>
+              <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                APPLICATIONS
+              </a>
+              <a href="careers-available.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 uppercase tracking-wider">
+                CAREERS AVAILABLE
+              </a>
+            </div>
+          </div>
+
+          <!-- CONTACT US -->
+          <div class="relative nav-item" data-section="contact">
+            <button
+              type="button"
+              class="nav-btn font-bebas text-white hover:text-gold-400 text-[16px] tracking-wider uppercase transition-colors cursor-pointer whitespace-nowrap"
+              aria-expanded="false"
+            >
+              CONTACT US
+            </button>
+            <div class="dropdown-panel absolute right-0 mt-3 w-60 bg-[#0b192c] border border-white/15 rounded-lg shadow-2xl py-2 z-50">
+              <a href="contact-us.html" class="block px-4 py-2 text-xs font-semibold text-gold-450 hover:bg-white/10 uppercase tracking-wider border-b border-white/10">
+                CONTACT US
+              </a>
+              <a href="client-contact.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
+                Client Contact / Request
+              </a>
+              <a href="applications.html" class="block px-4 py-2 text-xs text-slate-200 hover:text-gold-400 hover:bg-white/5 tracking-wide">
+                Applications
+              </a>
+            </div>
+          </div>
+
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none">
+          <div class="w-5 flex flex-col justify-between gap-[4px]">
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+            <span class="block h-[2px] w-full bg-gold-500 rounded-full"></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Full-Width Visual Mega-Menu Panel -->
+      <div id="whatWeDoMegaMenu" class="dropdown-panel hidden lg:block absolute inset-x-0 top-full bg-[#0b192c] border-t border-white/10 border-b-2 border-b-gold-500/40 shadow-[0_24px_48px_rgba(0,0,0,0.75)] z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
+          <div class="grid grid-cols-4 gap-5">
+            <a href="#services-provided" data-select-service="armed-unarmed" class="mega-service-link group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img src="assets/securitycard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=600&q=80';" alt="Armed & Unarmed Security" class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  ARMED &amp; UNARMED<br />SECURITY
+                </span>
+              </div>
+            </a>
+
+            <a href="#services-provided" data-select-service="vehicle-patrol" class="mega-service-link group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img src="assets/patrolcarcard.jpeg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80';" alt="Vehicle Patrol" class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  VEHICLE PATROL
+                </span>
+              </div>
+            </a>
+
+            <a href="#services-provided" data-select-service="emergency-response" class="mega-service-link group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img src="assets/emergencyresponsecard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';" alt="Emergency Response" class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  EMERGENCY RESPONSE
+                </span>
+              </div>
+            </a>
+
+            <a href="#services-provided" data-select-service="executive-protection" class="mega-service-link group relative h-52 rounded-xl overflow-hidden bg-navy-850 border border-white/10 border-b-[3px] border-b-gold-450 shadow-lg block">
+              <img src="assets/execprotectioncard.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80';" alt="Executive Protection" class="w-full h-full object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b192c] via-[#0b192c]/45 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="font-bebas text-white group-hover:text-gold-450 text-2xl leading-tight tracking-wide uppercase block transition-colors">
+                  EXECUTIVE PROTECTION
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/15 flex items-center gap-8 text-xs font-semibold text-white">
+            <a href="#why-choose-us" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+              <span>What We Do overview</span>
+              <span class="text-gold-450">&rarr;</span>
+            </a>
+            <a href="#services-provided" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+              <span>All services</span>
+              <span class="text-gold-450">&rarr;</span>
+            </a>
+            <a href="#industries" class="hover:text-gold-450 transition-colors flex items-center gap-1.5">
+              <span>Industries</span>
+              <span class="text-gold-450">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Accordion Drawer -->
+      <div id="mobileDrawer" class="hidden lg:hidden bg-[#0b192c] border-t border-white/10 px-6 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
+        <div class="border-b border-white/10 pb-2">
+          <a href="index.html" class="block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">HOME</a>
+        </div>
+        <div class="border-b border-white/10 pb-2">
+          <a href="index.html#about-us" class="block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">ABOUT US</a>
+        </div>
+        <div class="border-b border-white/10 pb-2">
+          <button type="button" class="mobile-acc-btn w-full flex items-center justify-between font-bebas text-gold-450 text-lg tracking-wider uppercase py-1">
+            <span>WHAT WE DO</span>
+            <span class="text-xs font-sans text-slate-400">+</span>
+          </button>
+          <div class="hidden pl-3 pt-1 pb-2 space-y-1.5 text-xs">
+            <a href="#why-choose-us" class="mobile-nav-link block text-gold-400 font-semibold uppercase">Why Choose Danao</a>
+            <a href="#services-provided" class="mobile-nav-link block text-slate-300 hover:text-white uppercase">Services We Provide</a>
+            <a href="#industries" class="mobile-nav-link block text-slate-300 hover:text-white uppercase">Industries We Work With</a>
+          </div>
+        </div>
+        <div class="border-b border-white/10 pb-2">
+          <a href="sustainability.html" class="block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">SUSTAINABILITY</a>
+        </div>
+        <div class="border-b border-white/10 pb-2">
+          <a href="career.html" class="block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">CAREER</a>
+        </div>
+        <div>
+          <a href="contact-us.html" class="block font-bebas text-white hover:text-gold-450 text-lg tracking-wider uppercase py-1">CONTACT US</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- =====================================================================
+       2. PAGE BANNER HEADER
+  ====================================================================== -->
+  <section id="page-banner" class="page-section relative pt-24 pb-12 sm:pt-28 sm:pb-14 bg-navy-950 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900/95 to-navy-850/80"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-up is-visible">
+        <div>
+          <span class="inline-block text-gold-450 text-xs font-bold uppercase tracking-widest mb-2">
+            OPERATIONAL CAPABILITIES &amp; STANDARDS
+          </span>
+          <h1 class="font-bebas text-white text-4xl sm:text-5xl md:text-6xl tracking-wide uppercase leading-none">
+            WHAT WE DO
+          </h1>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Tailored physical guarding, mobile patrols, rapid emergency response, and executive protection engineered to safeguard people, property, and high-value operations nationwide.
+          </p>
+        </div>
+
+        <!-- Quick Anchor Pills -->
+        <div class="flex flex-wrap gap-2 text-xs font-semibold">
+          <a href="#why-choose-us" class="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-gold-450 hover:text-navy-950 text-white transition-colors">
+            Why Choose Us
+          </a>
+          <a href="#services-provided" class="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-gold-450 hover:text-navy-950 text-white transition-colors">
+            Services We Provide
+          </a>
+          <a href="#industries" class="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-gold-450 hover:text-navy-950 text-white transition-colors">
+            Industries
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       3. MAIN LIGHT CONTENT: WHY CHOOSE US (G4S SLEEK), SERVICES POPUP, INDUSTRIES
+  ====================================================================== -->
+  <main class="bg-tactical-grid text-slate-800">
+
+    <!-- ===================================================================
+         SECTION A: WHY CHOOSE DANAO SECURITY SERVICES? (G4S ENTERPRISE STYLE)
+    ==================================================================== -->
+    <section id="why-choose-us" class="page-section scroll-mt-20 max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-14 sm:pt-20 pb-14">
+      <div class="reveal-up">
+        <span class="text-gold-600 text-[11px] font-bold uppercase tracking-widest">
+          OUR OPERATIONAL ADVANTAGE
+        </span>
+        <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase mt-1">
+          WHY CHOOSE DANAO SECURITY SERVICES?
+        </h2>
+        <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
+        <p class="mt-3 text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+          Modeled on disciplined enterprise standards, our approach unites clear leadership, structured reporting, and direct accountability across every deployed post.
+        </p>
+      </div>
+
+      <!-- G4S-Inspired Sleek Interactive Pillar Matrix -->
+      <div class="mt-8 bg-navy-900 rounded-2xl overflow-hidden shadow-xl border border-navy-800 reveal-up">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+
+          <!-- Left Selector Column (5 Pillars) -->
+          <div class="lg:col-span-5 bg-navy-950/90 border-b lg:border-b-0 lg:border-r border-white/10 p-3 sm:p-4 flex flex-col gap-1.5">
+            <button
+              type="button"
+              data-pillar="communication"
+              class="pillar-tab active w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-gold-450 text-navy-950 font-bold text-xs sm:text-sm uppercase tracking-wider text-left cursor-pointer shadow-sm"
+            >
+              <span class="flex items-center gap-3">
+                <span class="text-xs font-extrabold opacity-75">01</span>
+                <span>Communication</span>
+              </span>
+              <span>&rarr;</span>
+            </button>
+
+            <button
+              type="button"
+              data-pillar="coordination"
+              class="pillar-tab w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-transparent hover:bg-white/5 text-slate-200 font-semibold text-xs sm:text-sm uppercase tracking-wider text-left cursor-pointer"
+            >
+              <span class="flex items-center gap-3">
+                <span class="text-xs font-bold text-gold-450">02</span>
+                <span>Coordination</span>
+              </span>
+              <span class="text-slate-400">&rarr;</span>
+            </button>
+
+            <button
+              type="button"
+              data-pillar="organization"
+              class="pillar-tab w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-transparent hover:bg-white/5 text-slate-200 font-semibold text-xs sm:text-sm uppercase tracking-wider text-left cursor-pointer"
+            >
+              <span class="flex items-center gap-3">
+                <span class="text-xs font-bold text-gold-450">03</span>
+                <span>Organization</span>
+              </span>
+              <span class="text-slate-400">&rarr;</span>
+            </button>
+
+            <button
+              type="button"
+              data-pillar="technology"
+              class="pillar-tab w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-transparent hover:bg-white/5 text-slate-200 font-semibold text-xs sm:text-sm uppercase tracking-wider text-left cursor-pointer"
+            >
+              <span class="flex items-center gap-3">
+                <span class="text-xs font-bold text-gold-450">04</span>
+                <span>Technology</span>
+              </span>
+              <span class="text-slate-400">&rarr;</span>
+            </button>
+
+            <button
+              type="button"
+              data-pillar="customer-service"
+              class="pillar-tab w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-transparent hover:bg-white/5 text-slate-200 font-semibold text-xs sm:text-sm uppercase tracking-wider text-left cursor-pointer"
+            >
+              <span class="flex items-center gap-3">
+                <span class="text-xs font-bold text-gold-450">05</span>
+                <span>Traditional Customer Service</span>
+              </span>
+              <span class="text-slate-400">&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Right Active Detail Showcase (Sleek G4S Executive Card) -->
+          <div class="lg:col-span-7 p-6 sm:p-9 flex flex-col justify-between text-white">
+            <div id="pillarDetailBox" class="transition-opacity duration-200">
+              <div class="flex items-center justify-between gap-4 pb-4 border-b border-white/10">
+                <div class="flex items-center gap-3.5">
+                  <div id="pillarIconWrap" class="w-11 h-11 rounded-xl bg-gold-450/15 border border-gold-450/40 text-gold-450 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span id="pillarTag" class="text-[10px] font-bold uppercase tracking-widest text-gold-450 block">
+                      PILLAR 01 &bull; TRANSPARENT ALIGNMENT
+                    </span>
+                    <h3 id="pillarTitle" class="font-bebas text-white text-2xl sm:text-3xl tracking-wide uppercase">
+                      COMMUNICATION
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <p id="pillarDesc" class="mt-5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                We maintain constant communication both within our team and with our clients. We are always attentive to client concerns and feedback, ensuring they are addressed promptly and effectively.
+              </p>
+
+              <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="bg-navy-950/70 border border-white/10 rounded-xl p-3.5">
+                  <span class="text-gold-450 font-semibold block">Client Standard</span>
+                  <span id="pillarStandard" class="text-slate-300 mt-0.5 block">Direct escalation channels &amp; timely updates</span>
+                </div>
+                <div class="bg-navy-950/70 border border-white/10 rounded-xl p-3.5">
+                  <span class="text-gold-450 font-semibold block">Field Execution</span>
+                  <span id="pillarExecution" class="text-slate-300 mt-0.5 block">Clear post instructions &amp; shift handovers</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-7 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <span class="text-slate-400">Built on compliance, accountability, and rapid operational readiness.</span>
+              <a href="contact-us.html" class="text-gold-450 hover:text-white font-semibold underline underline-offset-4 transition-colors">
+                Speak with Operations &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION B: SERVICES WE PROVIDE (12 CARDS + SEMI-FULLSCREEN POPUP)
+    ==================================================================== -->
+    <section id="services-provided" class="page-section scroll-mt-20 relative max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-16">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 reveal-up">
+        <div>
+          <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase">
+            SERVICES WE PROVIDE
+          </h2>
+          <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 max-w-xl">
+            Click any service card to expand its full operational overview. Click outside the panel or press Esc to return to the grid.
+          </p>
+        </div>
+      </div>
+
+      <!-- Wrapper around the Services Grid + Semi-Fullscreen Popup Overlay -->
+      <div id="servicesGridWrapper" class="relative mt-9">
+
+        <!-- 12 Services Grid (4 Columns on Desktop) -->
+        <div id="servicesCardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Populated cleanly via JS from servicesCatalog for exact sync with popup & deep-links -->
+        </div>
+
+        <!-- SEMI-FULLSCREEN DARK NAVY POPUP PANEL -->
+        <div
+          id="servicePopupBackdrop"
+          class="hidden fixed inset-0 z-40 bg-navy-950/55 backdrop-blur-[2px] flex items-center justify-center p-4 sm:p-8 lg:p-12"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="popupServiceTitle"
+        >
+          <div
+            id="servicePopupPanel"
+            class="popup-panel-enter relative w-full max-w-5xl min-h-[420px] sm:min-h-[480px] max-h-[82vh] overflow-y-auto rounded-3xl bg-[#0b192c] border-2 border-gold-450/50 shadow-[0_30px_80px_rgba(0,0,0,0.75)] p-6 sm:p-10 text-white flex flex-col justify-between"
+          >
+            <!-- Top Row: Pinned Service Icon Badge on Top-Left + Close Button on Top-Right -->
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex items-center gap-4">
+                <div
+                  id="popupIconBadge"
+                  class="w-14 h-14 rounded-2xl bg-navy-850 border border-gold-450/50 shadow-lg flex items-center justify-center text-gold-450 shrink-0"
+                >
+                  <!-- SVG Icon Injected Dynamically -->
+                </div>
+                <div>
+                  <span id="popupServiceCategory" class="text-[11px] font-bold uppercase tracking-widest text-gold-450 block">
+                    CORE SECURITY SERVICE
+                  </span>
+                  <h3 id="popupServiceTitle" class="font-bebas text-white text-3xl sm:text-4xl tracking-wider uppercase mt-0.5">
+                    ARMED &amp; UNARMED SECURITY
+                  </h3>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                id="closeServicePopupBtn"
+                aria-label="Close service details"
+                class="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold-450 text-white hover:text-navy-950 flex items-center justify-center transition-colors cursor-pointer shrink-0 font-bold text-lg"
+              >
+                &times;
+              </button>
+            </div>
+
+            <!-- Center / Main Body: Service Photo + Brief Description + Key Capabilities -->
+            <div class="my-7 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+              <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/15 bg-navy-850 h-48 sm:h-56">
+                <img
+                  id="popupServiceImage"
+                  src=""
+                  alt=""
+                  class="w-full h-full object-cover object-center"
+                />
+              </div>
+
+              <div class="lg:col-span-7 space-y-4">
+                <p id="popupServiceDesc" class="text-sm sm:text-base text-slate-200 leading-relaxed">
+                  <!-- Service description injected here -->
+                </p>
+
+                <div class="pt-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-gold-450 block mb-2.5">
+                    Key Operational Inclusions
+                  </span>
+                  <ul id="popupServiceBullets" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                    <!-- Bullets injected here -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Action Bar -->
+            <div class="pt-5 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
+              <span class="text-xs text-slate-400">
+                Click outside this panel or press <strong class="text-slate-200">ESC</strong> to return to all services.
+              </span>
+              <div class="flex items-center gap-3">
+                <button
+                  type="button"
+                  id="backToGridBtn"
+                  class="px-4 py-2 rounded-lg border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition-colors cursor-pointer"
+                >
+                  Back to Grid
+                </button>
+                <a
+                  href="contact-us.html"
+                  class="px-5 py-2 rounded-lg bg-gold-450 hover:bg-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider transition-colors"
+                >
+                  Request This Service &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION C: INDUSTRIES WE WORK WITH (16 SECTOR TILES)
+    ==================================================================== -->
+    <section id="industries" class="page-section scroll-mt-20 max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-20 sm:pb-24">
+      <div class="reveal-up">
+        <h2 class="font-bebas text-navy-900 text-3xl sm:text-4xl tracking-wide uppercase">
+          INDUSTRIES WE WORK WITH
+        </h2>
+        <div class="w-16 h-1 bg-gold-500 rounded-full mt-1"></div>
+        <p class="mt-3 text-xs sm:text-sm text-slate-600 max-w-xl">
+          Specialized security protocols adapted to the operational risks and compliance requirements of diverse sectors.
+        </p>
+      </div>
+
+      <div id="industriesGrid" class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+        <!-- Populated via JS for clean icon rendering -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       4. FOOTER (DEEP NAVY WITH LOGO, CONTACTS, LEGAL)
+  ====================================================================== -->
+  <footer id="footer-section" class="page-section bg-navy-900 border-t border-white/10 text-slate-200">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-12 sm:py-14">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+
+        <!-- Left: Emblem + Brand Title -->
+        <div class="md:col-span-6 flex flex-col items-center md:items-start text-center md:text-left">
+          <div class="flex flex-col items-center">
+            <img
+              src="assets/logodssi1.png"
+              alt="Danao Security Services Inc Logo"
+              class="w-16 h-20 sm:w-20 sm:h-24 object-contain"
+            />
+            <span class="font-bebas text-gold-500 text-xl sm:text-2xl tracking-wider uppercase mt-2">
+              DANAO SECURITY SERVICES INC
+            </span>
+          </div>
+        </div>
+
+        <!-- Middle: CONTACTS -->
+        <div class="md:col-span-3 text-center">
+          <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
+            CONTACTS
+          </h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li>
+              <a href="mailto:danao.main@gmail.com" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
+                <svg class="w-3.5 h-3.5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span>danao.main@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+639683226695" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
+                <svg class="w-3.5 h-3.5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+                <span>+63 968 322 6695</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: LEGAL -->
+        <div class="md:col-span-3 text-center">
+          <h4 class="text-white font-bold text-xs tracking-wider uppercase mb-3.5">
+            LEGAL
+          </h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li>
+              <a href="#terms" class="underline underline-offset-4 hover:text-gold-400 transition-colors">
+                Terms and Condition
+              </a>
+            </li>
+            <li>
+              <a href="#privacy" class="underline underline-offset-4 hover:text-gold-400 transition-colors">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       5. FLOATING ARROW CIRCLE BUTTON (NEXT SECTION / BACK TO TOP)
+  ====================================================================== -->
+  <button
+    id="sectionCycleBtn"
+    type="button"
+    aria-label="Scroll to next section"
+    title="Next Section"
+    class="fixed bottom-6 right-6 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-navy-950 shadow-xl border border-slate-200 hover:bg-gold-450 hover:border-gold-450 flex items-center justify-center transition-all duration-300 cursor-pointer"
+  >
+    <svg id="cycleArrowIcon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6" />
+    </svg>
+  </button>
+
+  <!-- =====================================================================
+       6. JAVASCRIPT INTERACTIVITY, SEMI-FULLSCREEN POPUP & DEEP-LINKING
+  ====================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* -------------------------------------------------------------------
+         1. Header Scroll, Mega-Menu & Dropdown Controls
+      -------------------------------------------------------------------- */
+      const mainHeader = document.getElementById('mainHeader');
+      const navItems = document.querySelectorAll('.nav-item');
+      const whatWeDoBtn = document.getElementById('whatWeDoBtn');
+      const whatWeDoMegaMenu = document.getElementById('whatWeDoMegaMenu');
+
+      function updateHeaderOnScroll() {
+        if (!mainHeader) return;
+        if (window.scrollY > 30) {
+          mainHeader.classList.add('shadow-lg');
+        } else {
+          mainHeader.classList.remove('shadow-lg');
+        }
+      }
+
+      window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+      updateHeaderOnScroll();
+
+      function closeAllDropdowns() {
+        navItems.forEach((item) => {
+          const panel = item.querySelector('.dropdown-panel');
+          const btn = item.querySelector('button.nav-btn');
+          if (panel) panel.classList.remove('open');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+        if (whatWeDoMegaMenu) whatWeDoMegaMenu.classList.remove('open');
+        if (whatWeDoBtn) whatWeDoBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      if (whatWeDoBtn && whatWeDoMegaMenu) {
+        whatWeDoBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = whatWeDoMegaMenu.classList.contains('open');
+          closeAllDropdowns();
+          if (!isOpen) {
+            whatWeDoMegaMenu.classList.add('open');
+            whatWeDoBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+        whatWeDoMegaMenu.addEventListener('click', (e) => e.stopPropagation());
+      }
+
+      navItems.forEach((item) => {
+        const btn = item.querySelector('button.nav-btn');
+        const panel = item.querySelector('.dropdown-panel');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = panel.classList.contains('open');
+          closeAllDropdowns();
+          if (!isOpen) {
+            panel.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+        panel.addEventListener('click', (e) => e.stopPropagation());
+      });
+
+      document.addEventListener('click', closeAllDropdowns);
+
+      /* Mobile Navigation Drawer */
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => mobileDrawer.classList.add('hidden'));
+      });
+
+      document.querySelectorAll('.mobile-acc-btn').forEach((accBtn) => {
+        accBtn.addEventListener('click', () => {
+          const content = accBtn.nextElementSibling;
+          const symbol = accBtn.querySelector('span:last-child');
+          content.classList.toggle('hidden');
+          symbol.textContent = content.classList.contains('hidden') ? '+' : '−';
+        });
+      });
+
+      /* -------------------------------------------------------------------
+         2. G4S-Inspired Sleek 'Why Choose Us' Interactive Pillars
+      -------------------------------------------------------------------- */
+      const pillarsData = {
+        communication: {
+          tag: 'PILLAR 01 • TRANSPARENT ALIGNMENT',
+          title: 'COMMUNICATION',
+          desc: 'We maintain constant communication both within our team and with our clients. We are always attentive to client concerns and feedback, ensuring they are addressed promptly and effectively.',
+          standard: 'Direct escalation channels & timely updates',
+          execution: 'Clear post instructions & shift handovers',
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />'
+        },
+        coordination: {
+          tag: 'PILLAR 02 • SEAMLESS FIELD EXECUTION',
+          title: 'COORDINATION',
+          desc: 'We ensure proper coordination between our internal staff and the client’s team to efficiently address issues and eliminate potential problems.',
+          standard: 'Aligned protocols with site & facility management',
+          execution: 'Synchronized dispatch, shift relief & incident alerts',
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />'
+        },
+        organization: {
+          tag: 'PILLAR 03 • STRUCTURED GOVERNANCE',
+          title: 'ORGANIZATION',
+          desc: 'We maintain a well-structured system for organizing client requests, instructions, concerns, and all relevant documents, ensuring they are easily accessible for timely reference and action.',
+          standard: 'Auditable logs, deployment records & post orders',
+          execution: 'Rapid retrieval of compliance & operational files',
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />'
+        },
+        technology: {
+          tag: 'PILLAR 04 • MODERN VIGILANCE',
+          title: 'TECHNOLOGY',
+          desc: 'We leverage technology as a core strength to enhance the efficiency and effectiveness of our security services.',
+          standard: 'Digital reporting tools & structured incident tracking',
+          execution: 'Surveillance integration & verifiable post monitoring',
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />'
+        },
+        'customer-service': {
+          tag: 'PILLAR 05 • DIRECT HUMAN ACCESS',
+          title: 'TRADITIONAL CUSTOMER SERVICE',
+          desc: 'We provide direct and accessible customer service, ensuring clients can speak to our representatives without going through automated systems or voicemail menus. Our team is always ready to listen and respond promptly to your concerns and inquiries.',
+          standard: 'Real human response with zero automated phone trees',
+          execution: 'Dedicated account support & fast issue resolution',
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />'
+        }
+      };
+
+      const pillarTabs = document.querySelectorAll('.pillar-tab');
+      const pillarDetailBox = document.getElementById('pillarDetailBox');
+      const pillarTag = document.getElementById('pillarTag');
+      const pillarTitle = document.getElementById('pillarTitle');
+      const pillarDesc = document.getElementById('pillarDesc');
+      const pillarStandard = document.getElementById('pillarStandard');
+      const pillarExecution = document.getElementById('pillarExecution');
+      const pillarIconWrap = document.getElementById('pillarIconWrap');
+
+      pillarTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const key = tab.getAttribute('data-pillar');
+          const data = pillarsData[key];
+          if (!data) return;
+
+          pillarTabs.forEach((t) => {
+            t.classList.remove('active', 'bg-gold-450', 'text-navy-950', 'font-bold', 'shadow-sm');
+            t.classList.add('bg-transparent', 'text-slate-200', 'font-semibold');
+            const arrow = t.querySelector('span:last-child');
+            if (arrow) arrow.classList.add('text-slate-400');
+          });
+
+          tab.classList.add('active', 'bg-gold-450', 'text-navy-950', 'font-bold', 'shadow-sm');
+          tab.classList.remove('bg-transparent', 'text-slate-200', 'font-semibold');
+          const activeArrow = tab.querySelector('span:last-child');
+          if (activeArrow) activeArrow.classList.remove('text-slate-400');
+
+          pillarDetailBox.style.opacity = '0.2';
+          setTimeout(() => {
+            pillarTag.textContent = data.tag;
+            pillarTitle.textContent = data.title;
+            pillarDesc.textContent = data.desc;
+            pillarStandard.textContent = data.standard;
+            pillarExecution.textContent = data.execution;
+            pillarIconWrap.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">${data.icon}</svg>`;
+            pillarDetailBox.style.opacity = '1';
+          }, 120);
+        });
+      });
+
+      /* -------------------------------------------------------------------
+         3. Services Catalog + Semi-Fullscreen Popup + Deep-Linking
+      -------------------------------------------------------------------- */
+      const servicesCatalog = [
+        {
+          slug: 'armed-unarmed',
+          title: 'Armed & Unarmed Security',
+          category: 'CORE GUARDING SERVICE',
+          image: 'assets/securitycard.jpg',
+          fallback: 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=800&q=80',
+          desc: 'Disciplined armed and unarmed security officers stationed at entry points, critical assets, and commercial facilities to deter unauthorized access, enforce safety protocols, and maintain order.',
+          bullets: ['High-Value Asset Protection', 'Access & Visitor Control', 'Visible Crime Deterrence', 'CCTV & SOC Coordination'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />'
+        },
+        {
+          slug: 'vehicle-patrol',
+          title: 'Vehicle Patrol',
+          category: 'MOBILE PATROL & RESPONSE',
+          image: 'assets/patrolcarcard.jpeg',
+          fallback: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
+          desc: 'Randomized mobile vehicle patrols covering wide perimeters, industrial estates, and commercial compounds with rapid alarm verification, lock-up/unlock checks, and visible deterrence.',
+          bullets: ['Randomized Route Patrols', 'Alarm & Incident Response', 'Lock-Up & Unlock Checks', 'Perimeter Hazard Sweeps'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M8 17h.01M16 17h.01M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0v6a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-6" />'
+        },
+        {
+          slug: 'emergency-response',
+          title: 'Emergency Response',
+          category: 'RAPID INCIDENT & CRISIS',
+          image: 'assets/emergencyresponsecard.jpg',
+          fallback: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80',
+          desc: 'Fast-mobilizing emergency response teams trained for alarm verification, fire and medical coordination, crowd management, and perimeter containment during urgent incidents.',
+          bullets: ['Rapid Incident Deployment', 'Fire & Medical Coordination', 'Crowd & Crisis Containment', 'Post-Incident Documentation'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46 0L3.34 16c-.77 1.33.19 3 1.73 3z" />'
+        },
+        {
+          slug: 'executive-protection',
+          title: 'Executive Protection',
+          category: 'CLOSE PROTECTION & ESCORT',
+          image: 'assets/execprotectioncard.jpg',
+          fallback: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+          desc: 'Discreet, risk-informed close protection for executives, visiting dignitaries, and high-profile clients—combining advance route reconnaissance, secure transit, and venue security.',
+          bullets: ['Close Personal Escort', 'Advance Route Recon', 'Secure Ground Transit', 'Event & Residence Security'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />'
+        },
+        {
+          slug: 'corporate-facility',
+          title: 'Corporate Facility Security',
+          category: 'COMMERCIAL & OFFICE',
+          image: 'assets/corporatesecu.webp',
+          fallback: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+          desc: 'Structured front-desk access control, lobby screening, tenant safety protocols, and after-hours protection for office towers, business hubs, and corporate headquarters.',
+          bullets: ['Lobby & Turnstile Access', 'Visitor Badging & Logs', 'Tenant Safety Protocols', 'After-Hours Facility Guarding'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />'
+        },
+        {
+          slug: 'industrial-security',
+          title: 'Industrial Security',
+          category: 'PLANTS & LOGISTICS',
+          image: 'assets/powerplant.jpg',
+          fallback: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+          desc: 'Heavy-duty perimeter guarding, cargo and gate verification, and safety hazard monitoring for manufacturing plants, warehouses, construction sites, and energy facilities.',
+          bullets: ['Gate & Cargo Inspection', 'Perimeter Fence Monitoring', 'Contractor & Safety Checks', '24/7 Shift Coverage'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />'
+        },
+        {
+          slug: 'guard-force-management',
+          title: 'Guard Force Management',
+          category: 'WORKFORCE & COMPLIANCE',
+          image: 'assets/guardenforcement.webp',
+          fallback: 'https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=800&q=80',
+          desc: 'End-to-end manpower scheduling, licensing verification, duty rotation, and performance supervision so your security force stays compliant, well-rested, and post-ready.',
+          bullets: ['Duty Scheduling & Relief', 'License & Credential Tracking', 'Field Supervisor Audits', 'Standardized Post Orders'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />'
+        },
+        {
+          slug: 'travel-security',
+          title: 'Travel Security',
+          category: 'TRANSIT & HOSPITALITY',
+          image: 'assets/travelsecurity.jpg',
+          fallback: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
+          desc: 'Coordinated security support for corporate travelers, airport transfers, hotel stays, and regional deployments across active hubs in Luzon and the Visayas.',
+          bullets: ['Airport & Transit Coordination', 'Hotel & Venue Vetting', 'Itinerary Risk Briefings', 'Regional Hub Support'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />'
+        },
+        {
+          slug: 'search-and-rescue',
+          title: 'Search and Rescue',
+          category: 'EMERGENCY & FIELD SUPPORT',
+          image: 'assets/searchandrecuse.jpg',
+          fallback: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80',
+          desc: 'Structured search, location assistance, and emergency support coordination during severe weather, site evacuations, or missing-person and hazard scenarios.',
+          bullets: ['Rapid Search Mobilization', 'Evacuation Assistance', 'LGU & Rescue Liaison', 'Field Hazard Reporting'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />'
+        },
+        {
+          slug: 'off-site-supervision',
+          title: 'Off-Site Security Supervision & Monitoring',
+          category: 'REMOTE OVERSIGHT',
+          image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80',
+          desc: 'Continuous remote oversight and digital reporting to verify guard attendance, monitor checkpoint activity, and keep management informed across multiple client sites.',
+          bullets: ['Digital Guard Tour Logs', 'Remote Check-In Verification', 'Multi-Site Status Tracking', 'Escalation & Alert Logs'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />'
+        },
+        {
+          slug: 'command-center',
+          title: 'Command Center Operation',
+          category: '24/7 COMMAND & CONTROL',
+          image: 'assets/commandcenter.webp',
+          fallback: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+          desc: 'Centralized situational awareness, real-time incident coordination, and dispatch control that connect field guards, patrol units, and client stakeholders around the clock.',
+          bullets: ['24/7 Dispatch & Coordination', 'Live Incident Tracking', 'Multi-Channel Comms', 'Executive Status Briefings'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />'
+        },
+        {
+          slug: 'security-inspection',
+          title: 'Security Inspection / Auditing',
+          category: 'RISK & COMPLIANCE AUDITS',
+          image: 'assets/inspection.webp',
+          fallback: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+          desc: 'Comprehensive physical security audits, vulnerability assessments, and post inspections that pinpoint blind spots, procedural gaps, and actionable upgrades.',
+          bullets: ['Site Vulnerability Audits', 'Post & Guard Inspections', 'Access & Lighting Review', 'Actionable Risk Reports'],
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />'
+        }
+      ];
+
+      const servicesCardsGrid = document.getElementById('servicesCardsGrid');
+      const popupBackdrop = document.getElementById('servicePopupBackdrop');
+      const popupPanel = document.getElementById('servicePopupPanel');
+      const popupIconBadge = document.getElementById('popupIconBadge');
+      const popupServiceCategory = document.getElementById('popupServiceCategory');
+      const popupServiceTitle = document.getElementById('popupServiceTitle');
+      const popupServiceImage = document.getElementById('popupServiceImage');
+      const popupServiceDesc = document.getElementById('popupServiceDesc');
+      const popupServiceBullets = document.getElementById('popupServiceBullets');
+      const closeServicePopupBtn = document.getElementById('closeServicePopupBtn');
+      const backToGridBtn = document.getElementById('backToGridBtn');
+
+      // Render all 12 service cards
+      servicesCatalog.forEach((srv, idx) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.setAttribute('data-service-slug', srv.slug);
+        card.className = 'service-tile reveal-up group relative rounded-2xl overflow-hidden bg-navy-900 shadow-lg text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold-450';
+        card.style.transitionDelay = `${(idx % 4) * 50}ms`;
+
+        card.innerHTML = `
+          <div class="w-9 h-9 rounded-lg bg-navy-950 border border-white/20 shadow-md flex items-center justify-center absolute top-2.5 left-2.5 z-20 text-gold-450">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">${srv.icon}</svg>
+          </div>
+          <div class="h-40 w-full overflow-hidden bg-navy-850">
+            <img
+              src="${srv.image}"
+              onerror="this.onerror=null;this.src='${srv.fallback}';"
+              alt="${srv.title}"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="bg-navy-950 px-3.5 py-3 border-t border-white/10 text-center">
+            <span class="text-white group-hover:text-gold-450 font-semibold text-xs sm:text-[13px] leading-snug block transition-colors">
+              ${srv.title}
+            </span>
+          </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openServicePopup(srv.slug);
+        });
+
+        servicesCardsGrid.appendChild(card);
+      });
+
+      function openServicePopup(slug) {
+        const service = servicesCatalog.find((s) => s.slug === slug);
+        if (!service) return;
+
+        popupIconBadge.innerHTML = `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">${service.icon}</svg>`;
+        popupServiceCategory.textContent = service.category;
+        popupServiceTitle.textContent = service.title;
+        popupServiceDesc.textContent = service.desc;
+
+        popupServiceImage.onerror = function () {
+          this.onerror = null;
+          this.src = service.fallback;
+        };
+        popupServiceImage.src = service.image;
+        popupServiceImage.alt = service.title;
+
+        popupServiceBullets.innerHTML = service.bullets
+          .map(
+            (b) => `
+              <li class="flex items-center gap-2 bg-navy-950/75 border border-white/10 rounded-lg px-3 py-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-450 shrink-0"></span>
+                <span>${b}</span>
+              </li>
+            `
+          )
+          .join('');
+
+        popupBackdrop.classList.remove('hidden');
+        popupPanel.classList.remove('popup-panel-enter');
+        void popupPanel.offsetWidth;
+        popupPanel.classList.add('popup-panel-enter');
+      }
+
+      function closeServicePopup() {
+        popupBackdrop.classList.add('hidden');
+      }
+
+      // Click outside the expanded panel closes it
+      popupBackdrop.addEventListener('click', (e) => {
+        if (!popupPanel.contains(e.target)) {
+          closeServicePopup();
+        }
+      });
+
+      closeServicePopupBtn.addEventListener('click', closeServicePopup);
+      backToGridBtn.addEventListener('click', closeServicePopup);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (!popupBackdrop.classList.contains('hidden')) {
+            closeServicePopup();
+          } else {
+            closeAllDropdowns();
+          }
+        }
+      });
+
+      // Mega-menu service links open the matching popup directly on this page
+      document.querySelectorAll('.mega-service-link').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const slug = link.getAttribute('data-select-service');
+          if (slug) {
+            e.preventDefault();
+            closeAllDropdowns();
+            const targetSec = document.getElementById('services-provided');
+            const y = targetSec.getBoundingClientRect().top + window.scrollY - 76;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+            setTimeout(() => openServicePopup(slug), 260);
+          }
+        });
+      });
+
+      // Handle Deep-Link from Landing Page (?service=<slug>#services-provided)
+      const urlParams = new URLSearchParams(window.location.search);
+      const requestedService = urlParams.get('service');
+      if (requestedService) {
+        setTimeout(() => {
+          const targetSec = document.getElementById('services-provided');
+          if (targetSec) {
+            const y = targetSec.getBoundingClientRect().top + window.scrollY - 76;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+          setTimeout(() => openServicePopup(requestedService), 250);
+        }, 120);
+      }
+
+      /* -------------------------------------------------------------------
+         4. Industries We Work With (16 Sector Tiles)
+      -------------------------------------------------------------------- */
+      const industriesList = [
+        { name: 'Construction Sites', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />' },
+        { name: 'Hotels / Commercial Buildings', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />' },
+        { name: 'Residential', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />' },
+        { name: 'Campuses', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />' },
+        { name: 'Government Facilities', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 7l9-4 9 4M4 10h16v11H4V10z" />' },
+        { name: 'Medical Facilities', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />' },
+        { name: 'Hospitality', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />' },
+        { name: 'Banks', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />' },
+        { name: 'Retail', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />' },
+        { name: 'Car Dealership', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M8 17h.01M16 17h.01M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0v6a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-6" />' },
+        { name: 'Solar Farms', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />' },
+        { name: 'Events Security', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />' },
+        { name: 'Parking Lot', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />' },
+        { name: 'Industrial', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />' },
+        { name: 'Religious Institutions', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-6-9h12M9 7l3-4 3 4" />' },
+        { name: 'CCTV Operations', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />' }
+      ];
+
+      const industriesGrid = document.getElementById('industriesGrid');
+      industriesList.forEach((ind, idx) => {
+        const box = document.createElement('div');
+        box.className = 'industry-tile reveal-up bg-white border border-slate-200 rounded-xl p-4 sm:p-5 flex flex-col items-center justify-center text-center gap-2.5 shadow-sm';
+        box.style.transitionDelay = `${(idx % 4) * 40}ms`;
+        box.innerHTML = `
+          <div class="w-10 h-10 rounded-lg bg-navy-900 text-gold-450 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">${ind.icon}</svg>
+          </div>
+          <span class="text-navy-900 font-semibold text-xs leading-snug">${ind.name}</span>
+        `;
+        industriesGrid.appendChild(box);
+      });
+
+      /* -------------------------------------------------------------------
+         5. Scroll Reveal Observer
+      -------------------------------------------------------------------- */
+      const revealEls = document.querySelectorAll('.reveal-up');
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      revealEls.forEach((el) => revealObserver.observe(el));
+
+      /* -------------------------------------------------------------------
+         6. Floating Next-Section / Back-to-Top Button
+      -------------------------------------------------------------------- */
+      const cycleBtn = document.getElementById('sectionCycleBtn');
+      const cycleIcon = document.getElementById('cycleArrowIcon');
+      const sections = Array.from(document.querySelectorAll('.page-section'));
+
+      function isAtBottom() {
+        return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40;
+      }
+
+      function updateCycleButtonState() {
+        if (isAtBottom()) {
+          cycleIcon.style.transform = 'rotate(180deg)';
+          cycleBtn.title = 'Back to Top';
+          cycleBtn.setAttribute('aria-label', 'Back to top');
+        } else {
+          cycleIcon.style.transform = 'rotate(0deg)';
+          cycleBtn.title = 'Next Section';
+          cycleBtn.setAttribute('aria-label', 'Scroll to next section');
+        }
+      }
+
+      window.addEventListener('scroll', updateCycleButtonState, { passive: true });
+      updateCycleButtonState();
+
+      cycleBtn.addEventListener('click', () => {
+        if (isAtBottom()) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        const headerOffset = 76;
+        const currentScroll = window.scrollY + headerOffset + 15;
+        const nextSection = sections.find((sec) => sec.offsetTop > currentScroll);
+        if (nextSection) {
+          window.scrollTo({ top: nextSection.offsetTop - headerOffset, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
